@@ -1,0 +1,10 @@
+<ul id="tracklist" class="grid_8">
+<% @artist.each do |a| %>
+
+  <li class="track">
+    <h2><%= link_to a.name, artist_path(a.id) %></h2>
+    <p><%= a.bio %></p>
+  </li>
+  
+<% end %>
+</ul>

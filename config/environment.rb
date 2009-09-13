@@ -9,7 +9,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
 
-  config.gem = "authlogic"
+  config.gem "authlogic"
 
   config.time_zone = 'Amsterdam'
 

@@ -1,0 +1,22 @@
+<html>
+  <head>
+      <title><%= yield(:title) %></title>
+      <%= stylesheet_link_tag 'reset' %>      
+      <%= stylesheet_link_tag '960' %>
+      <%= stylesheet_link_tag 'screen' %>
+      <%= javascript_include_tag 'jquery-1.3.2.min' %>
+      <%= yield(:head) %>
+      
+      <style type="text/css" media="screen">
+        body{
+          background: #000;
+        }
+      </style>
+      
+  </head>
+  <body>
+
+    <%= yield %>
+
+  </body>
+</html>
