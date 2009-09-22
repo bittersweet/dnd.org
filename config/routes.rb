@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => "tracks", :action => "index"
+  map.root :controller => "overview", :action => "index"
   
   map.resources :tracks
   map.resources :artists
