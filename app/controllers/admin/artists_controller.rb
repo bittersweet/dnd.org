@@ -7,8 +7,10 @@ class Admin::ArtistsController < ApplicationController
   def create
     @artist = Artist.new(params[:artist])
     if @artist.save
-      flash[:notice] = "Artist saved"
+      flash[:notice] = 'Artist saved'
       redirect_to admin_artists_path
+    else
+      render 'new'
     end
   end
   
@@ -21,7 +23,7 @@ class Admin::ArtistsController < ApplicationController
     if @artist.update_attributes(params[:artist])
       redirect_to artist_path(params[:id])
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -29,7 +31,7 @@ class Admin::ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @artist.destroy
     redirect_to :back
-    flash[:notice] = "Artist deleted"
+    flash[:notice] = 'Artist deleted'
   end
   
   def index
