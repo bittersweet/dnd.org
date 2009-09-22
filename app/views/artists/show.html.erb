@@ -2,10 +2,7 @@
   
   <h1><%= @artist.name %></h1>
   
-  <ul>
-  <% @track.each do |t| %>
-    <li><%= t.name %></li>
-  <% end %>
-  </ul>
+<%= render :partial => 'tracklist' %>
+
   
 </div>
