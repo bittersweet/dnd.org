@@ -1,5 +1,8 @@
   <ul id="tracklist">
   <% @tracks.each do |t| %>
-    <li><%= t.name %></li>
+    <li id="<%= t.id %>" class="track">
+      <h2><%= link_to t.name, track_path(t) %></h2>
+      <p><%= t.description %></p>
+    </li>
   <% end %>
   </ul>

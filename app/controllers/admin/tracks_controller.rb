@@ -25,7 +25,7 @@ class Admin::TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
     if @track.update_attributes(params[:track])
-      redirect_to track_path(params[:id])
+      redirect_to admin_tracks_path
     else
       render "edit"
     end

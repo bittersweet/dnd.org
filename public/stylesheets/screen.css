@@ -192,3 +192,20 @@ a.on {
 h1{
 	font-size: 2em;
 }
+
+#tracklist{
+	
+}
+
+#tracklist li{
+	margin-bottom: 10px;
+	line-height: 18pt;
+	padding: 10px;
+	height: 48px;
+	width: 350px;
+	background: aqua;
+}
+
+#tracklist li h2{
+  font-size: 14pt;
+}
