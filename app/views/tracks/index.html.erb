@@ -2,22 +2,22 @@
 
   <div class="grid_5 alpha">
 
-    <div class="listing"><h1>Latest tracks</h1></div>
+    <div class="listing"><h1><%= link_to "Latest tracks", tracks_path %></h1></div>
 
   <%= render :partial => 'artists/tracklist' %>
 
   </div>
   
-    <div class="grid_5 prefix_1">
-      
-      <div id="weblog" class="listing"><h1>Weblog</h1></div>
-      
-    </div><div class="clear"></div>
+  <div class="grid_5 prefix_1">
     
-    <div class="grid_5 alpha">
-      
-      <div id="artists" class="listing"><h1>Artists</h1></div>
-      
-    </div>
+    <div id="weblog" class="listing"><h1><%= link_to "Weblog", weblogs_path %></h1></div>
+    
+  </div><div class="clear"></div>
+  
+  <div class="grid_5 alpha">
+    
+    <div id="artists" class="listing"><h1><%= link_to "Artists", artists_path %></h1></div>
+    
+  </div>
 
 </div>
