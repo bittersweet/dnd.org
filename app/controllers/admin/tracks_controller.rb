@@ -17,6 +17,20 @@ class Admin::TracksController < ApplicationController
     end
   end
   
+  def edit
+    @track = Track.find(params[:id])
+    @artist = Artist.all
+  end
+  
+  def update
+    @track = Track.find(params[:id])
+    if @track.update_attributes(params[:track])
+      redirect_to track_path(params[:id])
+    else
+      render "edit"
+    end
+  end
+  
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
