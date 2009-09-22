@@ -1,0 +1,18 @@
+<div id="content" class="grid_12">
+  
+  <h1>Nieuwe post</h1>
+  
+  <% form_for([:admin, @weblog]) do |f| %>
+
+    <ul>
+      <%= f.error_messages %>
+      <%= hidden_field(:weblog, :user_id, options = {"value" => "#{current_user.id}"}) %>
+      <li><%= f.label :title %>
+      <%= f.text_field :title, :class => "text", :size => "30" %></li>
+      <li><%= f.label :content %>
+      <%= f.text_area :content, :class => "text", :cols => "40", :rows => "15" %></li>
+      <li><%= f.submit "Submit" %></li>
+    </ul>
+  <% end %>
+    
+</div>

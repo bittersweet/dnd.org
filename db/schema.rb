@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090922131117) do
+ActiveRecord::Schema.define(:version => 20090922203728) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -58,5 +58,13 @@ ActiveRecord::Schema.define(:version => 20090922131117) do
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
   add_index "users", ["login"], :name => "index_users_on_login"
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
+
+  create_table "weblogs", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
