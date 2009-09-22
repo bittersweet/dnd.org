@@ -1,8 +1,11 @@
 <div class="grid_12">
   
-  <h1><%= @artist.name %></h1>
-  
-<%= render :partial => 'tracklist' %>
+  <div class="grid_5 alpha">
 
+    <h1><%= @artist.name %></h1>
+    <div class="listing"><h1>Other tracks</h1></div>
   
+  <%= render :partial => 'tracklist' %>
+
+  </div>
 </div>
