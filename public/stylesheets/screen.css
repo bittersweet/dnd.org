@@ -3,10 +3,11 @@ html {
 	height: 100%;
 	margin-bottom: 1px;
 }
-#wrapper{
+#wrapper {
 	height: 100%;
 }
 body {
+	background: #FFFFF8;
 	height: 100%;
 	color: #000;
 	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -198,21 +199,21 @@ h1 {
 	padding-top: 10px;
 }
 
-.listing{
+.listing {
 	margin-top: 20px;
 	text-transform: uppercase;
 	font-family: "Lucida";
 	padding: 10px;
-	background: #62A48b;
+	background: #B2211A;
 	width: 100%;
 }
 
-#weblog{
-	background: #4C7F6C;
+#weblog {
+	background: #FF473E;
 }
 
-#artists{
-	background: #284238;
+#artists {
+	background: #FF5F58;
 }
 
 #tracklist li {
@@ -221,7 +222,7 @@ h1 {
 	padding: 10px;
 	height: 48px;
 	width: 100%;
-/*	background: #62A48B;*/
+	/* background: #62A48B;*/
 }
 
 #tracklist li h2 {
@@ -229,23 +230,23 @@ h1 {
 }
 
 
-#footer{
-	margin-top: -120px;
+#footer {
+	margin-top: -150px;
 	padding-top: 10px;
 	height: 120px;
-	background: #7AC943;
+	background: #7D6978;
 	border-top: 20px solid black;
 	clear: both;
 	line-height: 20px;
 }
 
-#footer a{
+#footer a {
 	font-weight: bold;
 }
 
 /* Player */
 
-#player{
+#player {
 	height: 40px;
 	background: black;
 	width: 100%;
@@ -256,3 +257,6 @@ h1 {
 	position: fixed;
 	opacity: 0.8;
 }
+
+/* typography and links */
+
