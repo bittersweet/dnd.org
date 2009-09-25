@@ -21,7 +21,7 @@ class Admin::ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(params[:artist])
-      redirect_to artist_path(params[:id])
+      redirect_to admin_artists_path
     else
       render 'edit'
     end

@@ -2,8 +2,9 @@
 <% @artist.each do |a| %>
 
   <li class="track">
-    <h2><%= link_to a.name, artist_path(a.id) %></h2>
-    <p><%= a.bio %></p>
+    <h2><%= link_to a.name, artist_path(a) %></h2>
+    <p><%= link_to "Delete", admin_artist_path(a), :confirm => 'Are you sure?', :method => :delete %> | 
+       <%= link_to "Edit", edit_admin_artist_path(a) %></p>
   </li>
   
 <% end %>
