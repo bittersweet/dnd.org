@@ -9,7 +9,7 @@
 
     <li class="track">
       <h2><%= link_to w.title, weblog_path(w) %></h2>
-      <p><%= link_to "Delete", admin_weblog_path(w), :confirm => 'Are you sure?', :method => :delete %> | 
+      <p><%= link_to "Delete", admin_weblog_path(w.id), :confirm => 'Are you sure?', :method => :delete %> | 
          <%= link_to "Edit", edit_admin_weblog_path(w) %></p>
     </li>
   
