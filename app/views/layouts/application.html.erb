@@ -11,45 +11,44 @@
     
     <div id="wrap">
     
-    <div id="header">
+      <div id="header">
       
-      <div class="container_12">
+        <div class="container_12">
         
-        <div id="logo" class="grid_12">
-          <%= link_to image_tag('logo.png', :border => 0), root_path %>
+          <div id="logo" class="grid_12">
+            <%= link_to image_tag('logo.png', :border => 0), root_path %>
 
-          <% if current_user %>
-            <%= link_to "Logout", logout_path, :method => :delete %>
-          <% else %>
-            <%= link_to "Login", login_path %>
-          <% end %>  
+            <% if current_user %>
+              <%= link_to "Logout", logout_path, :method => :delete %>
+            <% else %>
+              <%= link_to "Login", login_path %>
+            <% end %>  
+          </div>
+        
         </div>
-        
+      
       </div>
-      
-      
-    </div>
     
-    <div id="wrapper" class="clearfix container_12">
+      <div id="wrapper" class="container_12">
 
-      <div id="flash_container" class="grid_12">
-        <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <%- end -%>
-        <script type="text/javascript">
-        $(function(){
+        <div id="flash_container" class="grid_12">
+          <%- flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <%- end -%>
+          <script type="text/javascript">
+          $(function(){
         
-          setTimeout(function() {
-            $("#flash_notice").slideUp();
-          }, 2000);
+            setTimeout(function() {
+              $("#flash_notice").slideUp();
+            }, 2000);
         
         
-        });
-        </script>
+          });
+          </script>
+        </div>
+
+      <%= yield %>
       </div>
-
-    <%= yield %>
-    </div>
     
     </div>
     
@@ -58,6 +57,9 @@
         <div class="grid_8">
           <p>deNachtdienst.org, staying fresh in 2009.</p>
           <p>Ben je dope en wil je ook je muziek online zetten? <a href="#">Get in touch.</a></p>
+        </div>
+        <div id="login" class="grid_4">
+          <a href="/login"><img src="/images/login.png"></a>
         </div>
       </div>
     </div>
