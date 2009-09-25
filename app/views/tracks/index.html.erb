@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  Tracks |
+<% end %>
+
 <div class="grid_12">
 
   <div class="grid_5 alpha">
@@ -6,18 +10,6 @@
 
   <%= render :partial => 'artists/tracklist' %>
 
-  </div>
-  
-  <div class="grid_5 prefix_1">
-    
-    <div id="weblog" class="listing"><h1><%= link_to "Weblog", weblogs_path %></h1></div>
-    
-  </div><div class="clear"></div>
-  
-  <div class="grid_5 alpha">
-    
-    <div id="artists" class="listing"><h1><%= link_to "Artists", artists_path %></h1></div>
-    
   </div>
 
 </div>

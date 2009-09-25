@@ -1,9 +1,13 @@
+<% content_for :title do %>
+  <%= @artist.name %> |
+<% end %>
+
 <div class="grid_12">
   
   <div class="grid_5 alpha">
 
     <h1><%= @artist.name %></h1>
-    <div class="listing"><h1>Other tracks</h1></div>
+    <div class="listing"><h1>Tracks</h1></div>
   
   <%= render :partial => 'tracklist' %>
 
