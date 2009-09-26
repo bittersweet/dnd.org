@@ -70,12 +70,16 @@
 
     <script type="text/javascript">
     $(function(){
-  
-      $("a.play").click(function() {
-        var track = $(this).prev().prev().text();
-        $("#player h3").text(track);
-        console.log(track);
+
+      $("a.play").click(function(event) {
+        event.preventDefault();
+        $("#player").slideDown();
+        var track = $(this).prev().prev().html();
+        $("#player h3").html(track);
+
       })
+    
+  
   
     });
     </script>
