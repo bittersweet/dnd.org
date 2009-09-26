@@ -6,7 +6,7 @@ class Track < ActiveRecord::Base
 
   belongs_to :artist
   
-  has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename"
+  has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
 
   validates_presence_of :name, :message => "can't be blank"
   validates_presence_of :description, :message => "can't be blank"

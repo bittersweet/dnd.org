@@ -3,7 +3,7 @@
   <li id="<%= t.id %>" class="track">
     <h2><%= link_to t.name, track_path(t) %></h2>
     <p class="description"><%= t.description %></p>
-    <a class="play" href="#">play</a>
+    <a class="play" href="<%= t.mp3.url %>">play</a>
   </li>
 <% end %>
 </ul>
