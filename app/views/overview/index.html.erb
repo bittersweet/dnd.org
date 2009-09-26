@@ -16,10 +16,7 @@
     
   </div><div class="clear"></div>
   
-  <div class="grid_5">
+  <div id="artists" class="listing"><h1><%= link_to "Artists", artists_path %></h1></div>
     
-    <div id="artists" class="listing"><h1><%= link_to "Artists", artists_path %></h1></div>
+  <%= render :partial => 'artists/artistlist' %>
     
-    <%= render :partial => 'artists/artistlist' %>
-    
-  </div>

@@ -1,8 +1,17 @@
 <% content_for :title do %><%= @weblog.title %> |<% end %>
 
-<div class="grid_5">
+<div class="grid_6">
 
   <div class="listing"><h1><%= @weblog.title %></h1></div>
-  <p><%= @weblog.content %></p>
+
+  <ul id="tracklist">
+
+    <li class="track">
+      <p><%= @weblog.content %></p>
+    </li>
+
+  </ul>
+
+
 
 </div>
