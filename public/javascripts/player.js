@@ -18,7 +18,6 @@ $(document).ready(function(){
                 // $(this).setFile("assault.mp3");
                 $("#player_song_title").html("DJ Assault - Ass and Titties");
     },
-    height: 100,
     volume: 50,
     oggSupport: false
   })
