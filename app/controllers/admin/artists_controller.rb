@@ -1,4 +1,5 @@
 class Admin::ArtistsController < ApplicationController
+  before_filter :require_user
 
   def new
     @artist = Artist.new

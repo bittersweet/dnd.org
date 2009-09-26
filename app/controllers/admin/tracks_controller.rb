@@ -1,5 +1,5 @@
 class Admin::TracksController < ApplicationController
-  # before_filter :require_user, :only => :new
+  before_filter :require_user
 
   def new
     @track = Track.new
