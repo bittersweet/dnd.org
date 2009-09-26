@@ -10,6 +10,7 @@ Rails::Initializer.run do |config|
 
 
   config.gem "authlogic"
+  config.gem "haml"
 
   config.time_zone = 'Amsterdam'
 
