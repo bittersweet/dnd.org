@@ -122,12 +122,16 @@ h1 {
   width: 100%;
   position: absolute;
   bottom: 0;
+  left: 0;
   line-height: 40px;
   position: fixed;
   opacity: 0.8;
   padding-left: 80px; }
   #player a {
     color: #EDAFD7; }
+
+#song_title {
+  color: #EDAFD7; }
 
 @font-face {
   font-family: "Graublau Sans Web";

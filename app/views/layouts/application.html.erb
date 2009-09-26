@@ -5,6 +5,7 @@
       <%= stylesheet_link_tag '960' %>
       <%= stylesheet_link_tag 'screen' %>
       <%= javascript_include_tag 'jquery-1.3.2.min' %>
+      <%= javascript_include_tag 'jquery.jplayer' %>
       <%= yield(:head) %>
   </head>
   <body>
@@ -64,9 +65,44 @@
       </div>
     </div>
     
+    
+    
+    <style type="text/css" media="screen">
+      #player_playlist_message, #player_controls, #player_progress, #play_time{
+        float: left;
+        color: white;
+      }
+    </style>
+        
     <div id="player">
-      <h3>Dit is de player</h3>
+      <!-- <h3>Dit is de player</h3> -->
+      
+      <div id="player_container">
+
+  			<div id="player_playlist_message">
+            <div id="song_title"></div>
+  			</div>
+
+  			<ul id="player_controls">
+  				<p id="player_play">play</p>
+  				<li id="player_pause">pause</li>
+
+  			</ul>
+        
+        <div id="play_time"></div>
+  			
+  			<div id="player_progress">
+  				<div id="player_progress_load_bar">
+  					<div id="player_progress_play_bar"></div>
+  				</div>
+  			</div>
+
+
+  		</div>
+      
+      
     </div>
+		
 
     <script type="text/javascript">
     $(function(){
@@ -78,11 +114,74 @@
         $("#player h3").html(track);
 
       })
-    
-  
   
     });
     </script>
+    
+    
+		<script>
+
+		$(document).ready(function(){
+
+			$("#player").jPlayer({
+				ready: function () {
+                    $(this).setFile("assault.mp3").play();
+                    $("#song_title").html("DJ Assault - Ass and Titties");
+				},
+				height: 100,
+				volume: 50,
+				oggSupport: false
+			})
+			.jPlayerId("play", "player_play")
+			.jPlayerId("pause", "player_pause")
+			.jPlayerId("stop", "player_stop")
+			.jPlayerId("loadBar", "player_progress_load_bar")
+			.jPlayerId("playBar", "player_progress_play_bar")
+			.onProgressChange( function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+				var myPlayedTime = new Date(playedTime);
+				var ptMin = (myPlayedTime.getUTCMinutes() < 10) ? "0" + myPlayedTime.getUTCMinutes() : myPlayedTime.getUTCMinutes();
+				var ptSec = (myPlayedTime.getUTCSeconds() < 10) ? "0" + myPlayedTime.getUTCSeconds() : myPlayedTime.getUTCSeconds();
+				$("#play_time").text(ptMin+":"+ptSec);
+
+			})
+			.onSoundComplete( function() {
+				$(this).play();
+			});
+		});
+
+		</script>
+		
+		<style>
+
+		#player_progress {
+		    line-height: 32px;
+		    float: left;
+			background-color: #eee;
+			width:122px;
+			margin-left: 20px;
+			margin-top: 10px;
+            height:12px;
+		}
+		#player_progress_load_bar {
+			background: url("/images/bar_load.gif")  top left repeat-x;
+			width:0px;
+			height:15px;
+			cursor: pointer;
+		}
+		#player_progress_load_bar.buffer {
+			background: url("/images/bar_buffer.gif")  top left repeat-x;
+		}
+		#player_progress_play_bar {
+			background: url("/images/bar_play.gif") top left repeat-x ;
+			width:0px;
+			height:15px;
+		}
+
+
+		</style>
+		
+
+
 
 
   </body>
