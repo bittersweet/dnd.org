@@ -3,14 +3,19 @@ $(document).ready(function(){
   $("a.play").click(function(event) {
     event.preventDefault();
     $("#player").slideDown();
-    var track = $(this).prev().prev().html();
-    $("#player h3").html(track);
+    var trackname = $(this).prev().prev().html();
+    var trackurl = $(this).attr("href")
+    $("#player h3").html(trackname);
+    
+    $("#jplayer").setFile(trackurl).play();
 
   });
+  
+  
 
   $("#jplayer").jPlayer({
     ready: function () {
-                $(this).setFile("assault.mp3").play();
+                // $(this).setFile("assault.mp3");
                 $("#player_song_title").html("DJ Assault - Ass and Titties");
     },
     height: 100,
