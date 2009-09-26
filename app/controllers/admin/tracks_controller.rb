@@ -18,11 +18,12 @@ class Admin::TracksController < ApplicationController
   end
   
   def edit
-    @track = Track.find(params[:id])
     @artist = Artist.all
+    @track = Track.find(params[:id])
   end
   
   def update
+    @artist = Artist.all
     @track = Track.find(params[:id])
     if @track.update_attributes(params[:track])
       redirect_to admin_tracks_path

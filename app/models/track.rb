@@ -5,9 +5,14 @@ class Track < ActiveRecord::Base
   end
 
   belongs_to :artist
+  
+  has_attached_file :mp3
 
-  validates_presence_of :name, :on => :save, :message => "can't be blank"
-  validates_presence_of :description, :on => :save, :message => "can't be blank"
-  validates_presence_of :artist_id, :on => :save, :message => "can't be blank"
+  validates_presence_of :name, :message => "can't be blank"
+  validates_presence_of :description, :message => "can't be blank"
+  validates_presence_of :artist_id, :message => "can't be blank"
+
+  # validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
+  # validates_attachment_content_type :mp3, :content_type => ['audio/mpeg'], :message => "Please only select audio files"
 
 end
