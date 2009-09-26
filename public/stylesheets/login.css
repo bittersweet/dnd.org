@@ -116,3 +116,16 @@ a.on {
 	padding: 0.25em;
 	width: 16.75em;
 }
+
+#dialog input.button, #wrapper input.button{
+	margin: 0.5 em 0;
+}
+
+#dialog .errorExplanation ul{
+	margin: 10px 0 10px 0!important;
+}
+
+#dialog .errorExplanation ul{
+	font-weight: bold;
+	list-style: none!important;
+}

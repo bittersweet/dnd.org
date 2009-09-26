@@ -1,14 +1,8 @@
 <% content_for :title do %><%= @track.name %> |<% end %>
 
-<div class="grid_12">
-  
-  <div class="grid_5 alpha">
-    <div class="listing"><h1><a href="#"><%= @track.name %></a></h1></div>
-    <div class="listing"><h1><%= link_to "Latest tracks", tracks_path %></h1></div>
-    
-    <%= @track.name %>
-  
-    <div class="listing"><h1>Other tracks</h1></div>
-    <%= render :partial => 'artists/tracklist' %>
-  </div>
+<div class="grid_5">
+  <div class="listing"><h1><a href="#"><%= @track.name %></a></h1></div>
+
+  <div class="listing"><h1>Other tracks</h1></div>
+  <%= render :partial => 'artists/tracklist' %>
 </div>
