@@ -1,0 +1,28 @@
+#player_playlist_message, #player_controls, #player_progress, #play_time
+  float: left
+  color: white
+  margin-right: 15px
+
+#player_progress
+  line-height: 32px
+  background-color: #eee
+  width: 122px
+  margin-left: 20px
+  margin-top: 10px
+  height: 12px
+
+
+#player_progress_load_bar
+  background: url("/images/bar_load.gif")  top left repeat-x
+  width: 0px
+  height: 15px
+  cursor: pointer
+
+  &.buffer
+    background: url("/images/bar_buffer.gif")  top left repeat-x
+
+
+#player_progress_play_bar
+  background: url("/images/bar_play.gif") top left repeat-x 
+  width: 0px
+  height: 15px
