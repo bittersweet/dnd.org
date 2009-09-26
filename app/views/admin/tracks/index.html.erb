@@ -1,11 +1,17 @@
-<ul id="tracklist" class="grid_8">
-<% @track.each do |t| %>
-
-  <li class="track">
-    <h2><%= link_to t.name, track_path(t.id) %></h2>
-    <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> | 
-       <%= link_to "Edit", edit_admin_track_path(t) %></p>
-  </li>
+<div class="grid_6">
   
-<% end %>
-</ul>
+  <div class="listing"><h1>Tracks</h1></div>
+
+  <ul id="tracklist">
+  <% @track.each do |t| %>
+
+    <li class="track">
+      <h2><%= link_to t.name, track_path(t.id) %></h2>
+      <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> | 
+         <%= link_to "Edit", edit_admin_track_path(t) %></p>
+    </li>
+  
+  <% end %>
+  </ul>
+
+</div>
