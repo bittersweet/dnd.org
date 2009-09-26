@@ -68,5 +68,18 @@
       <h3>Dit is de player</h3>
     </div>
 
+    <script type="text/javascript">
+    $(function(){
+  
+      $("a.play").click(function() {
+        var track = $(this).prev().prev().text();
+        $("#player h3").text(track);
+        console.log(track);
+      })
+  
+    });
+    </script>
+
+
   </body>
 </html>

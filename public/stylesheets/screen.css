@@ -69,12 +69,22 @@ h1 {
 #tracklist {
   padding-top: 10px; }
   #tracklist li {
+    position: relative;
     margin: 0;
     line-height: 18pt;
     padding: 10px 0px 20px 0px;
     height: auto;
     width: 100%;
     border-bottom: 1px solid rgb(187, 187, 187); }
+    #tracklist li .play {
+      float: right;
+      position: absolute;
+      top: 12px;
+      right: 0;
+      background: url("/images/i-playpause.gif");
+      height: 18px;
+      text-indent: -1000px;
+      width: 14px; }
     #tracklist li:last-child {
       border: none; }
     #tracklist li h2 {
@@ -110,7 +120,6 @@ h1 {
   line-height: 40px;
   position: fixed;
   opacity: 0.8; }
-
 
 @font-face {
   font-family: "Graublau Sans Web";
