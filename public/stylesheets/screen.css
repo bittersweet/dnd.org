@@ -109,6 +109,9 @@ h1 {
   .listing a {
     color: #B2211A; }
 
+#main {
+  height: 500px; }
+
 #header {
   padding-top: 10px;
   height: 70px;
