@@ -1,4 +1,4 @@
-#player_playlist_message, #player_controls, #player_progress, #play_time {
+#player_song_title, #player_controls, #player_progress, #play_time {
   float: left;
   color: white;
   margin-right: 15px; }

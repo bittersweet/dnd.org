@@ -11,7 +11,7 @@ $(document).ready(function(){
   $("#jplayer").jPlayer({
     ready: function () {
                 $(this).setFile("assault.mp3").play();
-                $("#song_title").html("DJ Assault - Ass and Titties");
+                $("#player_song_title").html("DJ Assault - Ass and Titties");
     },
     height: 100,
     volume: 50,
