@@ -2,7 +2,12 @@
 
 <div class="grid_5">
   <div class="listing"><h1><a href="#"><%= @track.name %></a></h1></div>
+  <p class="description"><%= @track.description %></p>
+</div>
 
-  <div class="listing"><h1>Other tracks</h1></div>
+<div class="grid_5 prefix_1">
+  
+  <div class="listing"><h1>Other tracks by <%= @artist.name %></h1></div>
   <%= render :partial => 'artists/tracklist' %>
+  
 </div>

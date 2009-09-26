@@ -46,12 +46,12 @@ body {
     padding: 0.25em;
     width: 691px; }
 
-#flash_container div {
+#flash_container {
   font-weight: bold; }
-  #flash_container div #flash_notice {
+  #flash_container #flash_notice {
     padding: 20px;
     background: pink; }
-  #flash_container div #flash_error {
+  #flash_container #flash_error {
     padding: 20px;
     color: red;
     background: white; }
@@ -82,6 +82,9 @@ h1 {
   padding-top: 20px;
   font-family: "Graublau Sans Web";
   width: 100%; }
+  .listing + p {
+    line-height: 1.5em;
+    padding-top: 10px; }
   .listing a {
     color: #B2211A; }
 

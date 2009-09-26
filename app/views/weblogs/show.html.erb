@@ -1,12 +1,8 @@
 <% content_for :title do %><%= @weblog.title %> |<% end %>
 
-<div class="grid_12">
+<div class="grid_5">
 
-  <div class="grid_5 alpha">
-
-    <h2><%= link_to @weblog.title, weblog_path(@weblog) %></h2>
-    <p><%= @weblog.content %></p>
-  
-  </div>
+  <div class="listing"><h1><%= @weblog.title %></h1></div>
+  <p><%= @weblog.content %></p>
 
 </div>
