@@ -103,6 +103,9 @@ h1 {
   padding-top: 20px;
   font-family: "Graublau Sans Web";
   width: 100%; }
+  .listing + p {
+    line-height: 1.3em;
+    padding-top: 10px; }
   .listing a {
     color: #B2211A; }
 
