@@ -2,13 +2,15 @@
   
   <h1>Nieuwe track</h1>
   
-  <% form_for([:admin, @track]) do |f| %>
+  <% form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
 
     <ul>
       <%= f.error_messages %>
       <li><%= f.label :artist %>
       <%= select("track", "artist_id", @artist.collect {|a| [ a.name, a.id ] }, { :include_blank => true })
        %></li>
+      <li><%= f.label :mp3 %>
+      <%= f.file_field :mp3 %></li>
       <li><%= f.label :name %>
       <%= f.text_field :name, :class => "text", :size => "30" %></li>
       <li><%= f.label :description %>
