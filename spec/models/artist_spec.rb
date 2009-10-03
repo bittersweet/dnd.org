@@ -2,12 +2,23 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Artist do
 
-  it "should succeed when creating a new valid_artist" do
-    Factory.create(:valid_artist)
+  before(:each) do
+    @artist = Factory.create(:valid_artist)
   end
 
-  it "should be invalid when creating a invalid artist" do
-    Factory.build(:invalid_artist).should be_invalid
+  it "should be valid" do
+    @artist.should be_valid
   end
+
+  it "should not be valid without a name" do
+    @artist.name = ''
+    @artist.should_not be_valid
+  end
+
+  it "should not be valid without a bio" do
+    @artist.bio = ''
+    @artist.should_not be_valid
+  end
+
 end
 
