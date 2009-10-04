@@ -9,6 +9,11 @@ class TracksController < ApplicationController
   
   def index
     @tracks = Track.all.reverse
+
+    respond_to do |format|
+      format.html
+      format.atom
+    end
   end
   
 end
