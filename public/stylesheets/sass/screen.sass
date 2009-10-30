@@ -1,154 +1,155 @@
 html, body, #wrap
-  height: 100%
+  :height 100%
 
 body > #wrapper
-  height: auto
-  min-height: 100%
+  :height auto
+  :min-height 100%
 
 #footer
-  position: relative
-  background: #7D6978
-  padding-top: 10px
-  margin-top: -130px
-  height: 100px
-  border-top: 20px solid black
-  clear: both
-  line-height: 20px
+  :position relative
+  :background #7D6978
+  :padding-top 10px
+  :margin-top -130px
+  :height 100px
+  :border-top 20px solid black
+  :clear both
+  :line-height 20px
 
   a
-    font-weight: bold
-    color: #000
+    :font-weight bold
+    :color #000
 a
   text-decoration: none
-  color: #464A47
+  :color #464A47
   
   &:hover
-    border-bottom: solid 2px #cacaca
+    :border-bottom solid 2px #cacaca
 
 label
-  display: block
-  font-weight: bold
-  margin-bottom: 5px
+  :display block
+  :font-weight bold
+  :margin-bottom 5px
 
 body
-  background: #FFFFF8
-  height: 100%
-  color: #000
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif
-  font-size: 75%
+  :background #FFFFF8
+  :height 100%
+  :color #000
+  :font-family "Lucida Grande", Helvetica, Arial, sans-serif
+  :font-size 75%
 
 #wrapper
-  padding-bottom: 190px
-  padding-top: 40px
+  :padding-bottom 190px
+  :padding-top 40px
 
   input.text
-    width: 691px
-    border: 1px solid #999
-    font-size: 2em
-    padding: 0.25em
-    width: 16.75em
+    :width 691px
+    :border 1px solid #999
+    :font-size 2em
+    :padding 0.25em
+    :width 16.75em
 
   textarea.text
-    font-size: 1em
-    border: 1px solid #999
-    padding: 0.25em
-    width: 691px
+    :font-size 1em
+    :border 1px solid #999
+    :padding 0.25em
+    :width 691px
 
 #flash_container
-  font-weight: bold
+  :font-weight bold
 
   #flash_notice
-    padding: 20px
-    background: pink
+    :padding 20px
+    :background pink
 
   #flash_error
-    padding: 20px
-    color: red
-    background: white
+    :padding 20px
+    :color red
+    :background white
 
 #content
-  color: #000
-  padding-top: 20px
+  :color #000
+  :padding-top 20px
 
 h1
-  font-size: 2em
+  :font-size 2em
 
 #artists
-  margin-left: 10px
+  :margin-top -80px
+  :padding-top 80px
 
-#tracklist
-  padding-top: 10px
+.tracklist
+  :padding-top 10px
   
   li
-    position: relative
-    margin: 0
-    line-height: 18pt
-    padding: 10px 0px 20px 0px
-    height: auto
-    width: 100%
-    border-bottom: 1px solid rgb(187, 187, 187)
+    :position relative
+    :margin 0
+    :line-height 18pt
+    :padding 10px 0px 20px 0px
+    :height auto
+    :width 100%
+    :border-bottom 1px solid rgb(187, 187, 187)
     
     .play
-      float: right
-      position: absolute
-      top: 12px
-      right: 0
-      background: url("/images/i-playpause.gif")
+      :float right
+      :position absolute
+      :top 12px
+      :right 0
+      :background url("/images/i-playpause.gif")
       
-      height: 18px
-      text-indent: -5000px
-      width: 14px
+      :height 18px
+      :text-indent -5000px
+      :width 14px
 
     &:last-child
-      border: none
+      :border none
 
     h2
-      font-size: 14pt
-      font-weight: normal
+      :font-size 14pt
+      :font-weight normal
 
 .description
-  width: 330px
+  :width 330px
 
 .listing
-  padding-top: 20px
-  font-family: "Graublau Sans Web"
-  width: 100%
+  :padding-top 20px
+  :font-family "Graublau Sans Web"
+  :width 100%
 
   + p
-    line-height: 1.3em
-    padding-top: 10px
+    :line-height 1.3em
+    :padding-top 10px
 
   a
-    color: #B2211A
+    :color #B2211A
 
 #main
-  height: 500px
+  :height 500px
 
 #header
-  padding-top: 10px
-  height: 70px
-  background: #7D6978
-  border-bottom: 20px solid #464A47
+  :padding-top 10px
+  :height 60px
+  :background #7D6978
+  :border-bottom 20px solid #464A47
 
 #player
-  display: none
-  height: 40px
-  background: black
-  width: 100%
-  position: absolute
-  bottom: 0
-  left: 0
-  line-height: 40px
-  position: fixed
-  opacity: 0.8
-  padding-left: 80px
+  :display none
+  :height 40px
+  :background black
+  :width 100%
+  :position absolute
+  :bottom 0
+  :left 0
+  :line-height 40px
+  :position fixed
+  :opacity 0.8
+  :padding-left 80px
   
   a
-    color: #EDAFD7
+    :color #EDAFD7
 
 #song_title
-  color: #EDAFD7
+  :color #EDAFD7
 
 @font-face
-  font-family: "Graublau Sans Web"
-  src: url(GraublauWeb.otf) format("opentype")
+  :font-family "Graublau Sans Web"
+  :src url(GraublauWeb.otf) format("opentype")

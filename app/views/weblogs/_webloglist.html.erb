@@ -1,8 +1,9 @@
-  <ul id="tracklist">
-  <% @weblogs.each do |w| %>
-    <li id="<%= w.id %>" class="track">
-      <h2><%= link_to w.title, weblog_path(w) %></h2>
-      <p><%= h(w.content[0..250]) %>&hellip;<%= link_to '[read more]', weblog_path(w) %></p>
-    </li>
-  <% end %>
-  </ul>
+<ul class="tracklist">
+<% @weblogs.each do |w| %>
+  <li id="<%= w.id %>" class="track">
+    <h2><%= link_to w.title, weblog_path(w) %></h2>
+    <p><%= h(w.content) %></p>
+  </li>
+<% end %>
+</ul>
+

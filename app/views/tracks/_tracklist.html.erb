@@ -1,4 +1,4 @@
-<ul id="tracklist">
+<ul class="tracklist">
 <% @tracks.each_with_index do |t, i| %>
   <li id="track-<%= i %>" class="track">
     <h2><%= link_to t.name, track_path(t), :id => i %></h2>
