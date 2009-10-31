@@ -11,9 +11,12 @@ class TracksController < ApplicationController
     @tracks = Track.all.reverse
   end
 
-  def playcount
-    Track.update_playcount(params[:id], request.env)
-    render :nothing => true
+  def download
+    @track = Track.find(params[:id])
+    send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => 'audio/mpeg',
+                                                       :stream => false,
+                                                       :x_sendfile => true
+    @track.update_playcount(request.env)
   end
 
 end
