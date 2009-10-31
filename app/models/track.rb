@@ -5,6 +5,7 @@ class Track < ActiveRecord::Base
   end
 
   belongs_to :artist
+  has_many :statistics
   
   has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
 
