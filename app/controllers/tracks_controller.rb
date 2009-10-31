@@ -13,10 +13,9 @@ class TracksController < ApplicationController
 
   def download
     @track = Track.find(params[:id])
-    send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => 'audio/mpeg',
-                                                       :stream => false,
-                                                       :x_sendfile => true
     @track.update_playcount(request.env)
+    send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => 'audio/mpeg',
+                                                       :x_sendfile => true
   end
 
 end
