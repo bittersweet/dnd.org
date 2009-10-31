@@ -33,8 +33,11 @@ $(document).ready(function(){
   $("a.play").click(function(event) {
     event.preventDefault();
     $("#player").slideDown();
-    var trackname = $(this).prev().prev().html();
-    var trackurl = $(this).attr("href");
+    var $this = $(this);
+    var trackname = $this.prev().prev().html();
+    var tracknameurl = $(trackname).attr("href")
+    var trackurl = $this.attr("href");
+  	$.post(tracknameurl + "/play");
     $("#player_song_title").html(trackname);    
     playtrack(trackurl);
   });

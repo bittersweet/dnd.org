@@ -16,4 +16,11 @@ class Track < ActiveRecord::Base
   validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
   # validates_attachment_content_type :mp3, :content_type => ['audio/mpeg'], :message => "Please only select audio files"
 
+  def self.update_playcount(track, env)
+    Statistic.create(:track_id => track,
+                     :ip => env["REMOTE_ADDR"],
+                     :browser => env['HTTP_USER_AGENT'],
+                     :played_at => Time.now)
+  end
+
 end

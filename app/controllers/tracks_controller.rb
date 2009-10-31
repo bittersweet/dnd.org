@@ -10,5 +10,10 @@ class TracksController < ApplicationController
   def index
     @tracks = Track.all.reverse
   end
-  
+
+  def playcount
+    Track.update_playcount(params[:id], request.env)
+    render :nothing => true
+  end
+
 end
