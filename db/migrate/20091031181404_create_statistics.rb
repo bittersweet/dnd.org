@@ -5,8 +5,6 @@ class CreateStatistics < ActiveRecord::Migration
       t.string   :ip
       t.string   :browser
       t.datetime :played_at
-
-      t.timestamps
     end
   end
 
