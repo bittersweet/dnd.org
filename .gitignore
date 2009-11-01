@@ -3,3 +3,4 @@ public/stylesheets/player.css
 public/audio
 log/*
 *.swp
+config/config.yml
