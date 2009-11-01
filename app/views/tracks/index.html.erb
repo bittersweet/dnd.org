@@ -1,5 +1,5 @@
+<% content_for :head do %><%= auto_discovery_link_tag(:rss, track_feed_url) %><% end %>
 <% content_for :title do %>Tracks |<% end %>
-
 <div class="grid_5">
 
   <div class="listing"><h1><%= link_to "Latest tracks", tracks_path %></h1></div>

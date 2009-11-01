@@ -3,7 +3,7 @@
   <li id="track-<%= i %>" class="track">
     <h2><%= link_to t.name, track_path(t), :id => i %></h2>
     <p class="description"><%= t.description %></p>
-    <a class="play" href="<%= download_path(t) %>">play</a>
+    <a class="play" href="<%= track_download_path(t) %>">play</a>
   </li>
 <% end %>
 </ul>

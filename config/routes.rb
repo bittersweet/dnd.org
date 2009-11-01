@@ -1,21 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => "overview", :action => "index"
-  
-  map.resources :tracks
+  map.root :controller => 'overview', :action => 'index'
+
+  map.track_feed '/tracks/feed', :controller => 'tracks', :format => 'rss'
+  map.resources :tracks do |t|
+    t.download '/download/:id', :controller => 'tracks', :action => 'download'
+  end
+
   map.resources :artists
   map.resources :weblogs
-  
+
   map.resource :user_session
-  map.resource :account, :controller => "users"
+  map.resource :account, :controller => 'users'
   map.resources :users
-  
-  map.playcount '/tracks/:id/play', :controller => 'tracks', :action => 'playcount'
-  map.download '/tracks/download/:id', :controller => 'tracks', :action => 'download'
-  
-  map.login "login", :controller => "user_sessions", :action => "new"
-  map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  
+
+  map.login 'login', :controller => 'user_sessions', :action => 'new'
+  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+
   map.namespace :admin do |admin|
     admin.resources :tracks
     admin.resources :artists
