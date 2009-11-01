@@ -10,6 +10,7 @@ class Admin::TracksController < ApplicationController
     @artist = Artist.all
     @track = Track.new(params[:track])
     if @track.save
+      @track.send_later(:twitterupdate)
       flash[:notice] = "Track saved"
       redirect_to root_path
     else

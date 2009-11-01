@@ -25,5 +25,12 @@ class Track < ActiveRecord::Base
                        :played_at => Time.now)
     end
   end
+  
+  def twitterupdate
+    httpauth = Twitter::HTTPAuth.new(APP_CONFIG['username'], APP_CONFIG['password'])
+
+    client = Twitter::Base.new(httpauth)
+    client.update("New track uploaded: #{name} http://www.denachtdienst.org/tracks/#{to_param}")
+  end
 
 end
