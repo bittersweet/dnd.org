@@ -12,9 +12,10 @@ require 'tasks/rails'
 require 'cucumber'
 require 'cucumber/rake/task'
 
-  task :cucumber_and_rspec do
-    Cucumber::Rake::Task.new(:features) do |t|
-      t.cucumber_opts = "features --format pretty"
-    end
+task :cucumber_and_rspec do
+  Cucumber::Rake::Task.new(:features) do |t|
+    t.cucumber_opts = "features --format pretty"
   end
+end
 
+task :build => ['db:migrate', :spec]
