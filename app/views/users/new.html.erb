@@ -1,11 +1,11 @@
 <div id="dialog">
 
 <h1>Register</h1>
-
+<ul>
   <% form_for @user, :url => account_path do |f| %>
     <%= f.error_messages %>
     <%= render :partial => "form", :object => f %>
     <li><%= f.submit "Register" %></li>
   <% end %>
-
+</ul>
 </div>
