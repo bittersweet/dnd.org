@@ -1,0 +1,8 @@
+-content_for :title do
+  ="#{@weblog.title} |"
+
+.grid_6
+  .article
+    .listing
+      %h1= @weblog.title
+    %p= @weblog.content

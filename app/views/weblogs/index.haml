@@ -1,0 +1,12 @@
+-content_for :title do
+  Weblogs |
+
+.grid_6
+  .listing
+    %h1 Posts
+  
+  %ul#tracklist
+    -@weblog.each do |w|
+      %li.track
+        %h2= link_to w.title, weblog_path(w)
+        %p= w.content

@@ -1,9 +1,0 @@
-<ul class="tracklist">
-<% @weblogs.each do |w| %>
-  <li id="<%= w.id %>" class="track">
-    <h2><%= link_to w.title, weblog_path(w) %></h2>
-    <p><%= h(w.content) %></p>
-  </li>
-<% end %>
-</ul>
-

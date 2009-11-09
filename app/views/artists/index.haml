@@ -1,0 +1,8 @@
+- content_for :title do
+  Artists |
+
+%ul.grid_8{:id => 'tracklist'}
+  - @artist.each do |a|
+    %li.track
+      %h2= link_to a.name, artist_path(a)
+      %p= a.bio
