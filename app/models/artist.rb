@@ -8,5 +8,7 @@ class Artist < ActiveRecord::Base
   
   validates_presence_of :name, :message => "can't be blank"
   validates_presence_of :bio, :message => "can't be blank"
+  
+  default_scope :order => 'name ASC'
 
 end
