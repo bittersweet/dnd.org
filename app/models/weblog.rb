@@ -7,5 +7,7 @@ class Weblog < ActiveRecord::Base
   validates_presence_of :title, :message => "can't be blank"
   validates_presence_of :content, :message => "can't be blank"
   validates_presence_of :user_id, :message => "can't be blank"
+  
+  named_scope :latest, :limit => 10, :order => 'id DESC'
 
 end
