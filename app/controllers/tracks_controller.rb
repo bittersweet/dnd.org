@@ -8,7 +8,7 @@ class TracksController < ApplicationController
   end
   
   def index
-    @tracks = Track.all.reverse
+    @tracks = Track.paginate(:page => params[:page], :per_page => 10, :order => 'created_at DESC')
   end
 
   def download
