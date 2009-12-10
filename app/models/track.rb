@@ -24,7 +24,7 @@ class Track < ActiveRecord::Base
       Statistic.create(:track_id => id,
                        :ip => env["REMOTE_ADDR"],
                        :browser => env['HTTP_USER_AGENT'],
-                       :played_at => Time.now)
+                       :created_at => Time.now)
     end
   end
 
