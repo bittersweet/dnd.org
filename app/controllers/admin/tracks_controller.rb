@@ -2,8 +2,6 @@ class Admin::TracksController < ApplicationController
   before_filter :require_user
   before_filter :load_artist, :except => [:destroy, :index]
 
-  #artist all before filter doen
-
   def new
     @track = Track.new
   end
