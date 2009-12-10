@@ -6,7 +6,7 @@ class Track < ActiveRecord::Base
 
   belongs_to :artist
   has_many :statistics
-  
+
   has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
 
   validates_presence_of :name, :message => "can't be blank"
@@ -26,12 +26,24 @@ class Track < ActiveRecord::Base
                        :played_at => Time.now)
     end
   end
-  
+
   def twitterupdate
     httpauth = Twitter::HTTPAuth.new(APP_CONFIG['username'], APP_CONFIG['password'])
 
     client = Twitter::Base.new(httpauth)
     client.update("New track uploaded: #{name} http://www.denachtdienst.org/tracks/#{to_param}")
+  end
+
+protected
+
+  after_save :read_mp3, :if => "self.length.nil?"
+  def read_mp3
+    update_attribute(:length, Mp3Info.new(self.mp3.path).length)
+  end
+
+  after_save :update_twitter
+  def update_twitter
+    send_later(:twitterupdate)
   end
 
 end

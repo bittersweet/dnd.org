@@ -8,10 +8,7 @@ class Admin::TracksController < ApplicationController
 
   def create
     @track = Track.new(params[:track])
-    mp3_info = Mp3Info.new(params[:track][:mp3].path)
-    @track.length = mp3_info.length
     if @track.save
-      @track.send_later(:twitterupdate)
       flash[:notice] = "Track saved"
       redirect_to root_path
     else
