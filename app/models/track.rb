@@ -19,7 +19,8 @@ class Track < ActiveRecord::Base
   named_scope :latest, :limit => 10, :order => 'id DESC'
 
   def update_playcount(env)
-    unless Statistic.find_by_track_id(id, :conditions => ["played_at >= '#{30.seconds.ago.utc.strftime("%Y-%m-%d %H:%M:%S")}' AND played_at < '#{1.minute.from_now.utc.strftime("%Y-%m-%d %H:%M:%S")}'"])
+
+    unless Statistic.find_by_track_id(id, :conditions => "created_at = '#{Time.now.strftime("%Y-%m-%d %H:%M")}'")
       Statistic.create(:track_id => id,
                        :ip => env["REMOTE_ADDR"],
                        :browser => env['HTTP_USER_AGENT'],
