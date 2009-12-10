@@ -1,13 +1,14 @@
 class Admin::TracksController < ApplicationController
   before_filter :require_user
+  before_filter :load_artist, :except => [:destroy, :index]
+
+  #artist all before filter doen
 
   def new
     @track = Track.new
-    @artist = Artist.all
   end
-  
+
   def create
-    @artist = Artist.all
     @track = Track.new(params[:track])
     mp3_info = Mp3Info.new(params[:track][:mp3].path)
     @track.length = mp3_info.length
@@ -19,14 +20,12 @@ class Admin::TracksController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
-    @artist = Artist.all
     @track = Track.find(params[:id])
   end
-  
+
   def update
-    @artist = Artist.all
     @track = Track.find(params[:id])
     if @track.update_attributes(params[:track])
       redirect_to admin_tracks_path
@@ -34,16 +33,23 @@ class Admin::TracksController < ApplicationController
       render "edit"
     end
   end
-  
+
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
     redirect_to :back
     flash[:notice] = "Track verwijderd"
   end
-  
+
   def index
     @track = Track.all.reverse
   end
+
+protected
+
+  def load_artist
+    @artist = Artist.all
+  end
+
 
 end
