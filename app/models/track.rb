@@ -19,13 +19,7 @@ class Track < ActiveRecord::Base
   named_scope :latest, :limit => 10, :order => 'id DESC'
 
   def update_playcount(env)
-
-    unless Statistic.find_by_track_id(id, :conditions => "created_at = '#{Time.now.strftime("%Y-%m-%d %H:%M")}'")
-      Statistic.create(:track_id => id,
-                       :ip => env["REMOTE_ADDR"],
-                       :browser => env['HTTP_USER_AGENT'],
-                       :created_at => Time.now)
-    end
+    Statistic.generate!(id, env)
   end
 
   def twitterupdate
