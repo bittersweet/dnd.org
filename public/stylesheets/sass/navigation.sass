@@ -1,0 +1,46 @@
+#navigation
+  margin-top: -17px
+  clear: right
+  list-style-type: none
+  font-weight: bold
+  text-align: center
+
+  > li
+    float: left
+    margin-right: 10px
+    height: 31px
+
+    > a
+      display: block
+      color: #cee7fa
+      background: url(/images/button.sprite.left.png) no-repeat 0 0
+      padding-left: 35px
+      text-shadow: #0e1e29 0 1px 1px
+
+      &:active, &.current
+        text-shadow: #0e1e29 0 -1px 1px
+
+  li
+    &#apps_button a
+      span
+        padding-right: 25px
+
+      &:hover
+        background-position: 0 -31px
+
+      &:active, &.current
+        background-position: 0 -62px
+
+    a
+      > span
+        display: block
+        background: url(/images/button.sprite.right.png) no-repeat 100% 0
+        line-height: 31px
+        padding-right: 15px
+
+      &:hover > span
+        background-position: 100% -31px
+
+      &:active > span, &.current > span
+        background-position: 100% -62px
+
