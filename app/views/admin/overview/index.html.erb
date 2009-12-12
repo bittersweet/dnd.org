@@ -1,0 +1,36 @@
+<%- content_for(:head) do -%>
+  <%= stylesheet_link_tag 'navigation' -%>
+<%- end -%>
+
+<div class="grid_10">
+  <ul id="navigation">
+    <li id="apps_button">
+      <a href="/admin/tracks/new" class="">
+        <span>
+          New track
+        </span>
+      </a>
+    </li>
+    <li id="apps_button">
+      <a href="/admin/weblogs/new" class="">
+        <span>
+          New weblog
+        </span>
+      </a>
+    </li>
+    <li id="apps_button">
+      <a href="/admin/artists/new" class="">
+        <span>
+          New artist
+        </span>
+      </a>
+    </li>
+    <li id="account_button">
+      <a href="/account/" class="">
+        <span>
+          Account
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

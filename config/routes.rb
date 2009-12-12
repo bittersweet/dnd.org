@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :tracks
     admin.resources :artists
     admin.resources :weblogs
+    admin.root :controller => 'overview', :action => 'index'
   end
 
   map.connect ':controller/:action/:id'
