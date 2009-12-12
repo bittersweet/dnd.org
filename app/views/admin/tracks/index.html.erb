@@ -1,17 +1,36 @@
 <div class="grid_6">
-  
+
   <div class="listing"><h1>Tracks</h1></div>
 
-  <ul id="tracklist">
+  <ul class="tracklist">
   <% @track.each do |t| %>
 
     <li class="track">
       <h2><%= link_to t.name, track_path(t.id) %></h2>
-      <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> | 
+      <span><%= t.statistics_count %> plays in <%= Time.now.yday - t.created_at.yday %> days</span>
+      <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> |
          <%= link_to "Edit", edit_admin_track_path(t) %></p>
     </li>
-  
+
   <% end %>
   </ul>
 
 </div>
+
+<ul id="navigation" style="float: right;">
+    <li class="apps_button">
+        <a href="/admin/tracks/new" class="">
+            <span>
+                New track
+            </span>
+        </a>
+
+        </li>
+    <li class="apps_button">
+        <a href="/account/" class="">
+            <span>
+                Account
+            </span>
+        </a>
+    </li>
+</ul>

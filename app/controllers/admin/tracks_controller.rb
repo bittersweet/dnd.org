@@ -10,7 +10,7 @@ class Admin::TracksController < ApplicationController
     @track = Track.new(params[:track])
     if @track.save
       flash[:notice] = "Track saved"
-      redirect_to root_path
+      redirect_to admin_tracks_path
     else
       render :new
     end

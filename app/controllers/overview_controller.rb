@@ -4,6 +4,8 @@ class OverviewController < ApplicationController
     @artists = Artist.all
     @tracks = Track.latest
     @weblogs = Weblog.latest
+
+    @stats = Statistic.playtime
   end
 
 end

@@ -1,6 +1,6 @@
 class AddTrackLengthToTracks < ActiveRecord::Migration
   def self.up
-    add_column :tracks, :length, :int
+    add_column :tracks, :length, :integer
   end
 
   def self.down

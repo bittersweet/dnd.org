@@ -11,4 +11,16 @@ class Statistic < ActiveRecord::Base
                      :created_at => Time.now)
   end
 
+
+  def self.playtime
+    t = Track.find(:all, :select => "length, statistics_count")
+    array = []
+    array2 = []
+    t.each do |t|
+      array.push t.length * t.statistics_count
+      array2.push t.statistics_count
+    end
+    [array.sum, array2.sum]
+  end
+
 end

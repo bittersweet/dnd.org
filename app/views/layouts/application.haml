@@ -2,7 +2,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
   %head
     %title="#{yield(:title)} on deNachtdienst"
-    =stylesheet_link_tag 'reset', '960', 'screen', 'player'
+    =stylesheet_link_tag 'reset', '960', 'screen', 'player', 'navigation'
     =javascript_include_tag 'jquery-1.3.2.min', 'jquery.jplayer', 'application'
     =yield(:head)
   %body
@@ -31,4 +31,4 @@
           #player_progress_load_bar
             #player_progress_play_bar
 
-=javascript_include_tag 'player'
+    =javascript_include_tag 'player'
