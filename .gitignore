@@ -5,3 +5,4 @@ public/audio
 log/*
 *.swp
 config/config.yml
+config/database.yml
