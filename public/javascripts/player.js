@@ -10,7 +10,7 @@ $(document).ready(function(){
     setsongtitle(trackname);
     playtrack(nexttrack_url);
   };
-  
+
   function prevtrack(current_track) {
     var prevtrack = current_track - 1;
     if (prevtrack < 10) {
@@ -21,11 +21,11 @@ $(document).ready(function(){
     setsongtitle(trackname);
     playtrack(prevtrack_url);
   };
-  
+
   function setsongtitle(title) {
     $("#player_song_title").html(title);
   };
-  
+
   function playtrack(trackurl ) {
     $("#jplayer").setFile(trackurl).play();
   };
@@ -34,9 +34,9 @@ $(document).ready(function(){
     event.preventDefault();
     $("#player").slideDown();
     var $this = $(this);
-    var trackname = $this.prev().prev().html();
+    var trackname = $this.prev().html();
     var trackurl = $this.attr("href");
-    $("#player_song_title").html(trackname);    
+    setsongtitle(trackname);
     playtrack(trackurl);
   });
 
