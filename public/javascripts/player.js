@@ -1,14 +1,14 @@
 $(document).ready(function(){
 
-  function nexttrack(current_track) {
+  function nextTrack(current_track) {
     var nexttrack = current_track + 1;
     var trackname = $("#track-" + nexttrack + " h2").html();
     var nexttrack_url = $("#track-" + nexttrack + " a.play").attr("href");
     setsongtitle(trackname);
     playtrack(nexttrack_url);
-  };
+  }
 
-  function prevtrack(current_track) {
+  function prevTrack(current_track) {
     var prevtrack = current_track - 1;
     if (prevtrack < 10) {
       prevtrack = prevtrack.charAt(1);
@@ -17,15 +17,15 @@ $(document).ready(function(){
     var prevtrack_url = $("#track-" + prevtrack + " a.play").attr("href");
     setsongtitle(trackname);
     playtrack(prevtrack_url);
-  };
+  }
 
   function setsongtitle(title) {
     $("#player_song_title").html(title);
-  };
+  }
 
   function playtrack(trackurl ) {
     $("#jplayer").setFile(trackurl).play();
-  };
+  }
 
   $("li.track").click(function(event) {
     $("#player").slideDown();
@@ -67,6 +67,6 @@ $(document).ready(function(){
   })
   .onSoundComplete( function() {
     var current_track = $("#player_song_title a").attr("id");
-    nexttrack(current_track);
+    nextTrack(current_track);
   });
 });
