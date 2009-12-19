@@ -1,19 +1,16 @@
 -content_for :title do
   Overview |
 
-.grid_5
-  .listing= link_to image_tag('latesttracks.png'), tracks_path
+.grid_12
+  .listing{ :class => 'listing' }=link_to image_tag('latesttracks.png'), tracks_path
   =render :partial => 'tracks/tracklist'
-
-.grid_5{ :class => 'prefix_1' }
-  #weblog{ :class => 'listing' }= link_to image_tag('weblog.png'), weblogs_path
-  =render :partial => 'weblogs/webloglist'
-
-.clear
-
 .grid_12
   #artists{ :class => 'listing' }= link_to image_tag('artists.png'), artists_path
   =render :partial => 'artists/artistlist'
+
+.grid_12
+  #weblog{ :class => 'listing' }= link_to image_tag('weblog.png'), weblogs_path
+  =render :partial => 'weblogs/webloglist'
 
 .grid_12
   #statistics{:class => 'alpha'}

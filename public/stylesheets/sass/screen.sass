@@ -1,6 +1,5 @@
 a
   text-decoration: none
-  :color snow
 
   &:hover
     :border-bottom solid 2px #cacaca
@@ -16,11 +15,10 @@ body
   :font-family "Lucida Grande", Helvetica, Arial, sans-serif
   :font-size 75%
   :line-height 1.8em
-  :background #3e3e3e url(/images/body_bg.jpg) repeat-x center 0
+  :background #3e3e3e
 
 #wrapper
-  :padding-top 20px
-  :margin-top 60px
+  :margin-top 30px
 
   input.text
     :width 691px
@@ -51,42 +49,47 @@ p
   :line-height 1.6em
   :padding-top 10px
 
-#content
-  :color #000
-  :padding-top 20px
-
 h1
   :font-size 2em
 
 #artists
-  :margin-top -80px
-  :padding-top 80px
+  :padding-top 50px
 
 .tracklist
   :padding-top 10px
   :padding-bottom 10px
-  
+
+  a
+    :color black
+    :font-size 0.8em
+
   &#artistlist li
     :height 130px
-  
+
   li
     :position relative
     :line-height 18pt
     :height auto
     :padding-top 10px
     :color #CACACA
-    
+
     &.track
-      :margin 0
-      :padding 10px 0px 20px 0px
-      :border-bottom 1px solid rgb(187, 187, 187)
-    
+      :margin-top 15px
+      :padding 20px 0px 20px 10px
+      :-webkit-border-radius 5px
+
+    &.odd
+      :background rgb(219, 229, 216)
+
+    &.even
+      :background rgb(179, 189, 176)
+
     .play
       :float right
       :position absolute
-      :top 12px
-      :right 0
-      :background url("/images/i-playpause.gif")  
+      :top 25px
+      :right 6px
+      :background url("/images/i-playpause.gif")
       :height 18px
       :text-indent -5000px
       :width 14px
@@ -128,7 +131,7 @@ h1
   :position fixed
   :opacity 0.8
   :padding-left 80px
-  
+
   a
     :color #EDAFD7
 
@@ -141,7 +144,3 @@ h1
   :padding-bottom 1.5em
   span
     :color orange
-
-@font-face
-  :font-family "Graublau Sans Web"
-  :src url(GraublauWeb.otf) format("opentype")
