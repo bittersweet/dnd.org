@@ -14,7 +14,8 @@ Rails::Initializer.run do |config|
   config.gem 'twitter'
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.gem 'ruby-mp3info', :lib => 'mp3info', :source => 'http://gemcutter.org'
-  
+  config.gem 'jammit'
+
   config.time_zone = 'Amsterdam'
 
 end

@@ -1,0 +1,21 @@
+package_assets: on
+
+javascripts:
+  common:
+    - public/javascripts/jquery-1.3.2.min.js
+    - public/javascripts/jquery.jplayer.js
+    - public/javascripts/player.js
+    - public/javascripts/application.js
+  admin:
+    - public/javascripts/jquery.uploadProgress.js
+
+stylesheets:
+  common:
+    - public/stylesheets/reset.css
+    - public/stylesheets/960.css
+    - public/stylesheets/screen.css
+    - public/stylesheets/player.css
+  login:
+    - public/stylesheets/login.css
+  admin:
+    - public/stylesheets/navigation.css
