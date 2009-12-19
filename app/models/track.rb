@@ -16,7 +16,8 @@ class Track < ActiveRecord::Base
   validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
   validates_attachment_content_type :mp3, :content_type => ['audio/mpeg'], :message => "Please only select audio files"
 
-  named_scope :latest, :limit => 10, :order => 'id DESC'
+  default_scope :order => 'created_at DESC'
+  named_scope :latest, :limit => 10
 
   def update_playcount(env)
     Statistic.generate!(id, env)
