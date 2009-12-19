@@ -67,6 +67,6 @@ $(document).ready(function(){
   })
   .onSoundComplete( function() {
     var current_track = $("#player_song_title a").attr("id");
-    nextTrack(current_track);
+    nextTrack(parseInt(current_track));
   });
 });
