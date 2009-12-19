@@ -16,7 +16,7 @@ body
   :font-family "Lucida Grande", Helvetica, Arial, sans-serif
   :font-size 75%
   :line-height 1.8em
-  :background #528036 url(/images/3272592879_7001feff0d_o.jpg) no-repeat fixed 0 0
+  :background url(/images/3272592879_7001feff0d_o.jpg) no-repeat fixed 0 0
 
 #wrapper
   :margin-top 30px
@@ -79,11 +79,15 @@ h1
       :margin-bottom 10px
       :padding 12px 0px 12px 10px
 
+      &:hover
+        :cursor pointer
+        :opacity 0.7
+
     &.odd
-      :background rgb(219, 229, 216)
+      :background rgb(240, 216, 216)
 
     &.even
-      :background rgb(179, 189, 176)
+      :background rgb(143, 71, 95)
 
     .play
       :float right
@@ -109,9 +113,6 @@ h1
   :padding-top 20px
   :font-family "Graublau Sans Web"
   :width 100%
-
-  a
-    :color #B2211A
 
 #main
   :height 500px

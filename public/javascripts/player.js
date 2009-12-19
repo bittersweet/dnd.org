@@ -30,6 +30,17 @@ $(document).ready(function(){
     $("#jplayer").setFile(trackurl).play();
   };
 
+  $("li.track").click(function(event) {
+    $("#player").slideDown();
+    var $this = $(this);
+    var id = "#" + $this.attr("id") + " a";
+    var trackname = $this.children().html();
+    var trackurl = $(id).attr("href");
+    console.log(trackname);
+    setsongtitle(trackname);
+    playtrack(trackurl);
+  });
+
   $("a.play").click(function(event) {
     event.preventDefault();
     $("#player").slideDown();
