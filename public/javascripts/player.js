@@ -2,9 +2,6 @@ $(document).ready(function(){
 
   function nexttrack(current_track) {
     var nexttrack = current_track + 1;
-    if (nexttrack < 10) {
-      nexttrack = nexttrack.charAt(1);
-    };
     var trackname = $("#track-" + nexttrack + " h2").html();
     var nexttrack_url = $("#track-" + nexttrack + " a.play").attr("href");
     setsongtitle(trackname);
