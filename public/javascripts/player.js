@@ -33,10 +33,9 @@ $(document).ready(function(){
   $("li.track").click(function(event) {
     $("#player").slideDown();
     var $this = $(this);
-    var id = "#" + $this.attr("id") + " a";
+    var id = "#" + $this.attr("id") + " a.play";
     var trackname = $this.children().html();
     var trackurl = $(id).attr("href");
-    console.log(trackname);
     setsongtitle(trackname);
     playtrack(trackurl);
   });
