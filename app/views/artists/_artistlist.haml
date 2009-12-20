@@ -1,5 +1,5 @@
 %ul.tracklist{:id => 'artistlist'}
   -@artists.each do |a|
-    %li{:class =>  "grid_3#{cycle(' alpha', '', '', ' omega')}"}
+    %li{:class =>  "artist grid_3 #{cycle('alpha', '', '', 'omega')}"}
       %h2= link_to a.name, artist_path(a)
       %p= a.bio
