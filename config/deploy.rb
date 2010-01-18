@@ -4,11 +4,11 @@ set :user,        'deploy'
 set :port,        30000
 set :repository,   'git@github.com:bittersweet/dnd.org.git'
 set :scm,         'git'
-set :deploy_to,   "/home/deploy/test/#{application}"
+set :deploy_to,   "/home/deploy/sites/#{application}"
+set :use_sudo, false
 
 ssh_options[:forward_agent] = true
 ssh_options[:username] = 'deploy'
-set :use_sudo,    false
 
 role :app, application
 role :web, application
@@ -17,7 +17,6 @@ role :db, application, :primary => true
 namespace :deploy do
 
   after "deploy:update_code", "deploy:link_production_db", "deploy:link_audio", "deploy:link_app_config"
-
 
   desc "Link in the production database.yml"
   task :link_production_db do
