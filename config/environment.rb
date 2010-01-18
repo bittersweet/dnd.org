@@ -10,7 +10,7 @@ Rails::Initializer.run do |config|
 
   config.gem 'authlogic'
   config.gem 'haml'
-  config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
+  config.gem 'paperclip'
   config.gem 'twitter'
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.gem 'ruby-mp3info', :lib => 'mp3info', :source => 'http://gemcutter.org'
