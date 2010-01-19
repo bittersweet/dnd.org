@@ -6,6 +6,7 @@
     =include_javascripts :common
     =yield(:head)
   %body
+    =render :partial => 'layouts/analytics'
     #header
       .container_12
         #logo{:class => 'grid_12'}
