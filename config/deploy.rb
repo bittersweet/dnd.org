@@ -16,7 +16,7 @@ role :db, application, :primary => true
 
 namespace :deploy do
 
-  after "deploy:update_code", "deploy:link_production_db", "deploy:link_audio", "deploy:link_app_config"
+  after "deploy:update_code", "deploy:link_production_db", "deploy:link_audio", "deploy:link_app_config", "deploy:precache_assets"
 
   desc "Link in the production database.yml"
   task :link_production_db do
@@ -31,6 +31,14 @@ namespace :deploy do
   desc "Link the app_config file"
   task :link_app_config do
     run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
+  end
+
+  desc 'Bundle and minify the JS and CSS files'
+  task :precache_assets, :roles => :app do
+    root_path = File.expand_path(File.dirname(__FILE__) + '/..')
+    assets_path = "#{root_path}/public/assets"
+    run_locally "/usr/bin/jammit"
+    top.upload assets_path, "#{current_release}/public", :via => :scp, :recursive => true
   end
 
   task :start do ; end
