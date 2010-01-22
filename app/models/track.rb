@@ -25,6 +25,7 @@ class Track < ActiveRecord::Base
 
 protected
 
+  # Will only execute callback if the length is nil, otherwise it will loop
   after_save :read_mp3, :if => "self.length.nil?"
   def read_mp3
     update_attribute(:length, Mp3Info.new(self.mp3.path).length)
