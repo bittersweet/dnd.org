@@ -23,13 +23,6 @@ class Track < ActiveRecord::Base
     Statistic.generate!(id, env)
   end
 
-  def twitterupdate
-    httpauth = Twitter::HTTPAuth.new(APP_CONFIG['username'], APP_CONFIG['password'])
-
-    client = Twitter::Base.new(httpauth)
-    client.update("New track uploaded: #{name} http://www.denachtdienst.org/tracks/#{to_param}")
-  end
-
 protected
 
   after_save :read_mp3, :if => "self.length.nil?"
@@ -39,7 +32,7 @@ protected
 
   after_save :update_twitter
   def update_twitter
-    send_later(:twitterupdate)
+    Delayed::Job.enqueue(TrackJob.new(id))
   end
 
 end
