@@ -15,6 +15,7 @@ Rails::Initializer.run do |config|
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
   config.gem 'ruby-mp3info', :lib => 'mp3info', :source => 'http://gemcutter.org'
   config.gem 'jammit'
+  config.gem 'hoptoad_notifier'
 
   config.time_zone = 'Amsterdam'
 

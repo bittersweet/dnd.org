@@ -2,6 +2,7 @@ development:
   username:
   password:
   analytics:
+  hoptoad:
 
 test:
 
