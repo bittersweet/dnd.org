@@ -1,6 +1,7 @@
 development:
-  username: 
-  password: 
+  username:
+  password:
+  analytics:
 
 test:
 
