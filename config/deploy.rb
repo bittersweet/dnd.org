@@ -1,18 +1,24 @@
-default_run_options[:pty] = true
+set :default_stage, "production"
+set :stages, %w(production staging)
+require 'capistrano/ext/multistage'
+
+# default_run_options[:pty] = true
 set :application, 'denachtdienst.org'
-set :user,        'deploy'
-set :port,        30000
-set :repository,   'git@github.com:bittersweet/dnd.org.git'
-set :scm,         'git'
-set :deploy_to,   "/home/deploy/sites/#{application}"
-set :use_sudo, false
-
-ssh_options[:forward_agent] = true
-ssh_options[:username] = 'deploy'
-
 role :app, application
 role :web, application
 role :db, application, :primary => true
+
+# Git
+set :repository,  'git@github.com:bittersweet/dnd.org.git'
+set :scm,         'git'
+set :deploy_via, :remote_cache
+set :use_sudo,    false
+
+# SSH
+set :user,        'deploy'
+set :port,        30000
+ssh_options[:forward_agent] = true
+ssh_options[:username] = 'deploy'
 
 namespace :deploy do
 
