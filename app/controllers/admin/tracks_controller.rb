@@ -37,7 +37,7 @@ class Admin::TracksController < ApplicationController
   end
 
   def index
-    @track = Track.all.reverse
+    @track = Track.all
   end
 
 protected
