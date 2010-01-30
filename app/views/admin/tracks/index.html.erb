@@ -7,7 +7,7 @@
 
     <li class="track">
       <h2><%= link_to t.name, track_path(t.id) %></h2>
-      <span><%= t.statistics_count %> plays in <%= Time.now.yday - t.created_at.yday %> days</span>
+      <span><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</span>
       <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> |
          <%= link_to "Edit", edit_admin_track_path(t) %></p>
     </li>
