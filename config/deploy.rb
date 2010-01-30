@@ -5,6 +5,7 @@ set :stages, %w(production staging)
 
 # default_run_options[:pty] = true
 set :application, 'denachtdienst.org'
+set :rails_env,   'production'
 role :app, application
 role :web, application
 role :db, application, :primary => true
@@ -59,17 +60,17 @@ end
 namespace :delayed_job do
   desc "Start delayed_job process"
   task :start, :roles => :app do
-    run "cd #{current_path}; script/delayed_job start RAILS_ENV=production"
+    run "cd #{current_path}; script/delayed_job start #{rails_env}"
   end
 
   desc "Stop delayed_job process"
   task :stop, :roles => :app do
-    run "cd #{current_path}; script/delayed_job stop RAILS_ENV=production"
+    run "cd #{current_path}; script/delayed_job stop #{rails_env}"
   end
 
   desc "Restart delayed_job process"
   task :restart, :roles => :app do
-    run "cd #{current_path}; script/delayed_job restart RAILS_ENV=production"
+    run "cd #{current_path}; script/delayed_job restart #{rails_env}"
   end
 end
 
