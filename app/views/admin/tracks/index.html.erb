@@ -1,36 +1,27 @@
-<div class="grid_6">
+<div class="grid_8">
 
   <div class="listing"><h1>Tracks</h1></div>
 
-  <ul class="tracklist">
-  <% @track.each do |t| %>
-
-    <li class="track">
-      <h2><%= link_to t.name, track_path(t.id) %></h2>
-      <span><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</span>
-      <p><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %> |
-         <%= link_to "Edit", edit_admin_track_path(t) %></p>
-    </li>
-
-  <% end %>
-  </ul>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Statistics</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <%- @track.each do |t| -%>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to t.name, track_path(t.id) %></td>
+      <td><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</td>
+      <td><%= link_to "Edit", edit_admin_track_path(t) %></td>
+      <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <%- end -%>
+  </table>
 
 </div>
 
-<ul id="navigation" style="float: right;">
-    <li class="apps_button">
-        <a href="/admin/tracks/new" class="">
-            <span>
-                New track
-            </span>
-        </a>
-
-        </li>
-    <li class="apps_button">
-        <a href="/account/" class="">
-            <span>
-                Account
-            </span>
-        </a>
-    </li>
-</ul>
+<div id="navigation" style="float: right;">
+  <a href="/admin/tracks/new">New track</a>
+  <a href="/account/">Account</a>
+</div>

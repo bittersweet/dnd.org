@@ -1,11 +1,20 @@
-<ul id="tracklist" class="grid_8">
-<% @artist.each do |a| %>
+<div class="grid_8">
 
-  <li class="track">
-    <h2><%= link_to a.name, artist_path(a) %></h2>
-    <p><%= link_to "Delete", admin_artist_path(a.id), :confirm => 'Are you sure?', :method => :delete %> | 
-       <%= link_to "Edit", edit_admin_artist_path(a) %></p>
-  </li>
-  
-<% end %>
-</ul>
+  <div class="listing"><h1>Artists</h1></div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <%- @artist.each do |a| -%>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to a.name, artist_path(a) %></td>
+      <td><%= link_to "Edit", edit_admin_artist_path(a) %></td>
+      <td><%= link_to "Delete", admin_artist_path(a.id), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <%- end -%>
+  </table>
+
+</div>
