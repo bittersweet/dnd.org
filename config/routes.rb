@@ -10,12 +10,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :artists
   map.resources :weblogs
 
-  map.resource :user_session
-  map.resource :account, :controller => 'users'
+  map.resource  :user_session
+  map.resource  :account, :controller => 'users'
   map.resources :users
 
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
+  map.login    'login',    :controller => 'user_sessions', :action => 'new'
+  map.logout   'logout',   :controller => 'user_sessions', :action => 'destroy'
 
   map.namespace :admin do |admin|
     admin.resources :tracks

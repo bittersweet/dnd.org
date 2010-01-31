@@ -1,10 +1,9 @@
-- content_for :title do
-  ="#{@artist.name} |" 
+-title("#{@artist.name}")
 
 .grid_5
   %h1= @artist.name
   %p= @artist.bio
-  
+
   .listing
     %h1 Tracks
   =render :partial => 'tracks/tracklist'

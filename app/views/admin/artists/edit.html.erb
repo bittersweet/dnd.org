@@ -1,7 +1,9 @@
+<%= title("Edit artist") %>
+
 <div id="main" class="grid_12">
-  
+
   <h1>Edit artiest</h1>
-  
+
   <% form_for([:admin, @artist]) do |f| %>
 
     <ul>
@@ -13,5 +15,5 @@
       <li><%= f.submit "Submit" %></li>
     </ul>
   <% end %>
-  
+
 </div>

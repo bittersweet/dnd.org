@@ -1,7 +1,9 @@
+<%= title("Edit track") %>
+
 <div id="main" class="grid_12">
-  
+
   <h1>Nieuwe track</h1>
-  
+
   <% form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
 
     <ul>
@@ -18,5 +20,5 @@
       <li><%= f.submit "Submit" %></li>
     </ul>
   <% end %>
-  
+
 </div>

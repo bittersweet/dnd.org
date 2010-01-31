@@ -1,10 +1,9 @@
--content_for :title do
-  Weblogs |
+-title("Weblogs")
 
 .grid_6
   .listing
     %h1 Posts
-  
+
   %ul#tracklist
     -@weblogs.each do |w|
       %li.track

@@ -1,7 +1,9 @@
+<%= title("New post") %>
+
 <div id="main" class="grid_12">
-  
+
   <h1>Nieuwe post</h1>
-  
+
   <% form_for([:admin, @weblog]) do |f| %>
 
     <ul>
@@ -14,5 +16,5 @@
       <li><%= f.submit "Submit" %></li>
     </ul>
   <% end %>
-    
+
 </div>
