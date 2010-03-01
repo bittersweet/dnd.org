@@ -7,14 +7,13 @@ class Track < ActiveRecord::Base
   belongs_to :artist
   has_many :statistics
 
-  has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
 
   validates_presence_of :name, :message => "can't be blank"
-  # validates_presence_of :description, :message => "can't be blank"
   validates_presence_of :artist_id, :message => "can't be blank"
 
+  has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
   validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
-  validates_attachment_content_type :mp3, :content_type => ['audio/mpeg'], :message => "Please only select audio files"
+  validates_attachment_content_type :mp3, :content_type => ['audio/mpeg', 'audio/mpg', 'audio/mp3'], :message => "Please only select audio files"
 
   default_scope :order => 'created_at DESC'
   named_scope :latest, :limit => 10
