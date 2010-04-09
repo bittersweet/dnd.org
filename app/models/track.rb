@@ -30,7 +30,7 @@ protected
     update_attribute(:length, Mp3Info.new(self.mp3.path).length)
   end
 
-  after_save :update_twitter
+  after_create :update_twitter
   def update_twitter
     Delayed::Job.enqueue(TrackJob.new(id))
   end
