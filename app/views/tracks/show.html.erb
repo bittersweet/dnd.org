@@ -1,0 +1,16 @@
+<% title @track.name -%>
+
+<div class="grid_5">
+  <h1><%= @track.name %></h1>
+  <% if @track.description? -%>
+    <p class="description"><%= @track.description %></p>
+  <% end -%>
+  <%= link_to "play", track_download_path(@track), :class => 'play' %>
+</div>
+
+<div class="grid_5 prefix_1"
+  <div class="listing">
+    <h1>Other tracks by <%= @artist.name %></h1>
+    <%= render :partial => 'tracks/tracklist' %>
+  </div>
+</div>

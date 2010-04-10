@@ -1,0 +1,19 @@
+<% title('Home') -%>
+
+<div class="grid_12">
+  <div class="listing">
+    <%= link_to image_tag('latesttracks.png'), tracks_path %>
+    <%= render :partial => 'tracks/tracklist' %>
+  </div>
+  <div class="listing">
+    <%= link_to image_tag('artists.png'), artists_path %>
+    <%= render :partial => 'artists/artistlist' %>
+  </div>
+</div>
+
+<div class="grid_12">
+  <div id="statistics" class="alpha">
+    <span><%= @stats[1] %></span> tracks listened for a total of <span><%= @stats[0] %></span>
+    seconds or <span><%= @stats[0] / 60 %></span> minutes or <span><%= @stats[0] / 3600 %></span> hours
+  </div>
+</div>

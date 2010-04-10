@@ -1,0 +1,11 @@
+<% title @artist.name -%>
+
+<div class="grid_5">
+  <h1><%= @artist.name %></h1>
+  <p><%= @artist.bio %></p>
+
+  <div class="listing">
+    <h1>Tracks</h1>
+    <%= render :partial => 'tracks/tracklist' %>
+  </div>
+</div>

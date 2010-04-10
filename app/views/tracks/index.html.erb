@@ -1,0 +1,12 @@
+<% content_for :head do -%>
+  <%= auto_discovery_link_tag(:rss, track_feed_url) %>
+<% end -%>
+
+<% title('All tracks') -%>
+
+<div class="grid_5">
+  <div class="listing">
+    <%= link_to image_tag('latesttracks.png'), tracks_path %>
+    <%= render :partial => 'tracks/tracklist' %>
+  </div>
+</div>
