@@ -119,14 +119,7 @@ h1
       background: rgb(143, 71, 95)
 
     .play
-      float: right
-      position: absolute
-      top: 18px
-      right: 6px
-      background: url("/images/embed/i-playpause.gif")
-      height: 18px
-      text-indent: -5000px
-      width: 14px
+      display: none
 
     &:last-child
       border: none
@@ -206,3 +199,22 @@ table
 .awesome
   position: relative
   top: 20px
+
+#required_listening_tracklist
+  li
+    +border-radius
+    margin-bottom: 1px
+    padding: 0 20px
+    font-size: 16px
+    line-height: 40px
+    width: 100%
+    background: rgb(143, 71, 95)
+    height: 40px
+    cursor: pointer
+
+    h2
+      display: inline
+
+    a
+      font-weight: normal
+      display: none

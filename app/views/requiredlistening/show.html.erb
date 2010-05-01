@@ -1,0 +1,20 @@
+<% title "Required Listening" %>
+
+<% if @tracks.any? -%>
+  <ul class="grid_7" id="required_listening_tracklist">
+    <% @tracks.each_with_index do |t, i| -%>
+      <li id="track-<%= i %>", class="<%= cycle('track even', 'track odd') %>">
+        <h2><%= link_to t.name, track_path(t), :id => i %></h2>
+        <%= link_to "play", track_download_path(t), :class => 'play' %>
+        <%= t.name %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  <p>No other tracks yet</p>
+<% end -%>
+
+<div class="grid_4 prefix_1" id="rl_artist">
+  <%= image_tag "kajan.jpeg", :width => 280 %>
+  <p><%= simple_format(@artist.bio) %></p>
+</div>

@@ -11,7 +11,7 @@
   <% if @track.description? -%>
     <p class="description"><%= @track.description %></p>
   <% end -%>
-  <%= link_to "Play", track_download_path(@track), :id => 'play', :class => 'awesome large' %>
+  <%= link_to "Play", track_download_path(@track), :class => 'play awesome large' %>
   <%= render :partial => 'facebook' %>
 </div>
 

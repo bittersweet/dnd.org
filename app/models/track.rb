@@ -7,7 +7,7 @@ class Track < ActiveRecord::Base
   belongs_to :artist
   has_many :statistics
 
-
+  validates_presence_of :section
   validates_presence_of :name, :message => "can't be blank"
   validates_presence_of :artist_id, :message => "can't be blank"
 
@@ -17,6 +17,9 @@ class Track < ActiveRecord::Base
 
   default_scope :order => 'created_at DESC'
   named_scope :latest, :limit => 10
+
+  named_scope :regular, :conditions => "section = 1"
+  named_scope :required_listening, :conditions => "section = 2"
 
   def update_playcount(env)
     Statistic.generate!(id, env)

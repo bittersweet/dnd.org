@@ -41,7 +41,7 @@ $(document).ready(function(){
     playtrack(trackurl);
   });
 
-  $("a#play").click(function(event) {
+  $("a.play").click(function(event) {
     event.preventDefault();
     $("#player").slideDown();
     var $this = $(this);

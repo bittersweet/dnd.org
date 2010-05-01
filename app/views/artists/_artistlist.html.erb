@@ -1,8 +1,10 @@
 <ul class="tracklist" id="artistlist">
   <% @artists.each do |a| -%>
-    <li class="artist grid_3 <%= cycle('alpha', '', '', 'omega') %>">
-      <h2><%= link_to a.name, artist_path(a) %></h2>
-      <p><%= a.bio %></p>
-    </li>
+    <% if a.has_tracks? -%>
+      <li class="artist grid_3 <%= cycle('alpha', '', '', 'omega') %>">
+        <h2><%= link_to a.name, artist_path(a) %></h2>
+        <p><%= truncate(a.bio, :length => 140) %></p>
+      </li>
+    <% end -%>
   <% end -%>
 </ul>

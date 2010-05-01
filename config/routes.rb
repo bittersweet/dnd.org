@@ -24,6 +24,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'overview', :action => 'index'
   end
 
+  map.resources :requiredlistening, :only => 'show'
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 

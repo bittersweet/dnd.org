@@ -6,6 +6,7 @@
 
   <% form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
 
+    <%= f.hidden_field :section, :value => 1 %>
     <ul>
       <%= f.error_messages %>
       <li><%= f.label :artist %>
