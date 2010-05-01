@@ -5,6 +5,9 @@
     <%= include_stylesheets :common, :media => 'all' %>
     <%= include_javascripts :common %>
     <%= yield(:head) %>
+    <meta property="fb:app_id" content="348368895558"/>
+    <meta property="og:image" content="http://assets.denachtdienst.org/images/logo.png">
+    <meta property="og:site_name" content="de Nachtdienst">
   </head>
   <body>
     <%= render :partial => 'layouts/analytics' %>
