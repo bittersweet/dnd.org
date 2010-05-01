@@ -9,6 +9,11 @@
   -webkit-border-radius: 5px
   -moz-border-radius: 5px
 
+=hover
+  &:hover
+    opacity: 0.7
+    cursor: pointer
+
 // Regular
 
 a
@@ -73,8 +78,7 @@ h1
   background = !boxbackground
   +border-radius
 
-  &:hover
-    cursor: pointer
+  +hover
 
   p
     width: 185px
@@ -110,9 +114,7 @@ h1
       margin-bottom: 10px
       padding: 12px 0px 12px 10px
 
-      &:hover
-        cursor: pointer
-        opacity: 0.7
+      +hover
 
     &.odd
       background: rgb(240, 216, 216)
@@ -186,9 +188,8 @@ table
   th
     font-size: .9em
     color: #000
-    text:
-      align: left
-      shadow: #eee 1px 1px 0px
+    text-align: left
+    text-shadow: #eee 1px 1px 0px
     height: 17px
     padding: 5px
 
@@ -212,7 +213,8 @@ table
     width: 100%
     background: rgb(143, 71, 95)
     height: 40px
-    cursor: pointer
+
+    +hover
 
     h2
       display: inline
