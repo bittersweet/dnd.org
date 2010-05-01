@@ -1,170 +1,180 @@
+// Variables
+
+!blue = #3bbfce
+!boxbackground = #F0C0C0
+
+// Mixins
+
+=border-radius
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+
 a
   text-decoration: none
 
   &:hover
-    :border-bottom solid 2px #cacaca
+    border-bottom: solid 2px #cacaca
 
 label
-  :display block
-  :font-weight bold
-  :margin-bottom 5px
+  display: block
+  font-weight: bold
+  margin-bottom: 5px
 
 body
-  :height 100%
-  :color #000
-  :font-family "Lucida Grande", Helvetica, Arial, sans-serif
-  :font-size 75%
-  :line-height 1.8em
-  :background url(/images/background.jpg) no-repeat fixed 0 0
-  :-webkit-background-size auto
-  :-moz-background-size auto
+  height: 100%
+  color: #000
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif
+  font-size: 75%
+  line-height: 1.8em
+  background: url(/images/background.jpg) no-repeat fixed 0 0
+  -webkit-background-size: auto
+  -moz-background-size: auto
 
 #wrapper
-  :margin-top 30px
+  margin-top: 30px
 
   input.text
-    :width 691px
-    :border 1px solid #999
-    :font-size 2em
-    :padding 0.25em
-    :width 16.75em
+    width: 691px
+    border: 1px solid #999
+    font-size: 2em
+    padding: 0.25em
+    width: 16.75em
 
   textarea.text
-    :font-size 1em
-    :border 1px solid #999
-    :padding 0.25em
-    :width 691px
+    font-size: 1em
+    border: 1px solid #999
+    padding: 0.25em
+    width: 691px
 
 #flash_container
-  :font-weight bold
+  font-weight: bold
 
   #flash_notice
-    :padding 20px
-    :background pink
+    padding: 20px
+    background: pink
 
   #flash_error
-    :padding 20px
-    :color red
-    :background white
+    padding: 20px
+    color: red
+    background: white
 
 p
-  :line-height 1.6em
-  :padding-top 10px
+  line-height: 1.6em
+  padding-top: 10px
 
 h1
-  :font-size 2em
+  font-size: 2em
 
 .artist
-  :margin-top 20px
-  :opacity 0.7
-  :background #F0C0C0
-  :-webkit-border-radius 5px
-  :-moz-border-radius 5px
+  margin-top: 20px
+  opacity: 0.7
+  background = !boxbackground
+  +border-radius
 
   &:hover
-    :cursor pointer
+    cursor: pointer
 
   p
-    :width 185px
+    width: 185px
 
   h2, p
-    :color black
-    :padding-left 20px
+    color: black
+    padding-left: 20px
 
 #artists
-  :padding-top 50px
+  padding-top: 50px
 
 .tracklist
-  :padding-top 10px
-  :padding-bottom 10px
+  padding-top: 10px
+  padding-bottom: 10px
 
   a
-    :color black
-    :font-size 0.8em
+    color: black
+    font-size: 0.8em
 
   &#artistlist li
-    :height 130px
+    height: 130px
 
   li
-    :-webkit-border-radius 5px
-    :-moz-border-radius 5px
-    :position relative
-    :line-height 18pt
-    :height auto
-    :padding-top 10px
-    :color #CACACA
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    position: relative
+    line-height: 18pt
+    height: auto
+    padding-top: 10px
+    color: #CACACA
 
     &.track
-      :margin-bottom 10px
-      :padding 12px 0px 12px 10px
+      margin-bottom: 10px
+      padding: 12px 0px 12px 10px
 
       &:hover
-        :cursor pointer
-        :opacity 0.7
+        cursor: pointer
+        opacity: 0.7
 
     &.odd
-      :background rgb(240, 216, 216)
+      background: rgb(240, 216, 216)
 
     &.even
-      :background rgb(143, 71, 95)
+      background: rgb(143, 71, 95)
 
     .play
-      :float right
-      :position absolute
-      :top 18px
-      :right 6px
-      :background url("/images/embed/i-playpause.gif")
-      :height 18px
-      :text-indent -5000px
-      :width 14px
+      float: right
+      position: absolute
+      top: 18px
+      right: 6px
+      background: url("/images/embed/i-playpause.gif")
+      height: 18px
+      text-indent: -5000px
+      width: 14px
 
     &:last-child
-      :border none
+      border: none
 
     h2
-      :font-size 14pt
-      :font-weight normal
+      font-size: 14pt
+      font-weight: normal
 
 .description
-  :width 330px
+  width: 330px
 
 .listing
-  :padding-top 20px
-  :width 100%
+  padding-top: 20px
+  width: 100%
 
 #main
-  :height 500px
+  height: 500px
 
 #header
-  :padding-top 30px
-  :height 60px
+  padding-top: 30px
+  height: 60px
 
 #player
-  :display none
-  :height 40px
-  :background black
-  :width 100%
-  :position absolute
-  :bottom 0
-  :left 0
-  :line-height 40px
-  :position fixed
-  :opacity 0.8
-  :padding-left 80px
+  display: none
+  height: 40px
+  background: black
+  width: 100%
+  position: absolute
+  bottom: 0
+  left: 0
+  line-height: 40px
+  position: fixed
+  opacity: 0.8
+  padding-left: 80px
 
   a
-    :color #EDAFD7
+    color: #EDAFD7
 
 #song_title
-  :color #EDAFD7
+  color: #EDAFD7
 
 #statistics
-  :font-size 3em
-  :line-height 1em
-  :padding-top 1.5em
-  :padding-bottom 1.5em
+  font-size: 3em
+  line-height: 1em
+  padding-top: 1.5em
+  padding-bottom: 1.5em
   span
-    :color orange
+    color: orange
 
 table
   width: 100%
@@ -190,4 +200,5 @@ table
 #facebook
   width: 450px
   padding: 10px
-  background: #fff
+  background = !boxbackground
+  +border-radius
