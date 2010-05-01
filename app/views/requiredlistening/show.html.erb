@@ -1,9 +1,9 @@
 <% title "Required Listening" %>
 
 <% if @tracks.any? -%>
-  <ul class="grid_7 tracklist" id="required_listening_tracklist">
+  <ul class="grid_7 tracklist">
     <% @tracks.each_with_index do |t, i| -%>
-      <li id="track-<%= i %>", class="<%= cycle('track even', 'track odd') %>">
+      <li id="track-<%= i %>", class="track even">
         <h2><%= link_to t.name, track_path(t), :id => i %></h2>
         <%= link_to "play", track_download_path(t), :class => 'play' %>
       </li>
