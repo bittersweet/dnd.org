@@ -11,12 +11,12 @@
   <% if @track.description? -%>
     <p class="description"><%= @track.description %></p>
   <% end -%>
-  <%= link_to "play", track_download_path(@track), :class => 'play' %>
+  <%= link_to "play", track_download_path(@track), :id => 'play', :class => 'awesome large' %>
   <%= render :partial => 'facebook' %>
 </div>
 
 <div class="grid_5 prefix_1">
-  <h1>Other tracks by <%= @artist.name %></h1>
+  <h1>Other tracks</h1>
   <div class="listing">
     <%= render :partial => 'tracks/tracklist' %>
   </div>

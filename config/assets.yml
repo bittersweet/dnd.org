@@ -15,6 +15,7 @@ stylesheets:
     - public/stylesheets/960.css
     - public/stylesheets/screen.css
     - public/stylesheets/player.css
+    - public/stylesheets/awesome-buttons.css
   login:
     - public/stylesheets/login.css
   admin:
