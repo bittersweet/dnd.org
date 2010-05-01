@@ -2,6 +2,8 @@
 
 !blue = #3bbfce
 !boxbackground = #F0C0C0
+!lightbar = rgb(240, 216, 216)
+!darkbar = rgb(143, 71, 95)
 
 // Mixins
 
@@ -13,6 +15,15 @@
   &:hover
     opacity: 0.7
     cursor: pointer
+
+=active
+  &.active
+    opacity: 0.5
+    background: black
+    color: white
+
+    h2, h2 a
+      color: white
 
 // Regular
 
@@ -77,7 +88,6 @@ h1
   opacity: 0.7
   background = !boxbackground
   +border-radius
-
   +hover
 
   p
@@ -102,34 +112,30 @@ h1
     height: 130px
 
   li
-    -webkit-border-radius: 5px
-    -moz-border-radius: 5px
-    position: relative
-    line-height: 18pt
-    height: auto
-    padding-top: 10px
-    color: #CACACA
+    +border-radius
+
+    h2
+      position: relative
+      top: -2px
 
     &.track
       margin-bottom: 10px
       padding: 12px 0px 12px 10px
-
       +hover
 
     &.odd
-      background: rgb(240, 216, 216)
+      background = !lightbar 
 
     &.even
-      background: rgb(143, 71, 95)
+      background = !darkbar
+
+    +active
 
     .play
       display: none
 
-    &:last-child
-      border: none
-
     h2
-      font-size: 14pt
+      font-size: 18px
       font-weight: normal
 
 .description
@@ -210,20 +216,9 @@ table
 
 #required_listening_tracklist
   li
-    +border-radius
-    margin-bottom: 1px
-    padding: 0 20px
-    font-size: 16px
-    line-height: 40px
-    width: 100%
-    background: rgb(143, 71, 95)
-    height: 40px
+    background = !darkbar 
 
-    +hover
-
-    h2
-      display: inline
-
-    a
+    a.play
       font-weight: normal
       display: none
+

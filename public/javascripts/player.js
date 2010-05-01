@@ -1,7 +1,13 @@
 $(document).ready(function(){
 
+  function setActive(current_track) {
+    $(".active").removeClass("active")
+    $("#" + current_track).addClass("active")
+  }
+
   function nextTrack(current_track) {
     var nexttrack = current_track + 1;
+    setActive("track-" + nexttrack);
     var trackname = $("#track-" + nexttrack + " h2").html();
     var nexttrack_url = $("#track-" + nexttrack + " a.play").attr("href");
     if (nexttrack_url == undefined) {
@@ -34,6 +40,7 @@ $(document).ready(function(){
   $("li.track").click(function(event) {
     $("#player").slideDown();
     var $this = $(this);
+    setActive($this.attr("id"));
     var id = "#" + $this.attr("id") + " a.play";
     var trackname = $this.children().html();
     var trackurl = $(id).attr("href");
