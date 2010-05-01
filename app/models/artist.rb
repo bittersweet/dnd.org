@@ -11,6 +11,8 @@ class Artist < ActiveRecord::Base
 
   default_scope :order => 'name ASC'
 
+  named_scope :regular, :conditions => "section = 1"
+  named_scope :requiredlistening, :conditions => "section = 2"
 
   def has_tracks?
     tracks.regular.count > 0

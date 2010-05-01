@@ -1,7 +1,7 @@
 class OverviewController < ApplicationController
 
   def index
-    @artists = Artist.all
+    @artists = Artist.regular
     @tracks = Track.regular.latest
     @weblogs = Weblog.latest
     @stats = Statistic.playtime
