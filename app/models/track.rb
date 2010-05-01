@@ -25,6 +25,10 @@ class Track < ActiveRecord::Base
     Statistic.generate!(id, env)
   end
 
+  def is_regular?
+    self.section == 1
+  end
+
 protected
 
   # Will only execute callback if the length is nil, otherwise it will loop
@@ -33,7 +37,7 @@ protected
     update_attribute(:length, Mp3Info.new(self.mp3.path).length)
   end
 
-  after_create :update_twitter
+  after_create :update_twitter, :if => :is_regular?
   def update_twitter
     Delayed::Job.enqueue(TrackJob.new(id))
   end
