@@ -8,6 +8,8 @@
 
     <ul>
       <%= f.error_messages %>
+      <li><%= f.label :section %>
+      <%= select("artist", "section", [["regular", 1], ["required listening", 2]]) %></li>
       <li><%= f.label :artist %>
       <%= select("track", "artist_id", @artist.collect {|a| [ a.name, a.id ] }, { :include_blank => true })
        %></li>
