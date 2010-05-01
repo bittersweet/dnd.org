@@ -24,11 +24,21 @@ ssh_options[:username] = 'deploy'
 
 namespace :deploy do
 
-  after "deploy:update_code", "deploy:link_production_db", "deploy:link_audio", "deploy:link_app_config", "deploy:precache_assets"
+  after "deploy:update_code",
+        "deploy:link_production_db",
+        "deploy:link_artists",
+        "deploy:link_audio",
+        "deploy:link_app_config",
+        "deploy:precache_assets"
 
   desc "Link in the production database.yml"
   task :link_production_db do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  end
+
+  desc "Link artists"
+  task :link_artists do
+    run "ln -nfs #{deploy_to}/shared/artists #{release_path}/public/artists"
   end
 
   desc "Link audio"

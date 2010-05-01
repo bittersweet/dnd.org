@@ -3,6 +3,7 @@ public/stylesheets/player.css
 public/stylesheets/navigation.css
 public/audio
 public/assets
+public/artists
 log/*
 *.swp
 config/config.yml

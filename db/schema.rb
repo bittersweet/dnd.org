@@ -9,14 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100501190726) do
+ActiveRecord::Schema.define(:version => 20100501195111) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "section",    :default => 0, :null => false
+    t.integer  "section",             :default => 0, :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
   end
 
   add_index "artists", ["section"], :name => "index_artists_on_section"

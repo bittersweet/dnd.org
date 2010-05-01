@@ -14,7 +14,9 @@
   <p>No other tracks yet</p>
 <% end -%>
 
-<div class="grid_4 prefix_1" id="rl_artist">
-  <%= image_tag "kajan.jpeg", :width => 280 %>
-  <p><%= simple_format(@artist.bio) %></p>
+<div class="grid_4 prefix_1">
+  <div id="rl_artist">
+    <%= image_tag @artist.avatar(:medium), :width => 280 %>
+    <p><%= simple_format(@artist.bio) %></p>
+  </div>
 </div>

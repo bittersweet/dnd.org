@@ -4,7 +4,7 @@
 
   <h1>Nieuwe artiest</h1>
 
-  <% form_for([:admin, @artist]) do |f| %>
+  <% form_for([:admin, @artist], :html => { :multipart => true }) do |f| %>
 
     <ul>
       <%= f.error_messages %>
@@ -14,6 +14,8 @@
       <%= f.text_field :name, :class => "text", :size => "30" %></li>
       <li><%= f.label :bio %>
       <%= f.text_area :bio, :class => "text", :cols => "40", :rows => "15" %></li>
+      <li><%= f.label :avatar %>
+      <%= f.file_field :avatar %></li>
       <li><%= f.submit "Submit" %></li>
     </ul>
   <% end %>
