@@ -5,6 +5,10 @@
 !lightbar = rgb(240, 216, 216)
 !darkbar = rgb(143, 71, 95)
 
+!boxbackground_neg = #0f3f3f
+!lightbar_neg = rgb(112, 184, 160)
+!darkbar_neg = rgb(15, 39, 39)
+
 // Mixins
 
 =border-radius
@@ -47,6 +51,9 @@ body
   background: url(/images/background.jpg) no-repeat fixed 0 0
   -webkit-background-size: auto
   -moz-background-size: auto
+
+body.negative
+  background: url(/images/background_i.jpg) no-repeat fixed 0 0
 
 #wrapper
   margin-top: 30px
@@ -104,8 +111,13 @@ h1
   padding-bottom: 10px
 
   a
-    color: black
     font-size: 0.8em
+
+  a.regular
+    color: black
+
+  a.negative
+    color: white
 
   &#artistlist li
     height: 130px
@@ -125,8 +137,20 @@ h1
     &.odd
       background = !lightbar 
 
+    &.odd_neg
+      background = !lightbar_neg
+
+      .a
+        color: white
+
     &.even
       background = !darkbar
+
+    &.even_neg
+      background = !darkbar_neg
+
+      .a
+        color: white
 
     +active
 
@@ -209,8 +233,12 @@ table
 
 #rl_artist
   padding: 10px
-  background = !boxbackground
+  background = !boxbackground_neg
+  color: #fff
   +border-radius
+
+  a
+    color: #fff
 
 .awesome
   position: relative
