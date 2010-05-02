@@ -1,34 +1,9 @@
 <%- title("Admin overview") %>
 
 <div class="grid_10">
-  <ul id="navigation">
-    <li class="apps_button">
-      <a href="/admin/tracks/" class="">
-        <span>
-          Tracks
-        </span>
-      </a>
-    </li>
-    <li class="apps_button">
-      <a href="/admin/weblogs/" class="">
-        <span>
-          Weblogs
-        </span>
-      </a>
-    </li>
-    <li class="apps_button">
-      <a href="/admin/artists/" class="">
-        <span>
-          Artists
-        </span>
-      </a>
-    </li>
-    <li class="apps_button">
-      <a href="/account/" class="">
-        <span>
-          Account
-        </span>
-      </a>
-    </li>
-  </ul>
+
+  <%= link_to 'Tracks', admin_tracks_path %>
+  <%= link_to 'Weblogs', admin_weblogs_path %>
+  <%= link_to 'Artists', admin_artists_path %>
+  <%= link_to 'Tracks', admin_tracks_path %>
 </div>
