@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100502094320) do
+ActiveRecord::Schema.define(:version => 20100502141004) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20100502094320) do
     t.datetime "updated_at"
     t.integer  "length"
     t.integer  "section",          :default => 0, :null => false
+    t.string   "artistlink"
+    t.string   "buylink"
   end
 
   add_index "tracks", ["section"], :name => "index_tracks_on_section"

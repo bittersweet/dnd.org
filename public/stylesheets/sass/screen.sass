@@ -125,8 +125,10 @@ h1
 
   li
     +border-radius
+    font-size: 14px
 
     h2
+      display: none
       position: relative
       top: -2px
 
@@ -135,23 +137,28 @@ h1
       padding: 12px 0px 12px 10px
       +hover
 
+    &.track_meta
+      height: 22px
+      margin-bottom: 10px
+      padding: 12px 0px 12px 10px
+      +hover
+
+      img
+        float: left
+
     &.odd
       background = !lightbar 
 
     &.odd_neg
       background = !lightbar_neg
-
-      .a
-        color: white
+      color: white
 
     &.even
       background = !darkbar
 
     &.even_neg
       background = !darkbar_neg
-
-      .a
-        color: white
+      color: white
 
     +active
 

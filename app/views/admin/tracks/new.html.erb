@@ -18,6 +18,10 @@
       <%= f.file_field :mp3 %></li>
       <li><%= f.label :name %>
       <%= f.text_field :name, :class => "text", :size => "30" %></li>
+      <li><%= f.label :artistlink %>
+      <%= f.text_field :artistlink, :class => "text", :size => "30" %></li>
+      <li><%= f.label :buylink %>
+      <%= f.text_field :buylink, :class => "text", :size => "30" %></li>
       <li><%= f.submit "Submit" %></li>
     </ul>
   <% end %>
