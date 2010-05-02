@@ -1,7 +1,7 @@
 <% title "Required Listening" %>
 
 <% if @tracks.any? -%>
-  <ul class="grid_7 tracklist">
+  <ul class="grid_8 tracklist">
     <% @tracks.each_with_index do |t, i| -%>
       <li id="track-<%= i %>", class="<%= cycle('track even_neg', 'track odd_neg') %>">
         <h2><%= link_to t.name, track_path(t), :id => i, :class => "negative track_url" %></h2>
@@ -21,7 +21,7 @@
   <p>No other tracks yet</p>
 <% end -%>
 
-<div class="grid_4 prefix_1">
+<div class="grid_4">
   <div id="rl_artist">
     <%= image_tag @artist.avatar(:medium), :width => 280 %>
     <p><%= simple_format(@artist.bio) %></p>
