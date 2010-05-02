@@ -9,7 +9,7 @@ $(function(){
     location.href=url;
   })
 
-  $(".track_url").click(function(event) {
+  $(".noplay").click(function(event) {
     var url = $(this).attr("href");
     location.href=url;
     return false
