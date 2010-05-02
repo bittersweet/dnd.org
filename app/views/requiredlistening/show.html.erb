@@ -4,7 +4,7 @@
   <ul class="grid_8 tracklist">
     <% @tracks.each_with_index do |t, i| -%>
       <li id="track-<%= i %>", class="<%= cycle('track even_neg', 'track odd_neg') %>">
-        <h2><%= link_to t.name, track_path(t), :id => i, :class => "negative noplay" %></h2>
+        <h2><%= link_to t.name, track_path(t), :id => i, :class => "hide" %></h2>
         <%= link_to "play", track_download_path(t), :class => 'play' %>
         <%= t.name %>
         <span class="track_meta">
