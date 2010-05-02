@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title><%= yield(:title) %> on deNachtdienst</title>
+    <%= stylesheet_link_tag 'reset' %>
+    <%= stylesheet_link_tag 'login' %>
+    <%= yield(:head) %>
+    <style type="text/css" media="screen">
+      body{
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dialog">
+      <%= yield %>
+    </div>
+  </body>
+</html>

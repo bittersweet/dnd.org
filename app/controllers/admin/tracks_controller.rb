@@ -1,5 +1,5 @@
 class Admin::TracksController < ApplicationController
-  before_filter :require_user
+  before_filter :authenticate_user!
   before_filter :load_artist, :except => [:destroy, :index]
 
   def new

@@ -1,5 +1,5 @@
 class Admin::ArtistsController < ApplicationController
-  before_filter :require_user
+  before_filter :authenticate_user!
 
   def new
     @artist = Artist.new
@@ -14,11 +14,11 @@ class Admin::ArtistsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
     @artist = Artist.find(params[:id])
   end
-  
+
   def update
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(params[:artist])
@@ -34,7 +34,7 @@ class Admin::ArtistsController < ApplicationController
     redirect_to :back
     flash[:notice] = 'Artist deleted'
   end
-  
+
   def index
     @artist = Artist.all
   end

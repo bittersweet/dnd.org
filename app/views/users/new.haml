@@ -1,9 +1,0 @@
--title("Register")
-
-#dialog
-  %h1 Register
-  %ul
-    -form_for @user, :url => account_path do |f|
-      =f.error_messages
-      =render :partial => 'form', :object => f
-      %li= f.submit 'Register'

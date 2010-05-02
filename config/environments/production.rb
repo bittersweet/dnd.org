@@ -26,3 +26,6 @@ config.action_controller.asset_host = "http://assets.denachtdienst.org"
 
 # Enable threaded mode
 # config.threadsafe!
+
+# Devise host
+config.action_mailer.default_url_options = { :host => 'denachtdienst.org' }

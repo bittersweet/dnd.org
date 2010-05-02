@@ -10,13 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :artists
   map.resources :weblogs
 
-  map.resource  :user_session
-  map.resource  :account, :controller => 'users'
-  map.resources :users
-
-  map.login    'login',    :controller => 'user_sessions', :action => 'new'
-  map.logout   'logout',   :controller => 'user_sessions', :action => 'destroy'
-
   map.namespace :admin do |admin|
     admin.resources :tracks
     admin.resources :artists
@@ -25,6 +18,8 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :requiredlistening, :only => 'show'
+
+  map.devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

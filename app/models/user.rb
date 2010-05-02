@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable
+
+  attr_accessible :email, :password
 end
