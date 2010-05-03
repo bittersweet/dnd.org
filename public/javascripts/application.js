@@ -11,7 +11,11 @@ $(function(){
 
   $(".noplay").click(function(event) {
     var url = $(this).attr("href");
-    location.href=url;
+    if ($(this).attr("target") == '_blank') {
+      window.open(url);
+    } else {
+      location.href=url;
+    }
     return false
   })
 

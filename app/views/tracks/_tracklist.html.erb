@@ -8,8 +8,8 @@
         <span class="track_meta">
           <%= link_to image_tag("info.png", :width => 16), t, :class => 'noplay' %>
           <% if t.artistlink && t.buylink -%>
-            <%= link_to image_tag("home.png", :width => 16), t.artistlink, :class => 'noplay' %>
-            <%= link_to image_tag("headphone.png", :width => 16), t.buylink, :class => 'noplay' %>
+            <%= link_to image_tag("home.png", :width => 16), t.artistlink, :class => 'noplay', :target => 'blank' %>
+            <%= link_to image_tag("headphone.png", :width => 16), t.buylink, :class => 'noplay', :target => 'blank' %>
           <% end -%>
         </span>
       </li>
