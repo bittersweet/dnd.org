@@ -6,8 +6,7 @@
     <%= include_javascripts :common %>
     <%= yield(:head) %>
     <link rel='shortcut icon' href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:image" content="<%= image_tag("nachtdienst.jpg") %>">
-    <meta property="og:site_name" content="de Nachtdienst">
+    <%= render :partial => 'facebook' %>
   </head>
   <body>
     <%= render :partial => 'layouts/analytics' %>
