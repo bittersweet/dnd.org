@@ -8,6 +8,11 @@ javascripts:
     - public/javascripts/application.js
   admin:
     - public/javascripts/jquery.uploadProgress.js
+  mobile:
+    - public/javascripts/jquery-1.3.2.min.js
+    - public/jqtouch/jqtouch.transitions.js
+    - public/jqtouch/jqtouch.min.js
+    - public/javascripts/mobile.js
 
 stylesheets:
   common:
@@ -20,3 +25,7 @@ stylesheets:
     - public/stylesheets/login.css
   admin:
     - public/stylesheets/navigation.css
+  mobile:
+    - public/stylesheets/mobile.css
+    - public/jqtouch/themes/jqt/theme.min.css
+    - public/jqtouch/jqtouch.min.css
