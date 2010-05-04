@@ -17,6 +17,7 @@ Rails::Initializer.run do |config|
   config.gem 'ruby-mp3info', :lib => 'mp3info'
   config.gem 'jammit'
   config.gem 'hoptoad_notifier'
+  config.gem 'newrelic_rpm'
 
   config.time_zone = 'Amsterdam'
 

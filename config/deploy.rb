@@ -25,15 +25,17 @@ ssh_options[:username] = 'deploy'
 namespace :deploy do
 
   after "deploy:update_code",
-        "deploy:link_production_db",
+        "deploy:link_configs",
         "deploy:link_artists",
         "deploy:link_audio",
         "deploy:link_app_config",
         "deploy:precache_assets"
 
-  desc "Link in the production database.yml"
-  task :link_production_db do
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  desc "Link to configs in shared/config"
+  task :link_configs do
+    ['database.yml', 'newrelic.yml'].each do |file|
+      run "ln -nfs #{deploy_to}/#{shared_dir}/config/#{file} #{release_path}/config/#{file}"
+    end
   end
 
   desc "Link artists"

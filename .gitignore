@@ -8,4 +8,5 @@ log/*
 *.swp
 config/config.yml
 config/database.yml
+config/newrelic.yml
 TODO
