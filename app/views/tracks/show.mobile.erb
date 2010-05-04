@@ -1,0 +1,8 @@
+<% title(h(@track.name)) -%>
+
+<ul class="rounded">
+  <li>
+    <h1><%= h(@track.name) %></h1>
+    <%= link_to "Play", track_download_path(@track) %>
+  </li>
+</ul>

@@ -1,6 +1,4 @@
-public/stylesheets/screen.css
-public/stylesheets/player.css
-public/stylesheets/navigation.css
+public/stylesheets/*.css
 public/audio
 public/assets
 public/artists

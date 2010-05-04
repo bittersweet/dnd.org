@@ -1,1 +1,11 @@
-This is the mobile version.
+<% title('Home') -%>
+
+<div id="container">
+  <ul>
+    <% @tracks.each do |t| -%>
+      <li class="arrow">
+        <%= link_to h(t.name), t %>
+      </li>
+    <% end -%>
+  </ul>
+</div>
