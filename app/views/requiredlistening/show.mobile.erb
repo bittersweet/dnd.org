@@ -1,0 +1,11 @@
+<ul class="rounded">
+  <li>
+    <%= image_tag @artist.avatar(:medium), :width => 150 %>
+    <%= simple_format(@artist.bio) %>
+  </li>
+  <% @tracks.each do |t| -%>
+    <li>
+      <%= link_to h(t.name), track_download_path(t), :rel => "external" %>
+    </li>
+  <% end -%>
+</ul>

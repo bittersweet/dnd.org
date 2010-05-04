@@ -1,0 +1,13 @@
+<% title("Required Listening") -%>
+
+<ul class="rounded">
+  <% if @artists.any? -%>
+    <% @artists.each do |a| -%>
+      <li>
+        <%= link_to a.name, requiredlistening_path(a.to_param) %>
+      </li>
+    <% end -%>
+  <% else -%>
+    <li>No artists yet</li>
+  <% end -%>
+</ul>
