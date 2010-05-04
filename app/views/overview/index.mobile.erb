@@ -1,9 +1,7 @@
 <% title('Home') -%>
 
 <ul>
-  <% @tracks.each do |t| -%>
-    <li class="arrow">
-      <%= link_to h(t.name), t %>
-    </li>
-  <% end -%>
+  <li class="arrow"><%= link_to "Latest Tracks", tracks_path %></li>
+  <li class="arrow"><%= link_to "Artists", artists_path %></li>
+  <li class="arrow"><%= link_to "Required Listening", requiredlistening_index_path %></li>
 </ul>

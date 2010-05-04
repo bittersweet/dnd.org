@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'overview', :action => 'index'
   end
 
-  map.resources :requiredlistening, :only => 'show'
+  map.resources :requiredlistening, :only => ['index', 'show']
 
   map.devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
 

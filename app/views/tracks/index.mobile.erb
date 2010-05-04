@@ -1,0 +1,7 @@
+<% title('Latest Tracks') -%>
+
+<ul>
+  <% @tracks.each do |t| -%>
+    <li class="arrow"><%= link_to t.name, track_path(t) %></li>
+  <% end -%>
+</ul>

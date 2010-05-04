@@ -1,10 +1,10 @@
-<% title("Required Listening") -%>
+<% title("Artists") -%>
 
 <ul class="rounded">
   <% if @artists.any? -%>
     <% @artists.each do |a| -%>
       <li class="arrow">
-        <%= link_to a.name, requiredlistening_path(a) %>
+        <%= link_to a.name, artist_path(a) %>
       </li>
     <% end -%>
   <% else -%>
