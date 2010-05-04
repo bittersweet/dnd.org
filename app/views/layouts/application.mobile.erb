@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'mobile' if mobile_device? %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+  <%= yield %>
+  </body>
+</html>
+
