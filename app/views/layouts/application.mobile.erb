@@ -9,14 +9,13 @@
   </head>
   <body>
 
-    <div class="current">
-      <div class="toolbar">
-        <h1><%=h yield(:title) %></h1>
-        <%= yield(:toolbar) %>
-      </div>
-
-      <%= yield %>
+  <div class="current">
+    <div class="toolbar">
+      <%= link_to "Back", nil, :class => "back" unless current_page? root_path %>
+      <h1><%=h yield(:title) %></h1>
     </div>
+    <%= yield %>
+  </div>
 
   </body>
 </html>

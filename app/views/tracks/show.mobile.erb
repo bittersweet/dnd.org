@@ -3,6 +3,6 @@
 <ul class="rounded">
   <li>
     <h1><%= h(@track.name) %></h1>
-    <%= link_to "Play", track_download_path(@track) %>
+    <%= link_to "Play", track_download_path(@track), :rel => "external" %>
   </li>
 </ul>
