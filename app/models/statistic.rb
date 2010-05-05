@@ -5,8 +5,8 @@ class Statistic < ActiveRecord::Base
   # validates_uniqueness_of :played_at, :scope => :ip
 
   def validate
-    if Statistic.find(:first, :conditions => ["played_at > ? AND played_at < ?", (DateTime.now - 5.seconds - 2.hours), (DateTime.now + 5.seconds - 2.hours)])
-      errors.add_to_base "fail"
+    if Statistic.find(:first, :conditions => ["track_id = ? AND ip = ? AND played_at > ? AND played_at < ?", self.track_id, self.ip, self.played_at - 5.seconds, self.played_at + 5.seconds])
+      errors.add_to_base 'Duplicate time entry'
     end
   end
 
