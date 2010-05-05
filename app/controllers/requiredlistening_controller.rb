@@ -4,6 +4,7 @@ class RequiredlisteningController < ApplicationController
     @artists = Artist.requiredlistening
 
     respond_to do |format|
+      format.html
       format.mobile do
         render :layout => 'application'
       end
@@ -15,6 +16,7 @@ class RequiredlisteningController < ApplicationController
     @tracks = @artist.tracks.required_listening
 
     respond_to do |format|
+      format.html
       format.mobile do
         render :layout => 'application'
       end
