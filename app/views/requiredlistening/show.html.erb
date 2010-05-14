@@ -3,10 +3,10 @@
 <% if @tracks.any? -%>
   <ul class="grid_8 tracklist">
     <% @tracks.each_with_index do |t, i| -%>
-      <li id="track-<%= i %>", class="track <%= cycle('even_neg', 'odd_neg') %>">
-        <h2><%= link_to t.name, track_path(t), :id => i, :class => "hide" %></h2>
+      <li id="track-<%= i %>" class="track <%= cycle('even_neg', 'odd_neg') %>">
+        <h2><%= link_to h(t.name), track_path(t), :id => i, :class => "hide" %></h2>
         <%= link_to "play", track_download_path(t), :class => 'play' %>
-        <%= t.name %>
+        <%= h t.name %>
         <span class="track_meta">
           <%= link_to image_tag("info.png", :width => 16), t, :class => 'noplay' %>
           <% if t.artistlink && t.buylink -%>
