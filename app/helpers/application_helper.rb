@@ -6,4 +6,10 @@ module ApplicationHelper
     return title
   end
 
+  def menu_link(name, pretty_name, url)
+    link_to_if(params[:controller] == name, pretty_name, url, :class => "active") do
+      link_to pretty_name, url
+    end
+  end
+
 end

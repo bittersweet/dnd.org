@@ -280,3 +280,29 @@ table
   position: relative
   top: 20px
 
+// Menu
+
+#header #menu ul li
+  display: inline-block
+  margin-left: 1em
+  padding-top: 20px
+  font-size: 15px
+
+  a
+    color: #000
+    padding: 10px
+    -webkit-border-radius: 15px
+    -moz-border-radius: 15px
+
+    &:hover
+      background = !lightbar
+
+    &.active
+      background = !lightbar
+      
+.negative #header #menu ul li a
+  &:hover
+    background = !lightbar_neg
+
+  &.active
+    background = !lightbar_neg
