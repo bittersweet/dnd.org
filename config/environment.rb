@@ -13,11 +13,11 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'paperclip'
   config.gem 'twitter'
-  config.gem 'will_paginate'
   config.gem 'ruby-mp3info', :lib => 'mp3info'
   config.gem 'jammit'
   config.gem 'hoptoad_notifier'
   config.gem 'newrelic_rpm'
+  config.gem 'redgreen'
 
   config.time_zone = 'Amsterdam'
 
