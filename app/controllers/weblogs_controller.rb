@@ -5,7 +5,7 @@ class WeblogsController < ApplicationController
   end
 
   def index
-    @weblogs = Weblog.paginate(:page => params[:page], :per_page => 8, :order => 'created_at DESC')
+    @weblogs = Weblog.all
   end
-  
+
 end

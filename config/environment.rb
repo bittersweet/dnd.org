@@ -17,7 +17,6 @@ Rails::Initializer.run do |config|
   config.gem 'jammit'
   config.gem 'hoptoad_notifier'
   config.gem 'newrelic_rpm'
-  config.gem 'redgreen'
 
   config.time_zone = 'Amsterdam'
 
