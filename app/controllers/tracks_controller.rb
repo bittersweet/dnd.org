@@ -8,7 +8,7 @@ class TracksController < ApplicationController
   end
 
   def index
-    @tracks = Track.all
+    @tracks = Track.regular
   end
 
   def download
