@@ -28,6 +28,6 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 
 # Gems for testing environment
-config.gem 'redgreen'
+# config.gem 'redgreen'
 config.gem 'mocha'
 config.gem 'factory_girl'
