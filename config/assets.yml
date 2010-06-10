@@ -20,6 +20,7 @@ stylesheets:
     - public/stylesheets/960.css
     - public/stylesheets/screen.css
     - public/stylesheets/player.css
+    - public/stylesheets/buttons.css
   login:
     - public/stylesheets/login.css
   admin:

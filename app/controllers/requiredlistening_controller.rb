@@ -18,7 +18,7 @@ class RequiredlisteningController < ApplicationController
     respond_to do |format|
       format.html
       format.mobile do
-        render :layout => 'application'
+        render :layout => 'application' # is dit wel nodig?
       end
     end
   end
