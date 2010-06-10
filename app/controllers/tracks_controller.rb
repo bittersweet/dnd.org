@@ -5,10 +5,9 @@ class TracksController < ApplicationController
   end
 
   def show
-    @track = Track.find(params[:id])
-    @artist = Artist.find(@track.artist_id)
-    @tracks = @artist.tracks.all
-    @tracks.delete(@track) #Removes the current displayed track from the tracklisting
+    @track  = Track.find(params[:id])
+    @artist = @track.artist
+    @tracks = @artist.tracks.reject { |t| t == @track }
   end
 
   def download
@@ -19,7 +18,7 @@ class TracksController < ApplicationController
            :content_type => @track.mp3.content_type,
            :content_disposition => "attachment; filename=\"#{@track.mp3_file_name}\"")
     else
-      send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => 'audio/mpeg'
+      send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => @track.mp3.content_type
     end
   end
 
