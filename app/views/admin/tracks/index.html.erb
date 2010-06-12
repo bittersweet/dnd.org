@@ -16,7 +16,7 @@
       <td><%= link_to t.name, track_path(t.id) %></td>
       <td><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</td>
       <td><%= link_to "Edit", edit_admin_track_path(t) %></td>
-      <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
     </tr>
     <%- end -%>
   </table>

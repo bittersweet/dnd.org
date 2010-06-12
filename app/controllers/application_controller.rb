@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   helper :all
-  filter_parameter_logging :password, :password_confirmation
   protect_from_forgery
   before_filter :prepare_for_mobile
 

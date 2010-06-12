@@ -1,28 +1,88 @@
-ActionController::Routing::Routes.draw do |map|
+DenachtdienstOrg::Application.routes.draw do |map|
+  root :to => 'overview#index'
 
-  map.root :controller => 'overview', :action => 'index'
+  resources :tracks do
+    member do
+      get :download
+    end
+    # get :download, :controller => 'tracks', :action => 'download'
+  end
+  resources :artists
+  resources :weblogs
 
-  map.track_feed '/tracks/feed', :controller => 'tracks', :format => 'rss'
-  map.resources :tracks do |t|
-    t.download '/download/:id', :controller => 'tracks', :action => 'download'
+  # resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
+  match 'requiredlistening' => 'requiredlistening#index'
+  match 'requiredlistening/:id' => 'requiredlistening#show'
+
+  namespace :admin do
+    root :to => 'overview#index'
+    resources :tracks
+    resources :artists
+    resources :weblogs
   end
 
-  map.resources :artists
-  map.resources :weblogs
-
-  map.namespace :admin do |admin|
-    admin.resources :tracks
-    admin.resources :artists
-    admin.resources :weblogs
-    admin.root :controller => 'overview', :action => 'index'
-  end
-
-  map.resources :requiredlistening, :only => ['index', 'show']
-
-  map.devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register'}
-
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-
+  devise_for :users, :path_names => { :sign_in => 'login',
+                                      :sign_out => 'logout',
+                                      :sign_up => 'register' }
   Jammit::Routes.draw(map)
+  # match "/#{Jammit.package_path}/:package.:extension",
+  # :to => 'jammit#package', :as => :jammit
+  # match "/#{Jammit.package_path}/:package.:extension" => 'jammit#package', :as => :jammit
+
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
+
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
+
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
+
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get :short
+  #       post :toggle
+  #     end
+  #
+  #     collection do
+  #       get :sold
+  #     end
+  #   end
+
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get :recent, :on => :collection
+  #     end
+  #   end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  # root :to => "welcome#index"
+
+  # See how all your routes lay out with "rake routes"
+
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

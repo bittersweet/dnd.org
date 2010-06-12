@@ -3,12 +3,7 @@ class Statistic < ActiveRecord::Base
   belongs_to :track, :counter_cache => true
 
   # validates_uniqueness_of :played_at, :scope => :ip
-
-  def validate
-    if Statistic.find(:first, :conditions => ["track_id = ? AND ip = ? AND played_at > ? AND played_at < ?", self.track_id, self.ip, self.played_at - 5.seconds, self.played_at + 5.seconds])
-      errors.add_to_base 'Duplicate time entry'
-    end
-  end
+  validate :single_statistics
 
   def self.generate!(id, env)
     Statistic.create(:track_id => id,
@@ -27,6 +22,14 @@ class Statistic < ActiveRecord::Base
       array2.push t.statistics_count
     end
     [array.sum, array2.sum]
+  end
+
+protected
+
+  def single_statistics
+    if Statistic.find(:first, :conditions => ["track_id = ? AND ip = ? AND played_at > ? AND played_at < ?", self.track_id, self.ip, self.played_at - 5.seconds, self.played_at + 5.seconds])
+      errors[:base] << 'Duplicate time entry'
+    end
   end
 
 end

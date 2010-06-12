@@ -6,6 +6,7 @@
     <%= include_javascripts :common %>
     <%= yield(:head) %>
     <link rel='shortcut icon' href="/favicon.ico"/>
+    <%= csrf_meta_tag %>
   </head>
   <body>
     <%= render :partial => 'layouts/analytics' %>

@@ -16,17 +16,17 @@ class Track < ActiveRecord::Base
   validates_attachment_content_type :mp3, :content_type => ['audio/mpeg', 'audio/mpg', 'audio/mp3'], :message => "Please only select audio files"
 
   default_scope :order => 'created_at DESC'
-  named_scope :latest, :limit => 10
+  scope :latest, :limit => 10
 
-  named_scope :regular, :conditions => "section = 1"
-  named_scope :required_listening, :conditions => "section = 2"
+  scope :regular, :conditions => "section = 1"
+  scope :required_listening, :conditions => "section = 2"
 
   def update_playcount(env)
     Statistic.generate!(id, env)
   end
 
   def is_regular?
-    self.section == 1
+    section == 1
   end
 
 protected

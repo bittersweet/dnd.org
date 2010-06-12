@@ -11,7 +11,7 @@ class TracksController < ApplicationController
   end
 
   def download
-    @track = Track.find(params[:track_id])
+    @track = Track.find(params[:id])
     @track.update_playcount(request.env)
     if Rails.env.production?
       head(:x_accel_redirect => @track.mp3.url,

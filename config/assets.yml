@@ -6,6 +6,7 @@ javascripts:
     - public/javascripts/jquery.jplayer.js
     - public/javascripts/player.js
     - public/javascripts/application.js
+    - public/javascripts/rails.js
   admin:
     - public/javascripts/jquery.uploadProgress.js
   mobile:

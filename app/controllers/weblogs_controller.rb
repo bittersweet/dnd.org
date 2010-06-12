@@ -5,7 +5,7 @@ class WeblogsController < ApplicationController
   end
 
   def index
-    @weblogs = Weblog.all
+    @weblogs = Weblog.latest
   end
 
 end
