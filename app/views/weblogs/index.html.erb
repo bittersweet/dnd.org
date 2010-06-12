@@ -1,0 +1,10 @@
+<% title("Weblogs") -%>
+
+<div class="grid_8">
+<% @weblogs.each do |w| -%>
+  <div class="post <%= cycle('even', 'odd') %>">
+    <h3><%= h w.title %></h3>
+    <p><%= simple_format(w.content) %></p>
+  </div>
+<% end -%>
+</div>
