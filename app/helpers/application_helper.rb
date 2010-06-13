@@ -12,12 +12,9 @@ module ApplicationHelper
     end
   end
 
-  def menu_link_admin(name)
-    if params[:controller] == "admin/#{name}"
-      "current"
-    else
-      ""
-    end
+  def class_if_current(path = '')
+    current_page = request.path_info.sub('/','')
+    %q(class = 'current') if current_page == path
   end
 
 end
