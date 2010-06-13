@@ -2,6 +2,8 @@ class Admin::TracksController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_artist, :except => [:destroy, :index]
 
+  layout 'admin'
+
   def new
     @track = Track.new
   end

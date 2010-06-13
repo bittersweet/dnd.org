@@ -12,4 +12,12 @@ module ApplicationHelper
     end
   end
 
+  def menu_link_admin(name)
+    if params[:controller] == "admin/#{name}"
+      "current"
+    else
+      ""
+    end
+  end
+
 end

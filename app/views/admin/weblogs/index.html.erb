@@ -1,22 +1,18 @@
 <%- title("Posts") %>
 
-<div class="grid_8">
+<h1>Posts</h1>
 
-  <div class="listing"><h1>Posts</h1></div>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-    <%- @weblog.each do |w| -%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @weblog.each do |w| %>
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= link_to w.title, weblog_path(w) %></td>
       <td><%= link_to "Edit", edit_admin_weblog_path(w) %></td>
       <td><%= link_to "Delete", admin_weblog_path(w.id), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
-    <%- end -%>
-  </table>
-
-</div>
+  <% end %>
+</table>

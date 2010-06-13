@@ -1,28 +1,24 @@
 <%- title("Edit track") %>
 
-<div id="main" class="grid_12">
+<h1>Nieuwe track</h1>
 
-  <h1>Nieuwe track</h1>
+<% form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
 
-  <% form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
-
-    <ul>
-      <%= f.error_messages %>
-      <li><%= f.label :section %>
+  <ul>
+    <%= f.error_messages %>
+    <li><%= f.label :section %>
       <%= select("track", "section", [["regular", 1], ["required listening", 2]]) %></li>
-      <li><%= f.label :artist %>
+    <li><%= f.label :artist %>
       <%= select("track", "artist_id", @artist.collect {|a| [ a.name, a.id ] }, { :include_blank => true })
-       %></li>
-      <li><%= f.label :mp3 %>
+      %></li>
+    <li><%= f.label :mp3 %>
       <%= f.file_field :mp3 %></li>
-      <li><%= f.label :name %>
+    <li><%= f.label :name %>
       <%= f.text_field :name, :class => "text", :size => "30" %></li>
-      <li><%= f.label :artistlink %>
+    <li><%= f.label :artistlink %>
       <%= f.text_field :artistlink, :class => "text", :size => "30" %></li>
-      <li><%= f.label :buylink %>
+    <li><%= f.label :buylink %>
       <%= f.text_field :buylink, :class => "text", :size => "30" %></li>
-      <li><%= f.submit "Submit" %></li>
-    </ul>
-  <% end %>
-
-</div>
+    <li><%= f.submit "Submit" %></li>
+  </ul>
+<% end %>

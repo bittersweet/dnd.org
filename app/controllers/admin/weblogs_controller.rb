@@ -1,6 +1,8 @@
 class Admin::WeblogsController < ApplicationController
   before_filter :authenticate_user!
 
+  layout 'admin'
+
   def index
     @weblog = Weblog.all.reverse
   end

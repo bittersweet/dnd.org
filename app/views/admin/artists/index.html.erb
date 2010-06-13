@@ -1,16 +1,14 @@
 <%- title("Artists") %>
 
-<div class="grid_8">
+<h1>Artists</h1>
 
-  <div class="listing"><h1>Artists</h1></div>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-    <%- @artist.each do |a| -%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <%- @artist.each do |a| -%>
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= link_to a.name, artist_path(a) %></td>
       <td><%= link_to "Edit", edit_admin_artist_path(a) %></td>
@@ -18,5 +16,3 @@
     </tr>
     <%- end -%>
   </table>
-
-</div>

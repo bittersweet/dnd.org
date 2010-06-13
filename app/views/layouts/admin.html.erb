@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+    <title><%= yield(:title) %> on deNachtdienst</title>
+    <%= include_stylesheets :admin, :media => 'all' %>
+    <%= yield(:head) %>
+    <link rel='shortcut icon' href="/favicon.ico"/>
+    <%= csrf_meta_tag %>
+</head>
+<body>
+  <%= render :partial => 'layouts/analytics' %>
+
+  <div class="header">
+    <ul class='nav'>
+      <li class="<%= menu_link_admin('overview') %>"><%= link_to 'Home', admin_root_path %></li>
+      <li class="<%= menu_link_admin('tracks') %>"><%= link_to 'Tracks', admin_tracks_path %></li>
+      <li class="<%= menu_link_admin('artists') %>"><%= link_to 'Artists', admin_artists_path %></li>
+      <li class="<%= menu_link_admin('weblogs') %>"><%= link_to 'Weblogs', admin_weblogs_path %></li>
+    </ul>
+  </div>
+
+<div id="main">
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <p>deNachtdienst.org 2010</p>
+</div>
+
+</body>
+</html>
+
+

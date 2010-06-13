@@ -1,27 +1,23 @@
 <%- title("Tracks") %>
 
-<div class="grid_10">
+<h1>Tracks</h1>
 
-  <div class="listing"><h1>Tracks</h1></div>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Statistics</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-    <%- @track.each do |t| -%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Statistics</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <%- @track.each do |t| -%>
     <tr class="<%= cycle('odd', 'even') %>">
-      <td><%= link_to t.name, track_path(t.id) %></td>
+      <td><%= link_to t.name, track_path(t) %></td>
       <td><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</td>
       <td><%= link_to "Edit", edit_admin_track_path(t) %></td>
       <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
     </tr>
     <%- end -%>
   </table>
-
-</div>
 
 <div id="navigation" style="float: right;">
   <a href="/admin/tracks/new">New track</a>

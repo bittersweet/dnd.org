@@ -1,6 +1,8 @@
 class Admin::ArtistsController < ApplicationController
   before_filter :authenticate_user!
 
+  layout 'admin'
+
   def new
     @artist = Artist.new
   end

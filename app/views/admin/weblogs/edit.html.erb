@@ -1,19 +1,15 @@
 <%- title("Edit post") %>
 
-<div id="main" class="grid_12">
+<h1>Edit post</h1>
 
-  <h1>Edit post</h1>
+<% form_for([:admin, @weblog]) do |f| %>
 
-  <% form_for([:admin, @weblog]) do |f| %>
-
-    <ul>
-      <%= f.error_messages %>
-      <li><%= f.label :title %>
+  <ul>
+    <%= f.error_messages %>
+    <li><%= f.label :title %>
       <%= f.text_field :title, :class => "text", :size => "30" %></li>
-      <li><%= f.label :content %>
+    <li><%= f.label :content %>
       <%= f.text_area :content, :class => "text", :cols => "40", :rows => "15" %></li>
-      <li><%= f.submit "Submit" %></li>
-    </ul>
-  <% end %>
-
-</div>
+    <li><%= f.submit "Submit" %></li>
+  </ul>
+<% end %>
