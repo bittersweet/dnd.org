@@ -9,7 +9,7 @@
 <ul>
   <% @tracks.each do |t| -%>
     <li>
-      <%= link_to h(t.name), track_download_path(t), :rel => "external" %>
+      <%= link_to h(t.name), download_track_path(t), :rel => "external" %>
     </li>
   <% end -%>
 </ul>
