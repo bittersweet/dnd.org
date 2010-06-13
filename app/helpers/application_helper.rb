@@ -12,8 +12,11 @@ module ApplicationHelper
     end
   end
 
-  def class_if_current(path = '')
+  def current_page
     current_page = request.path_info.sub('/','')
+  end
+
+  def class_if_current(path = '')
     %q(class = 'current') if current_page == path
   end
 

@@ -16,10 +16,5 @@
       <td><%= link_to "Edit", edit_admin_track_path(t) %></td>
       <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
     </tr>
-    <%- end -%>
-  </table>
-
-<div id="navigation" style="float: right;">
-  <a href="/admin/tracks/new">New track</a>
-  <a href="/account/">Account</a>
-</div>
+  <%- end -%>
+</table>

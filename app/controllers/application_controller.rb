@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_sub_tab
+    @subtab = true
+  end
+
   private
 
   helper_method :mobile_device?
