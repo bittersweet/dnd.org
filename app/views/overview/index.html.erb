@@ -13,7 +13,7 @@
 
 <div class="grid_12">
   <div id="statistics" class="alpha">
-    <span><%= @stats[1] %></span> tracks listened for a total of <span><%= @stats[0] %></span>
-    seconds or <span><%= @stats[0] / 60 %></span> minutes or <span><%= @stats[0] / 3600 %></span> hours
+    <span><%= @stats["total_plays"] %></span> tracks listened for a total of <span><%= @stats["total_seconds"] %></span>
+    seconds or <span><%= @stats["total_seconds"] / 60 %></span> minutes or <span><%= (@stats["total_seconds"].to_f / 3600) %></span> hours
   </div>
 </div>

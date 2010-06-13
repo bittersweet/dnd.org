@@ -2,7 +2,6 @@ class Statistic < ActiveRecord::Base
 
   belongs_to :track, :counter_cache => true
 
-  # validates_uniqueness_of :played_at, :scope => :ip
   validate :single_statistics
 
   def self.generate!(id, env)
@@ -14,14 +13,13 @@ class Statistic < ActiveRecord::Base
 
 
   def self.playtime
-    t = Track.find(:all, :select => "length, statistics_count")
-    array = []
-    array2 = []
-    t.each do |t|
-      array.push t.length * t.statistics_count
-      array2.push t.statistics_count
+    t = Track.select("length, statistics_count")
+
+    t.inject({"total_plays" => 0, "total_seconds" => 0}) do |r, i|
+      r["total_plays"] += i.statistics_count
+      r["total_seconds"] += (i.statistics_count * i.length)
+      r
     end
-    [array.sum, array2.sum]
   end
 
 protected
