@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
+gem "mysql", "2.8.1"
 
 gem 'capistrano'
 gem 'warden'
@@ -13,10 +14,6 @@ gem 'ruby-mp3info', :require => "mp3info"
 gem 'jammit', :git => 'http://github.com/railsjedi/jammit.git'
 gem 'hoptoad_notifier'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
-
-group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
 
 group :test do
   gem 'mocha'
