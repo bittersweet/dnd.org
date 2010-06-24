@@ -18,7 +18,7 @@ class TracksController < ApplicationController
            :content_type => @track.mp3.content_type,
            :content_disposition => "attachment; filename=\"#{@track.mp3_file_name}\"")
     else
-      send_file "#{RAILS_ROOT}/public#{@track.mp3.url}", :type => @track.mp3.content_type
+      send_file "#{Rails.root}/public#{@track.mp3.url}", :type => @track.mp3.content_type
     end
   end
 
