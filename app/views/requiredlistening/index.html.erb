@@ -4,7 +4,7 @@
 <ul class="tracklist" id="artistlist">
   <% @artists.each do |a| -%>
     <li class="artist neg grid_3 <%= cycle('alpha', '', '', 'omega') %>">
-      <h2><%= link_to a.name, requiredlistening_path(a.to_param) %></h2>
+      <h2><%= link_to a.name, :controller => 'requiredlistening', :action => 'show', :id => a.to_param %></h2>
       <p><%= truncate(a.bio, :length => 140) %></p>
     </li>
   <% end -%>

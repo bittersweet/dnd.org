@@ -5,7 +5,6 @@ DenachtdienstOrg::Application.routes.draw do |map|
     member do
       get :download
     end
-    # get :download, :controller => 'tracks', :action => 'download'
   end
   resources :artists
   resources :weblogs
