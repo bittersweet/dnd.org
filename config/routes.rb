@@ -9,9 +9,7 @@ DenachtdienstOrg::Application.routes.draw do |map|
   resources :artists
   resources :weblogs
 
-  # resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
-  match 'requiredlistening' => 'requiredlistening#index'
-  match 'requiredlistening/:id' => 'requiredlistening#show'
+  resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
 
   namespace :admin do
     root :to => 'overview#index'

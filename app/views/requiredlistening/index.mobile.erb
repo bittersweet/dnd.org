@@ -4,7 +4,7 @@
   <% if @artists.any? -%>
     <% @artists.each do |a| -%>
       <li class="arrow">
-        <%= link_to a.name, :controller => 'requiredlistening', :action => 'show', :id => a.to_param %>
+        <%= link_to a.name, requiredlistening_path(a) %>
       </li>
     <% end -%>
   <% else -%>
