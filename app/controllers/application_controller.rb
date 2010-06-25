@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  self.responder = AppResponder
+  respond_to :html
+
   helper :all
   protect_from_forgery
   before_filter :prepare_for_mobile

@@ -1,9 +1,15 @@
 class Admin::TracksController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_artist, :except => [:destroy, :index]
-  before_filter :set_sub_tab, :only => [:new, :edit, :index]
+  before_filter :load_artist, :except => [:index, :destroy]
+  before_filter :set_sub_tab, :only => [:index, :new, :edit]
 
   layout 'admin'
+
+  respond_to :html
+
+  def index
+    @tracks = Track.all
+  end
 
   def new
     @track = Track.new
@@ -11,12 +17,8 @@ class Admin::TracksController < ApplicationController
 
   def create
     @track = Track.new(params[:track])
-    if @track.save
-      flash[:notice] = "Track saved"
-      redirect_to admin_tracks_path
-    else
-      render :new
-    end
+    @track.save
+    respond_with :admin, @track
   end
 
   def edit
@@ -25,22 +27,14 @@ class Admin::TracksController < ApplicationController
 
   def update
     @track = Track.find(params[:id])
-    if @track.update_attributes(params[:track])
-      redirect_to admin_tracks_path
-    else
-      render "edit"
-    end
+    @track.update_attributes(params[:track])
+    respond_with :admin, @track
   end
 
   def destroy
     @track = Track.find(params[:id])
     @track.destroy
-    redirect_to :back
-    flash[:notice] = "Track verwijderd"
-  end
-
-  def index
-    @track = Track.all
+    respond_with :admin, @track
   end
 
 protected
