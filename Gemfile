@@ -14,10 +14,6 @@ gem 'jammit', :git => 'http://github.com/railsjedi/jammit.git'
 gem 'hoptoad_notifier'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
-group :development do
-  gem 'mongrel'
-end
-
 group :test do
   gem 'mocha'
   gem 'factory_girl_rails'
