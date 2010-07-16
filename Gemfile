@@ -10,11 +10,15 @@ gem 'haml'
 gem 'paperclip'
 gem 'twitter'
 gem 'ruby-mp3info', :require => 'mp3info'
-gem 'jammit', :git => 'http://github.com/railsjedi/jammit.git'
+gem 'jammit'
 gem 'hoptoad_notifier'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
 group :test do
+  gem 'rspec'
+  gem 'rspec-rails', '>= 2.0.0.beta.17'
   gem 'mocha'
-  gem 'factory_girl_rails'
+  gem 'machinist', '>= 2.0.0.beta1'
+  gem 'faker'
+  gem 'steak'
 end
