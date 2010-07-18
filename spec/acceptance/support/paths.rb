@@ -4,6 +4,15 @@ module NavigationHelpers
   def homepage
     "/"
   end
+
+  def artists_index
+    '/artists'
+  end
+
+  def artist_show(id)
+    "/artists/#{id}"
+  end
+
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance
