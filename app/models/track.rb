@@ -22,7 +22,9 @@ class Track < ActiveRecord::Base
   scope :required_listening, :conditions => "section = 2"
 
   def update_playcount(env)
-    Statistic.generate!(id, env)
+    ip = env['REMOTE_ADDR']
+    browser = env['HTTP_USER_AGENT']
+    self.statistics.create(:ip => ip, :browser => browser, :played_at => Time.now)
   end
 
   def is_regular?

@@ -4,14 +4,6 @@ class Statistic < ActiveRecord::Base
 
   validate :single_statistics
 
-  def self.generate!(id, env)
-    Statistic.create(:track_id => id,
-                     :ip => env["REMOTE_ADDR"],
-                     :browser => env['HTTP_USER_AGENT'],
-                     :played_at => Time.now)
-  end
-
-
   def self.playtime
     t = Track.select("length, statistics_count")
 

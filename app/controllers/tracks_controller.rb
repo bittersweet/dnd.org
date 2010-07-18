@@ -11,6 +11,7 @@ class TracksController < ApplicationController
   end
 
   def download
+    render :nothing => true
     @track = Track.find(params[:id])
     @track.update_playcount(request.env)
     if Rails.env.production?
