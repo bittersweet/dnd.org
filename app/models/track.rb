@@ -24,7 +24,7 @@ class Track < ActiveRecord::Base
   def update_playcount(env)
     ip = env['REMOTE_ADDR']
     browser = env['HTTP_USER_AGENT']
-    self.statistics.create(:ip => ip, :browser => browser, :played_at => Time.now)
+    statistics.create(:ip => ip, :browser => browser, :played_at => Time.now)
   end
 
   def is_regular?

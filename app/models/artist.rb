@@ -8,6 +8,7 @@ class Artist < ActiveRecord::Base
 
   validates_presence_of :name, :message => "can't be blank"
   validates_presence_of :bio, :message => "can't be blank"
+  validates_presence_of :section, :message => "can't be blank"
 
   has_attached_file :avatar, :styles => {:medium => "280x280"},
                     :convert_options => {:all => "-strip"},
