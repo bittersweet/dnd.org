@@ -20,5 +20,6 @@ group :test do
   gem 'mocha'
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'faker'
-  gem 'steak'
+  gem 'steak', :git => 'git://github.com/cavalle/steak.git'
+  gem 'capybara'
 end
