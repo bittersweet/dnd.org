@@ -1,9 +1,4 @@
-<%- title("Edit post") %>
-
-<h1>Edit post</h1>
-
-<% form_for([:admin, @weblog]) do |f| %>
-
+<% form_for([:admin, @article]) do |f| %>
   <ul>
     <%= f.error_messages %>
     <li><%= f.label :title %>

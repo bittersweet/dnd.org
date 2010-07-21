@@ -7,7 +7,7 @@ DenachtdienstOrg::Application.routes.draw do |map|
     end
   end
   resources :artists
-  resources :weblogs
+  resources :articles
 
   resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
 
@@ -15,7 +15,7 @@ DenachtdienstOrg::Application.routes.draw do |map|
     root :to => 'overview#index'
     resources :tracks
     resources :artists
-    resources :weblogs
+    resources :articles
   end
 
   devise_for :users, :path_names => { :sign_in => 'login',

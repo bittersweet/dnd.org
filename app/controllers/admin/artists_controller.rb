@@ -34,7 +34,7 @@ class Admin::ArtistsController < ApplicationController
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to :back
+    redirect_to admin_artists_path
     flash[:notice] = 'Artist deleted'
   end
 

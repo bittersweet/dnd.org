@@ -1,4 +1,4 @@
-class Weblog < ActiveRecord::Base
+class Article < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title.parameterize}"
@@ -13,7 +13,7 @@ protected
 
   after_save :update_twitter
   def update_twitter
-    Delayed::Job.enqueue(WeblogJob.new(id))
+    Delayed::Job.enqueue(ArticleJob.new(id))
   end
 
 end

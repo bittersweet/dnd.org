@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe WeblogsController do
+describe ArticlesController do
   before do
-    @weblog = Weblog.make!
+    @article = Article.make!
   end
 
   it "should render index" do
@@ -11,7 +11,7 @@ describe WeblogsController do
   end
 
   it "should render show" do
-    get :show, :id => @weblog
+    get :show, :id => @article
     response.should be_success
   end
 end
