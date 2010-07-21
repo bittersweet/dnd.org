@@ -1,5 +1,0 @@
-%ul.tracklist
-  -@weblogs.each do |w|
-    %li.track{:id => w.id}
-      %h2= link_to w.title, weblog_path(w)
-      %p= h(w.content)
