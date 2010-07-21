@@ -1,17 +1,9 @@
 require 'spec_helper'
 
 describe Admin::TracksController do
-  include Devise::TestHelpers
-
-  def mock_user(stubs={})
-    @mock_user ||= mock_model(User, stubs).as_null_object
-  end
 
   before(:each) do
-    request.env['warden'] = mock_model(Warden, :authenticate => mock_user,
-                                       :authenticate! => mock_user)
-    User.make!(:password => 'test')
-
+    login
     @artist = Artist.make!
     @track = Track.make!(:artist => @artist)
   end
