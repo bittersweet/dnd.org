@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
 
+  attr_accessible :title, :content
+
   def to_param
     "#{id}-#{title.parameterize}"
   end

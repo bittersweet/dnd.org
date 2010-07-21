@@ -1,15 +1,14 @@
 class Track < ActiveRecord::Base
 
-  def to_param
-    "#{id}-#{name.parameterize}"
-  end
-
   belongs_to :artist
   has_many :statistics
 
-  validates_presence_of :section
+  attr_accessible :artist_id, :name, :description, :section, :artistlink, :buylink
+  attr_accessible :mp3
+
   validates_presence_of :name, :message => "can't be blank"
   validates_presence_of :artist_id, :message => "can't be blank"
+  validates_presence_of :section, :message => "can't be blank"
 
   has_attached_file :mp3, :path => ":rails_root/public/audio/:id/:filename", :url => "/audio/:id/:filename"
   validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
@@ -20,6 +19,10 @@ class Track < ActiveRecord::Base
 
   scope :regular, :conditions => "section = 1"
   scope :required_listening, :conditions => "section = 2"
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 
   def update_playcount(env)
     ip = env['REMOTE_ADDR']

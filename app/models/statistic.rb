@@ -2,6 +2,8 @@ class Statistic < ActiveRecord::Base
 
   belongs_to :track, :counter_cache => true
 
+  attr_accessible :ip, :browser, :played_at
+
   validate :single_statistics
 
   def self.playtime

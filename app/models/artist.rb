@@ -1,5 +1,7 @@
 class Artist < ActiveRecord::Base
 
+  attr_accessible :name, :bio, :section
+
   def to_param
     "#{id}-#{name.parameterize}"
   end

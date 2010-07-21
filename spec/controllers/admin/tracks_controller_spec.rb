@@ -18,9 +18,9 @@ describe Admin::TracksController do
 
     post :create, :track => {
       :mp3 => File.new(Rails.root + 'spec/fixtures/track.mp3'),
+      :name => 'track title',
       :artist_id => @artist.id,
-      :section => 1,
-      :name => 'track title'
+      :section => 1
     }
     response.should be_redirect
 
