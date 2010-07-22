@@ -14,12 +14,12 @@
     <p class="description"><%= @track.description %></p>
   <% end -%>
   <%= link_to "Play", download_track_path(@track), :class => 'play awesome large' %>
-  <%= render :partial => 'facebook' %>
+  <%= render 'facebook' %>
 </div>
 
 <div class="grid_5 prefix_1">
   <h1>Other tracks</h1>
   <div class="listing">
-    <%= render :partial => 'tracks/tracklist' %>
+    <%= render @tracks %>
   </div>
 </div>
