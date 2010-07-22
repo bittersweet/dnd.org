@@ -20,7 +20,7 @@ class Artist < ActiveRecord::Base
   # validates_attachment_presence :avatar, :message => "Don't forget to include an image"
   # validates_attachment_content_type :avatar, :content_type => ['audio/mpeg', 'audio/mpg', 'audio/mp3'], :message => "Please only select audio files"
 
-  default_scope :order => 'name ASC'
+  scope :ordered, :order => 'name ASC'
 
   scope :regular, :conditions => "section = 1"
   scope :requiredlistening, :conditions => "section = 2"

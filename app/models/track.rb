@@ -14,7 +14,7 @@ class Track < ActiveRecord::Base
   validates_attachment_presence :mp3, :message => "Don't forget to select a mp3"
   validates_attachment_content_type :mp3, :content_type => ['audio/mpeg', 'audio/mpg', 'audio/mp3'], :message => "Please only select audio files"
 
-  default_scope :order => 'created_at DESC'
+  scope :ordered, :order => 'created_at DESC'
   scope :latest, :limit => 10
 
   scope :regular, :conditions => "section = 1"

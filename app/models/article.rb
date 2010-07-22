@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   validates_presence_of :title,   :message => "can't be blank"
   validates_presence_of :content, :message => "can't be blank"
 
+  scope :ordered, :order => 'created_at DESC'
   scope :latest, :limit => 4, :order => 'id DESC'
 
 protected

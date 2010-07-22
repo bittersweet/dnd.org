@@ -1,10 +1,10 @@
 class OverviewController < ApplicationController
 
   def index
-    @articles = Article.latest
-    @artists  = Artist.regular
+    @articles = Article.ordered.latest
+    @artists  = Artist.ordered.regular
     @stats    = Statistic.playtime
-    @tracks   = Track.regular.latest
+    @tracks   = Track.ordered.regular.latest
   end
 
 end
