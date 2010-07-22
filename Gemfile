@@ -16,10 +16,8 @@ gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
 group :test do
   gem 'rspec'
-  gem 'rspec-rails', '>= 2.0.0.beta.17'
-  gem 'mocha'
+  gem 'rspec-rails', '2.0.0.beta.17'
   gem 'machinist', '>= 2.0.0.beta1'
-  gem 'faker'
   gem 'steak', :git => 'git://github.com/cavalle/steak.git'
   gem 'capybara'
 end
