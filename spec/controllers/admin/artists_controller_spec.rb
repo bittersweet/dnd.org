@@ -11,6 +11,11 @@ describe Admin::ArtistsController do
     response.should be_success
   end
 
+  it "should render new" do
+    get :new
+    response.should be_success
+  end
+
   it "should create a artist" do
     Artist.destroy_all
 

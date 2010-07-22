@@ -8,7 +8,7 @@
     <th>Edit</th>
     <th>Delete</th>
   </tr>
-  <%- @artist.each do |a| -%>
+  <%- @artists.each do |a| -%>
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= link_to a.name, artist_path(a) %></td>
       <td><%= link_to "Edit", edit_admin_artist_path(a) %></td>

@@ -1,4 +1,4 @@
-<%= form_for([:admin, @track], :html => { :multipart => true }) do |f| %>
+<%= form_for([:admin, track], :html => { :multipart => true }) do |f| %>
   <%= render "shared/error_messages", :target => @track %>
 
   <%= f.hidden_field :section, :value => 1 %>
@@ -6,7 +6,7 @@
     <li><%= f.label :section %>
       <%= select("track", "section", [["regular", 1], ["required listening", 2]]) %></li>
     <li><%= f.label :artist %>
-      <%= select("track", "artist_id", @artist.collect {|a| [ a.name, a.id ] }, { :include_blank => true })
+      <%= select("track", "artist_id", artists.collect {|a| [ a.name, a.id ] }, { :include_blank => true })
       %></li>
     <li><%= f.label :mp3 %>
       <%= f.file_field :mp3 %></li>

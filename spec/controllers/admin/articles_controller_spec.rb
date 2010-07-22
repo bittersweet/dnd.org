@@ -1,13 +1,19 @@
 require 'spec_helper'
 
 describe Admin::ArticlesController do
-  before(:each) do
+
+  before do
     login
     @article = Article.make!
   end
 
   it "should render index" do
     get :index
+    response.should be_success
+  end
+
+  it "should render new" do
+    get :new
     response.should be_success
   end
 

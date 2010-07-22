@@ -1,5 +1,5 @@
 <%- title("New artist") %>
 
-<h1>Nieuwe artiest</h1>
+<h1>New artist</h1>
 
-<%= render 'form' %>
+<%= render :partial => 'form', :locals => { :artist => @artist } %>

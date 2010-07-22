@@ -2,4 +2,4 @@
 
 <h1>Nieuwe track</h1>
 
-<%= render 'form' %>
+<%= render :partial => 'form', :locals => { :track => @track, :artists => @artists } %>

@@ -13,6 +13,11 @@ describe Admin::TracksController do
     response.should be_success
   end
 
+  it "should render new" do
+    get :new
+    response.should be_success
+  end
+
   it "should create a track" do
     Track.destroy_all
 

@@ -4,6 +4,10 @@ class Admin::ArtistsController < ApplicationController
 
   layout 'admin'
 
+  def index
+    @artists = Artist.all
+  end
+
   def new
     @artist = Artist.new
   end
@@ -36,10 +40,6 @@ class Admin::ArtistsController < ApplicationController
     @artist.destroy
     redirect_to admin_artists_path
     flash[:notice] = 'Artist deleted'
-  end
-
-  def index
-    @artist = Artist.all
   end
 
 end

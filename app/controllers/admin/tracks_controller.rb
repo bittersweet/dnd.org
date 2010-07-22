@@ -40,7 +40,7 @@ class Admin::TracksController < ApplicationController
 protected
 
   def load_artist
-    @artist = Artist.all
+    @artists = Artist.all
   end
 
 end

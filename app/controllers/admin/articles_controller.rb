@@ -6,7 +6,7 @@ class Admin::ArticlesController < ApplicationController
   layout 'admin'
 
   def index
-    @article = Article.all.reverse
+    @articles = Article.all.reverse
   end
 
   def new
