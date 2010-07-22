@@ -9,3 +9,5 @@ config/database.yml
 config/newrelic.yml
 TODO
 .bundle
+autotest
+.rspec
