@@ -29,11 +29,12 @@ end
 
 include Devise::TestHelpers
 
+
 def mock_user(stubs={})
   @mock_user ||= mock_model(User, stubs).as_null_object
 end
 
 def login
-  request.env['warden'] = mock_model(Warden, :authenticate => mock_user,
-                                     :authenticate! => mock_user)
+  request.env['warden'] = mock(Warden, :authenticate => mock_user,
+                               :authenticate! => mock_user)
 end
