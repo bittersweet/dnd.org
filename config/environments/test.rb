@@ -30,6 +30,9 @@ DenachtdienstOrg::Application.configure do
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 
+  # Setting this to notify to have a clean output for now
+  config.active_support.deprecation = :notify
+
   Machinist.configure do |config|
     config.cache_objects = false
   end
