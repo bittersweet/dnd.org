@@ -3,11 +3,15 @@
 <div class="grid_12">
   <div class="listing">
     <%= link_to image_tag('latesttracks.png'), tracks_path %>
-    <%= render @tracks %>
+    <ul class="tracklist">
+      <%= render @tracks %>
+    </ul>
   </div>
   <div class="listing">
     <%= link_to image_tag('artists.png'), artists_path %>
-    <%= render @artists %>
+    <ul class="tracklist" id="artistlist">
+      <%= render @artists %>
+    </ul>
   </div>
 </div>
 

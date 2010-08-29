@@ -1,12 +1,10 @@
-<ul class="tracklist">
-  <li id="track-<%= track_counter %>" class="<%= cycle('track even', 'track odd') %>">
-    <h2><%= link_to track.name, track_path(track), :id => track_counter, :class => "hide" %></h2>
-    <%= link_to "play", download_track_path(track), :class => 'play' %>
-    <%= track.name %>
-    <span class="track_meta">
-      <%= link_to image_tag("info.png", :width => 16), track, :class => 'noplay' %>
-      <%= link_to image_tag("home.png", :width => 16), track.artistlink, :class => 'noplay', :target => '_blank' if track.artistlink.present? %>
-      <%= link_to image_tag("buy.png", :width => 16), track.buylink, :class => 'noplay', :target => '_blank' if track.buylink.present? %>
-    </span>
-  </li>
-</ul>
+<li id="track-<%= track_counter %>" class="<%= cycle('track even', 'track odd') %>">
+  <h2><%= link_to track.name, track_path(track), :id => track_counter, :class => "hide" %></h2>
+  <%= link_to "play", download_track_path(track), :class => 'play' %>
+  <%= track.name %>
+  <span class="track_meta">
+    <%= link_to image_tag("info.png", :width => 16), track, :class => 'noplay' %>
+    <%= link_to image_tag("home.png", :width => 16), track.artistlink, :class => 'noplay', :target => '_blank' if track.artistlink.present? %>
+    <%= link_to image_tag("buy.png", :width => 16), track.buylink, :class => 'noplay', :target => '_blank' if track.buylink.present? %>
+  </span>
+</li>

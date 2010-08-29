@@ -1,6 +1,4 @@
-<ul class="tracklist" id="artistlist">
-  <li class="artist grid_3 <%= cycle('alpha', '', '', 'omega') %>">
-    <h2><%= link_to artist.name, artist_path(artist) %></h2>
-    <p><%= truncate(artist.bio, :length => 140) %></p>
-  </li>
-</ul>
+<li class="artist grid_3 <%= cycle('alpha', '', '', 'omega') %>">
+  <h2><%= link_to artist.name, artist_path(artist) %></h2>
+  <p><%= truncate(artist.bio, :length => 140) %></p>
+</li>
