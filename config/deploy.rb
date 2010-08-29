@@ -1,11 +1,8 @@
-require 'capistrano/ext/multistage'
-
-set :default_stage, "production"
-set :stages, %w(production staging)
-
-# default_run_options[:pty] = true
+# Global settings
 set :application, 'denachtdienst.org'
 set :rails_env,   'production'
+set :deploy_to, "/home/deploy/sites/#{application}"
+
 role :app, application
 role :web, application
 role :db, application, :primary => true
@@ -13,7 +10,7 @@ role :db, application, :primary => true
 # Git
 set :repository,  'git@github.com:bittersweet/dnd.org.git'
 set :scm,         'git'
-set :deploy_via, :remote_cache
+set :deploy_via,  :remote_cache
 set :use_sudo,    false
 
 # SSH
