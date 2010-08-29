@@ -1,5 +1,5 @@
 <ul class="tracklist">
-  <li id="track-<%= track_counter %>", class="<%= cycle('track even', 'track odd') %>">
+  <li id="track-<%= track_counter %>" class="<%= cycle('track even', 'track odd') %>">
     <h2><%= link_to track.name, track_path(track), :id => track_counter, :class => "hide" %></h2>
     <%= link_to "play", download_track_path(track), :class => 'play' %>
     <%= track.name %>
