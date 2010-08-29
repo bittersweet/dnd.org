@@ -13,6 +13,10 @@ module NavigationHelpers
     "/artists/#{id}"
   end
 
+  def user_login
+    "/users/login"
+  end
+
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance
