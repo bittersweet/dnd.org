@@ -14,7 +14,7 @@ class TracksController < ApplicationController
     render :nothing => true
     @track = Track.find(params[:id])
     @track.update_playcount(request.env)
-    send_file @track.mp3.path, :type => @track.mp3.content_type, :disposition => 'attachment'
+    send_file @track.mp3.url, :type => @track.mp3.content_type
   end
 
 end
