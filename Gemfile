@@ -18,5 +18,5 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.19'
   gem 'steak', :git => 'git://github.com/cavalle/steak.git'
   gem 'capybara'
-  gem 'machinist'
+  gem 'machinist', '>= 2.0.0.beta2'
 end

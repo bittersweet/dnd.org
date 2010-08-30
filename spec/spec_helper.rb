@@ -38,3 +38,8 @@ def login
   request.env['warden'] = mock(Warden, :authenticate => mock_user,
                                :authenticate! => mock_user)
 end
+
+Machinist.configure do |config|
+  config.cache_objects = false
+end
+

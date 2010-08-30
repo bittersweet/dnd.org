@@ -32,8 +32,4 @@ DenachtdienstOrg::Application.configure do
 
   # Setting this to notify to have a clean output for now
   config.active_support.deprecation = :notify
-
-  Machinist.configure do |config|
-    config.cache_objects = false
-  end
 end
