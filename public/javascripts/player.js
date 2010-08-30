@@ -3,7 +3,7 @@ $(document).ready(function(){
   var song_title = $("#player_song_title");
 
   function setActive(current_track) {
-    $(".active").removeClass("active")
+    $("li.active").removeClass("active")
     $("#" + current_track).addClass("active")
   }
 
