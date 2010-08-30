@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc2'
+gem 'rails', '3.0.0'
 gem 'mysql', '2.8.1'
 
 gem 'capistrano'
@@ -11,7 +11,7 @@ gem 'paperclip'
 gem 'twitter'
 gem 'ruby-mp3info', :require => 'mp3info'
 gem 'jammit'
-gem 'hoptoad_notifier'
+gem 'hoptoad_notifier', :git => 'git://github.com/bittersweet/hoptoad_notifier.git'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
 group :development, :test do

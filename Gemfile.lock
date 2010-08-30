@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/bittersweet/hoptoad_notifier.git
+  revision: 38d0001
+  specs:
+    hoptoad_notifier (2.3.5)
+      activesupport
+
+GIT
   remote: git://github.com/cavalle/steak.git
   revision: 894084d
   specs:
@@ -16,12 +23,12 @@ GEM
   remote: http://rubygems.org/
   specs:
     abstract (1.0.0)
-    actionmailer (3.0.0.rc2)
-      actionpack (= 3.0.0.rc2)
+    actionmailer (3.0.0)
+      actionpack (= 3.0.0)
       mail (~> 2.2.5)
-    actionpack (3.0.0.rc2)
-      activemodel (= 3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
+    actionpack (3.0.0)
+      activemodel (= 3.0.0)
+      activesupport (= 3.0.0)
       builder (~> 2.1.2)
       erubis (~> 2.6.6)
       i18n (~> 0.4.1)
@@ -29,21 +36,21 @@ GEM
       rack-mount (~> 0.6.12)
       rack-test (~> 0.5.4)
       tzinfo (~> 0.3.23)
-    activemodel (3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
+    activemodel (3.0.0)
+      activesupport (= 3.0.0)
       builder (~> 2.1.2)
       i18n (~> 0.4.1)
-    activerecord (3.0.0.rc2)
-      activemodel (= 3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
-      arel (~> 1.0.0.rc1)
+    activerecord (3.0.0)
+      activemodel (= 3.0.0)
+      activesupport (= 3.0.0)
+      arel (~> 1.0.0)
       tzinfo (~> 0.3.23)
-    activeresource (3.0.0.rc2)
-      activemodel (= 3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
-    activesupport (3.0.0.rc2)
-    arel (1.0.0.rc1)
-      activesupport (>= 3.0.0.beta)
+    activeresource (3.0.0)
+      activemodel (= 3.0.0)
+      activesupport (= 3.0.0)
+    activesupport (3.0.0)
+    arel (1.0.1)
+      activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     capistrano (2.5.19)
@@ -63,7 +70,7 @@ GEM
     crack (0.1.6)
     culerity (0.2.12)
     daemons (1.1.0)
-    devise (1.1.rc2)
+    devise (1.1.2)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
@@ -71,11 +78,9 @@ GEM
       abstract (>= 1.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    haml (3.0.17)
+    haml (3.0.18)
     hashie (0.2.2)
     highline (1.6.1)
-    hoptoad_notifier (2.3.5)
-      activesupport
     httparty (0.5.2)
       crack (= 0.1.6)
     i18n (0.4.1)
@@ -83,7 +88,7 @@ GEM
       closure-compiler (>= 0.1.0)
       yui-compressor (>= 0.9.1)
     json_pure (1.4.6)
-    machinist (2.0.0.beta2)
+    machinist (1.0.6)
     mail (2.2.5)
       activesupport (>= 2.3.6)
       mime-types
@@ -108,18 +113,18 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.4)
       rack (>= 1.0)
-    rails (3.0.0.rc2)
-      actionmailer (= 3.0.0.rc2)
-      actionpack (= 3.0.0.rc2)
-      activerecord (= 3.0.0.rc2)
-      activeresource (= 3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
-      bundler (>= 1.0.0.rc.6)
-      railties (= 3.0.0.rc2)
-    railties (3.0.0.rc2)
-      actionpack (= 3.0.0.rc2)
-      activesupport (= 3.0.0.rc2)
-      rake (>= 0.8.3)
+    rails (3.0.0)
+      actionmailer (= 3.0.0)
+      actionpack (= 3.0.0)
+      activerecord (= 3.0.0)
+      activeresource (= 3.0.0)
+      activesupport (= 3.0.0)
+      bundler (~> 1.0.0)
+      railties (= 3.0.0)
+    railties (3.0.0)
+      actionpack (= 3.0.0)
+      activesupport (= 3.0.0)
+      rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
     rspec (2.0.0.beta.20)
@@ -161,12 +166,12 @@ DEPENDENCIES
   delayed_job!
   devise
   haml
-  hoptoad_notifier
+  hoptoad_notifier!
   jammit
   machinist
   mysql (= 2.8.1)
   paperclip
-  rails (= 3.0.0.rc2)
+  rails (= 3.0.0)
   rspec-rails (>= 2.0.0.beta.19)
   ruby-mp3info
   steak!
