@@ -8,7 +8,7 @@ class Admin::TracksController < ApplicationController
   respond_to :html
 
   def index
-    @tracks = Track.all
+    @tracks = Track.ordered
   end
 
   def new
