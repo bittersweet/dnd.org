@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  var song_title = $("#player_song_title");
+
   function setActive(current_track) {
     $(".active").removeClass("active")
     $("#" + current_track).addClass("active")
@@ -10,6 +12,7 @@ $(document).ready(function(){
     setActive("track-" + nexttrack);
     var trackname = $("#track-" + nexttrack + " h2").html();
     var nexttrack_url = $("#track-" + nexttrack + " a.play").attr("href");
+    /* If there are no more tracks to play */
     if (nexttrack_url == undefined) {
       $("#player").slideUp();
       return false;
@@ -30,11 +33,11 @@ $(document).ready(function(){
   }
 
   function setsongtitle(title) {
-    $("#player_song_title").html(title);
+    song_title.html(title);
   }
 
   function playtrack(trackurl ) {
-    $("#jplayer").setFile(trackurl).play();
+    $("#jplayer").jPlayer("setFile", trackurl).jPlayer("play");
   }
 
   $("li.track").click(function(event) {
@@ -58,26 +61,19 @@ $(document).ready(function(){
     playtrack(trackurl);
   });
 
-  $("#jplayer").jPlayer({
-    ready: function () {
-    },
-    volume: 50,
-    oggSupport: false
-  })
-  .jPlayerId("play", "player_play")
-  .jPlayerId("pause", "player_pause")
-  .jPlayerId("stop", "player_stop")
-  .jPlayerId("loadBar", "player_progress_load_bar")
-  .jPlayerId("playBar", "player_progress_play_bar")
-  .onProgressChange( function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
-    var myPlayedTime = new Date(playedTime);
-    var ptMin = (myPlayedTime.getUTCMinutes() < 10) ? "0" + myPlayedTime.getUTCMinutes() : myPlayedTime.getUTCMinutes();
-    var ptSec = (myPlayedTime.getUTCSeconds() < 10) ? "0" + myPlayedTime.getUTCSeconds() : myPlayedTime.getUTCSeconds();
-    $("#play_time").text(ptMin+":"+ptSec);
-
-  })
-  .onSoundComplete( function() {
+	$("#jplayer").jPlayer({
+		ready: function () {},
+		volume: 50,
+		oggSupport: false,
+    /* disable html5 support for now */
+    nativeSupport: false,
+	})
+	.jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+		$("#play_time").text($.jPlayer.convertTime(playedTime));
+		// $("#total_time").text($.jPlayer.convertTime(totalTime));
+	})
+	.jPlayer("onSoundComplete", function() {
     var current_track = $("#player_song_title a").attr("id");
     nextTrack(parseInt(current_track));
-  });
+	});
 });
