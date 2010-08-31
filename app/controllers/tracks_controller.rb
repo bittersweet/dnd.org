@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
 
   def index
-    @tracks = Track.regular
+    @tracks = Track.ordered.regular
   end
 
   def show
