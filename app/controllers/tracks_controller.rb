@@ -7,7 +7,7 @@ class TracksController < ApplicationController
   def show
     @track  = Track.find(params[:id])
     @artist = @track.artist
-    @tracks = @artist.tracks.reject { |t| t == @track }
+    @tracks = @artist.tracks.ordered.reject { |t| t == @track }
   end
 
   def download
