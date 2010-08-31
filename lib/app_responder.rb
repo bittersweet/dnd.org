@@ -35,8 +35,3 @@ class AppResponder < ActionController::Responder
     end
   end
 end
-
-# And now, just add it to your controller:
-class ApplicationController < ActionController::Base
-  self.responder = AppResponder
-end
