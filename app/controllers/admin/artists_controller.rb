@@ -5,7 +5,7 @@ class Admin::ArtistsController < ApplicationController
   layout 'admin'
 
   def index
-    @artists = Artist.all
+    @artists = Artist.ordered
   end
 
   def new
