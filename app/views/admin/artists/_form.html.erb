@@ -1,6 +1,7 @@
 <% form_for([:admin, artist], :html => { :multipart => true }) do |f| %>
+  <%= render "shared/error_messages", :target => artist %>
+
   <ul>
-    <%= f.error_messages %>
     <li><%= f.label :section %>
       <%= select("artist", "section", [["regular", 1], ["required listening", 2]]) %></li>
     <li><%= f.label :name %>
