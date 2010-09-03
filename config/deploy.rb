@@ -30,7 +30,8 @@ namespace :deploy do
         "deploy:link_artists",
         "deploy:link_audio",
         "deploy:link_app_config",
-        "deploy:precache_assets"
+        "deploy:precache_assets",
+        "deploy:cleanup"
 
   desc "Link to configs in shared/config"
   task :link_configs do
