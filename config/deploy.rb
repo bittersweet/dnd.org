@@ -1,3 +1,7 @@
+# This will activate bundler after every deploy
+# see http://github.com/carlhuda/bundler/blob/master/lib/bundler/capistrano.rb
+require 'bundler/capistrano'
+
 # Global settings
 set :application, 'denachtdienst.org'
 set :rails_env,   'production'
