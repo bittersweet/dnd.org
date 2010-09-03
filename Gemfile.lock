@@ -1,23 +1,31 @@
 GIT
   remote: git://github.com/bittersweet/hoptoad_notifier.git
-  revision: 38d0001
+  revision: 38d000114adcb9bff7dbe08d4c06b36259f6a8ec
   specs:
     hoptoad_notifier (2.3.5)
       activesupport
 
 GIT
   remote: git://github.com/cavalle/steak.git
-  revision: 894084d
+  revision: 894084dcca885ccef09627c3ff898c675936335a
   specs:
     steak (0.4.0.beta.1)
       rspec-core (>= 2.0.0.beta.19)
 
 GIT
   remote: git://github.com/collectiveidea/delayed_job.git
-  revision: b983b7e
+  revision: bd54a3f89bb33389d0e784e318e68ef8660f4215
   specs:
     delayed_job (2.1.0.pre)
       daemons
+
+GIT
+  remote: http://github.com/documentcloud/jammit.git
+  revision: 8f934928d6228147e86db483c59d2d2a23f3732f
+  specs:
+    jammit (0.5.1)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
 
 GEM
   remote: http://rubygems.org/
@@ -84,9 +92,6 @@ GEM
     httparty (0.5.2)
       crack (= 0.1.6)
     i18n (0.4.1)
-    jammit (0.5.1)
-      closure-compiler (>= 0.1.0)
-      yui-compressor (>= 0.9.1)
     json_pure (1.4.6)
     machinist (2.0.0.beta2)
     mail (2.2.5)
@@ -103,13 +108,13 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.3.1)
-    oauth (0.4.2)
+    oauth (0.4.3)
     paperclip (2.3.3)
       activerecord
       activesupport
     polyglot (0.3.1)
     rack (1.2.1)
-    rack-mount (0.6.12)
+    rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.4)
       rack (>= 1.0)
@@ -167,7 +172,7 @@ DEPENDENCIES
   devise
   haml
   hoptoad_notifier!
-  jammit
+  jammit!
   machinist (>= 2.0.0.beta2)
   mysql (= 2.8.1)
   paperclip

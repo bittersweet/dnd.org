@@ -10,7 +10,7 @@ gem 'haml'
 gem 'paperclip'
 gem 'twitter'
 gem 'ruby-mp3info', :require => 'mp3info'
-gem 'jammit'
+gem 'jammit', :git => 'http://github.com/documentcloud/jammit.git'
 gem 'hoptoad_notifier', :git => 'git://github.com/bittersweet/hoptoad_notifier.git'
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
