@@ -1,7 +1,3 @@
-# This will activate bundler after every deploy
-# see http://github.com/carlhuda/bundler/blob/master/lib/bundler/capistrano.rb
-require 'bundler/capistrano'
-
 # Global settings
 set :application, 'denachtdienst.org'
 set :rails_env,   'production'
@@ -22,6 +18,16 @@ set :user,        'deploy'
 set :port,        30000
 ssh_options[:forward_agent] = true
 ssh_options[:username] = 'deploy'
+
+# Bundler
+require 'bundler/capistrano'
+set :bundle_cmd,   "/home/deploy/.rvm/gems/ruby-1.9.2-p0/bin/bundle"
+set :bundle_flags, "--deployment"
+
+# RVM
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
+set :rvm_type, :user
 
 namespace :deploy do
 
