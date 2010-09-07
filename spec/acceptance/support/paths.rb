@@ -17,6 +17,10 @@ module NavigationHelpers
     "/users/login"
   end
 
+  def admin_overview
+    "/admin"
+  end
+
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance

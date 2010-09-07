@@ -4,7 +4,7 @@ end
 
 RSpec.configuration.include HelperMethods, :type => :acceptance
 
-def webrat_login
+def admin_login
   User.create(:email => 'test@test.com', :password => 'testing')
   visit user_login
 
