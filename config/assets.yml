@@ -30,6 +30,7 @@ stylesheets:
   admin:
     - public/stylesheets/reset.css
     - public/stylesheets/admin.css
+    - public/stylesheets/admintheme.css
   mobile:
     - public/stylesheets/mobile.css
     - public/jqtouch/themes/jqt/theme.min.css
