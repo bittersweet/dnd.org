@@ -1,3 +1,14 @@
 <%- title("Admin overview") %>
 
 <h1>Overview</h1>
+
+<h2>Latest played tracks</h2>
+
+<ul id="statistics_overview">
+  <% @statistics.each do |s| -%>
+    <li>
+      <%= s.track.name %>
+      <span style="float:right;"><%= timeago(s.played_at) %></span>
+    </li>
+  <% end -%>
+</ul>

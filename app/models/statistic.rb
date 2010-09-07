@@ -6,6 +6,9 @@ class Statistic < ActiveRecord::Base
 
   validate :single_statistics
 
+  scope :ordered, :order => 'played_at DESC'
+  scope :latest, :limit => 10
+
   def self.playtime
     t = Track.select("length, statistics_count")
 
