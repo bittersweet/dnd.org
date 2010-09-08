@@ -13,14 +13,6 @@ GIT
       rspec
 
 GIT
-  remote: git://github.com/collectiveidea/delayed_job.git
-  revision: 0af736eaae22d51c0c1cac1bd487f2c61d327efa
-  specs:
-    delayed_job (2.1.0.pre2)
-      activesupport (~> 3.0)
-      daemons
-
-GIT
   remote: http://github.com/documentcloud/jammit.git
   revision: 8f934928d6228147e86db483c59d2d2a23f3732f
   specs:
@@ -80,6 +72,8 @@ GEM
     crack (0.1.6)
     culerity (0.2.12)
     daemons (1.1.0)
+    delayed_job (2.0.3)
+      daemons
     devise (1.1.2)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
@@ -185,7 +179,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capybara
-  delayed_job!
+  delayed_job
   devise
   faye
   haml
