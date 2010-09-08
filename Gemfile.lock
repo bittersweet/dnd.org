@@ -7,16 +7,17 @@ GIT
 
 GIT
   remote: git://github.com/cavalle/steak.git
-  revision: 894084dcca885ccef09627c3ff898c675936335a
+  revision: 4956708bfe57c48991c3600a6dd6cf4dcc80fb25
   specs:
-    steak (0.4.0.beta.1)
-      rspec-core (>= 2.0.0.beta.19)
+    steak (1.0.0.beta.1)
+      rspec
 
 GIT
   remote: git://github.com/collectiveidea/delayed_job.git
-  revision: bd54a3f89bb33389d0e784e318e68ef8660f4215
+  revision: 0af736eaae22d51c0c1cac1bd487f2c61d327efa
   specs:
-    delayed_job (2.1.0.pre)
+    delayed_job (2.1.0.pre2)
+      activesupport (~> 3.0)
       daemons
 
 GIT
@@ -57,6 +58,7 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
+    addressable (2.2.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
@@ -82,8 +84,18 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
+    em-http-request (0.2.11)
+      addressable (>= 2.0.0)
+      eventmachine (>= 0.12.9)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    eventmachine (0.12.10)
+    faye (0.5.2)
+      em-http-request (>= 0.2)
+      eventmachine (>= 0.12)
+      json (>= 1.0)
+      rack (>= 1.0)
+      thin (>= 1.2)
     ffi (0.6.3)
       rake (>= 0.8.7)
     haml (3.0.18)
@@ -92,6 +104,7 @@ GEM
     httparty (0.5.2)
       crack (= 0.1.6)
     i18n (0.4.1)
+    json (1.4.6)
     json_pure (1.4.6)
     machinist (2.0.0.beta2)
     mail (2.2.5)
@@ -148,6 +161,10 @@ GEM
       ffi (>= 0.6.1)
       json_pure
       rubyzip
+    thin (1.2.7)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.0)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -170,6 +187,7 @@ DEPENDENCIES
   capybara
   delayed_job!
   devise
+  faye
   haml
   hoptoad_notifier!
   jammit!

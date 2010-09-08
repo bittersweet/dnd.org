@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery
   before_filter :prepare_for_mobile
+  before_filter :track_location
 
   layout :layout_by_resource
 
@@ -29,6 +30,10 @@ class ApplicationController < ActionController::Base
 
   def prepare_for_mobile
     request.format = :mobile if mobile_device?
+  end
+
+  def track_location
+    Bayeux.publish('/activity', :ip => request.ip, :location => request.path_info)
   end
 end
 
