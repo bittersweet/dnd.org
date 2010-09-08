@@ -10,7 +10,7 @@ function JamesClient() {
   };
 
   this.setupBayeuxHandlers = function() {
-    self.client = new Faye.Client("http://localhost:8000/faye", {
+    self.client = new Faye.Client("http://node.denachtdienst.org/faye", {
       timeout: 120
     });
 
