@@ -16,7 +16,7 @@ function JamesClient() {
     */
 
     self.client = new Faye.Client("http://localhost:8000/faye", {
-      timeout: 4
+      timeout: 40
     });
 
     self.client.subscribe('/activity', function (message) {
@@ -28,8 +28,7 @@ function JamesClient() {
     var ip = message.ip,
         location = message.location;
 
-    $("#activity").prepend("<li><span class='ip'>" + ip +
-    "</span> &raquo; <span class='location'>" + location + "</span></li>\n");
+    $("#activity").prepend("<li><span class='location'>" + location + "</span></li>\n");
   };
 
   this.init();

@@ -34,7 +34,6 @@ class ApplicationController < ActionController::Base
 
   def track_location
     RestClient.get('http://localhost:8000/activity', {
-      :ip => request.ip,
       :location => request.path_info
     })
   end
