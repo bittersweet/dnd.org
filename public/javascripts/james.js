@@ -10,8 +10,13 @@ function JamesClient() {
   };
 
   this.setupBayeuxHandlers = function() {
-    self.client = new Faye.Client("http://node.denachtdienst.org/faye", {
-      timeout: 120
+    /*
+     Faye.Logging.logLevel = 'debug';
+     Faye.logger = function(msg) { console.log(msg) };
+    */
+
+    self.client = new Faye.Client("http://localhost:8000/faye", {
+      timeout: 4
     });
 
     self.client.subscribe('/activity', function (message) {
@@ -34,3 +39,4 @@ var jamesClient;
 jQuery(function(){
   jamesClient = new JamesClient();
 });
+
