@@ -33,7 +33,10 @@ class ApplicationController < ActionController::Base
   end
 
   def track_location
-    Bayeux.publish('/activity', :ip => request.ip, :location => request.path_info)
+    RestClient.get('http://localhost:8000/activity', {
+      :ip => request.ip,
+      :location => request.path_info
+    })
   end
 end
 
