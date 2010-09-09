@@ -25,8 +25,7 @@ function JamesClient() {
   };
 
   this.logActivity = function (message) {
-    var ip = message.ip,
-        location = message.location;
+    var location = message.location;
 
     $("#activity").prepend("<li><span class='location'>" + location + "</span></li>\n");
   };
