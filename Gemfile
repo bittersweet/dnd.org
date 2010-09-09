@@ -13,7 +13,7 @@ gem 'ruby-mp3info', :require => 'mp3info'
 gem 'jammit', :git => 'http://github.com/documentcloud/jammit.git'
 gem 'hoptoad_notifier', :git => 'git://github.com/bittersweet/hoptoad_notifier.git'
 gem 'delayed_job' 
-gem 'rest-client'
+gem 'rest-client', :require => 'rest_client'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.19'
