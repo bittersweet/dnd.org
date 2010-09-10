@@ -13,7 +13,7 @@ class RequiredlisteningController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @tracks = @artist.tracks.required_listening
+    @tracks = @artist.tracks.ordered.required_listening
 
     respond_to do |format|
       format.html
