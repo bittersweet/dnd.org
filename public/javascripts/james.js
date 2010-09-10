@@ -15,7 +15,7 @@ function JamesClient() {
      Faye.logger = function(msg) { console.log(msg) };
     */
 
-    self.client = new Faye.Client("http://localhost:8000/faye", {
+    self.client = new Faye.Client("http://denachtdienst.org:8000/faye", {
       timeout: 40
     });
 
