@@ -32,7 +32,7 @@ feature "Feature name", %q{
     fill_in 'artist_bio', :with => 'Artist bio'
     click 'artist_submit'
 
-    page.should have_content('Artist created.')
+    page.should have_content('Artist was successfully created.')
     page.should have_content('Artist 1')
   end
 
@@ -51,8 +51,7 @@ feature "Feature name", %q{
     fill_in 'artist_bio', :with => 'Artist bio edit'
     click 'artist_submit'
 
-    page.should have_content('Artist updated.')
-    page.should have_content('Artist edit')
+    page.should have_content('Artist was successfully updated.')
   end
 
   scenario "Delete artist" do
@@ -67,7 +66,7 @@ feature "Feature name", %q{
 
     current_path.should == artists_overview
 
-    page.should have_content('Artist deleted.')
+    page.should have_content('Artist was successfully deleted.')
     page.should_not have_content(@artist.name)
   end
 end

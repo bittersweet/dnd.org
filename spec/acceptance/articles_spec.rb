@@ -33,7 +33,7 @@ feature "Feature name", %q{
     fill_in 'article_content', :with => 'Article content'
     click 'article_submit'
 
-    page.should have_content('Article created.')
+    page.should have_content('Article was successfully created.')
     page.should have_content('Article 1')
   end
 
@@ -52,7 +52,7 @@ feature "Feature name", %q{
     fill_in 'article_content', :with => 'Article content edit'
     click 'article_submit'
 
-    page.should have_content('Article updated.')
+    page.should have_content('Article was successfully updated.')
     page.should have_content('Article edit')
   end
 
@@ -68,7 +68,7 @@ feature "Feature name", %q{
 
     current_path.should == articles_overview
 
-    page.should have_content('Article deleted.')
+    page.should have_content('Article was successfully deleted.')
     page.should_not have_content(@article.title)
   end
 end
