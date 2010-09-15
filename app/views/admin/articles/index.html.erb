@@ -9,10 +9,10 @@
     <th>Delete</th>
   </tr>
   <% @articles.each do |a| %>
-    <tr class="<%= cycle('odd', 'even') %>">
+    <%= content_tag :tr, :id => "article_#{a.id}", :class => cycle('odd', 'even') do %>
       <td><%= link_to a.title, article_path(a) %></td>
       <td><%= link_to "Edit", edit_admin_article_path(a) %></td>
       <td><%= link_to "Delete", admin_article_path(a.id), :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <% end %>
   <% end %>
 </table>

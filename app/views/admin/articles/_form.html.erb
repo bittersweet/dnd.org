@@ -1,6 +1,7 @@
 <% form_for([:admin, article]) do |f| %>
+  <%= render "shared/error_messages", :target => article %>
+
   <ul>
-    <%= f.error_messages %>
     <li><%= f.label :title %>
       <%= f.text_field :title, :class => "text", :size => "30" %></li>
     <li><%= f.label :content %>

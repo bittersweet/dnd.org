@@ -1,9 +1,9 @@
 <% title("Articles") -%>
 
 <div class="grid_8">
-<% @articles.each do |w| -%>
+<% @articles.each do |a| -%>
   <div class="post <%= cycle('even', 'odd') %>">
-    <h3><%= a.title %></h3>
+    <h3><%= link_to a.title, a %></h3>
     <p><%= simple_format(a.content) %></p>
   </div>
 <% end -%>

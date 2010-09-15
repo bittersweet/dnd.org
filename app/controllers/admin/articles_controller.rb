@@ -16,7 +16,7 @@ class Admin::ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     if @article.save
-      redirect_to admin_articles_path, :notice => "Article created"
+      redirect_to admin_articles_path, :notice => 'Article created.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::ArticlesController < ApplicationController
 
   def update
     if @article.update_attributes(params[:article])
-      redirect_to admin_articles_path
+      redirect_to admin_articles_path, :notice => 'Article updated.'
     else
       render "edit"
     end
@@ -35,7 +35,7 @@ class Admin::ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_articles_path, :notice => "Article deleted"
+    redirect_to admin_articles_path, :notice => 'Article deleted.'
   end
 
   private

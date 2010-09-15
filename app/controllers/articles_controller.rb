@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @article = Article.latest
+    @articles = Article.latest
   end
 
 end

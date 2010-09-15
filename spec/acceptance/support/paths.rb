@@ -5,6 +5,14 @@ module NavigationHelpers
     '/'
   end
 
+  def articles_index
+    '/articles'
+  end
+
+  def article_show(id)
+    "/articles/#{id}"
+  end
+
   def artists_index
     '/artists'
   end
@@ -35,6 +43,10 @@ module NavigationHelpers
 
   def artists_overview
     '/admin/artists'
+  end
+
+  def articles_overview
+    '/admin/articles'
   end
 
 end
