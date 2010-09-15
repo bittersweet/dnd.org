@@ -5,16 +5,12 @@
 <h2>Latest played tracks</h2>
 
 <ul id="statistics_overview">
-  <% @statistics.each do |s| -%>
-    <li>
-      <%= s.track.name %>
-      <span style="float:right;"><%= timeago(s.played_at) %></span>
-    </li>
-  <% end -%>
-</ul>
-
-<h2>Latest activity</h2>
-<ul id="activity">
-</ul>
-
-<%= javascript_include_tag "http://denachtdienst.org:8000/faye.js", 'james' %>
+  <% if @statistics.any? %>
+    <% @statistics.each do |s| %>
+      <li>
+        <%= s.track.name %>
+        <span style="float:right;"><%= timeago(s.played_at) %></span>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
