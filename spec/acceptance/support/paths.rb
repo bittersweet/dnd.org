@@ -2,7 +2,7 @@ module NavigationHelpers
   # Put helper methods related to the paths in your application here.
 
   def homepage
-    "/"
+    '/'
   end
 
   def artists_index
@@ -13,12 +13,24 @@ module NavigationHelpers
     "/artists/#{id}"
   end
 
+  def user_register
+    '/users/register'
+  end
+
   def user_login
-    "/users/login"
+    '/users/login'
+  end
+
+  def user_password
+    'users/password/edit'
+  end
+
+  def user_edit
+    '/users/edit/'
   end
 
   def admin_overview
-    "/admin"
+    '/admin'
   end
 
 end

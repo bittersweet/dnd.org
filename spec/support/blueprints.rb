@@ -29,4 +29,5 @@ end
 
 User.blueprint do
   email { "user_#{sn}@test.com" }
+  password { "user_#{sn}_pass" }
 end

@@ -11,8 +11,6 @@ feature "Feature name", %q{
 
     visit artists_index
 
-    page.should have_css('#artistlist')
-    page.should have_css('.artist')
     page.should have_content(@artist.name)
   end
 
