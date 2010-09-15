@@ -1,7 +1,7 @@
 class Admin::TracksController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_artist, :except => [:index, :destroy]
-  before_filter :set_sub_tab, :only => [:index, :new, :edit]
+  before_filter :set_sub_tab, :only => [:index, :edit]
 
   layout 'admin'
 

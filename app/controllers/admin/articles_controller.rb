@@ -1,6 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :set_sub_tab, :only => [:new, :edit, :index]
+  before_filter :set_sub_tab, :only => [:edit, :index]
   before_filter :find_article, :only => [:edit, :update, :destroy]
 
   layout 'admin'
