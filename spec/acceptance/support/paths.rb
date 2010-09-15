@@ -33,6 +33,10 @@ module NavigationHelpers
     '/admin'
   end
 
+  def artists_overview
+    '/admin/artists'
+  end
+
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance

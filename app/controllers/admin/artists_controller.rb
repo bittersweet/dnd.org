@@ -15,7 +15,7 @@ class Admin::ArtistsController < ApplicationController
   def create
     @artist = Artist.new(params[:artist])
     if @artist.save
-      redirect_to admin_artists_path, :notice => 'Artist saved'
+      redirect_to admin_artists_path, :notice => 'Artist created.'
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class Admin::ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(params[:artist])
-      redirect_to admin_artists_path, :notice => 'Artist updated'
+      redirect_to admin_artists_path, :notice => 'Artist updated.'
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class Admin::ArtistsController < ApplicationController
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to admin_artists_path, :notice => 'Artist deleted'
+    redirect_to admin_artists_path, :notice => 'Artist deleted.'
   end
 
 end
