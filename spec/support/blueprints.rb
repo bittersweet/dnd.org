@@ -21,7 +21,7 @@ end
 Track.blueprint do
   artist
   name             { "Track #{sn}" }
-  section          { 0 }
+  section          { 1 }
   mp3_file_name    { "track_#{sn}.mp3" }
   mp3_content_type { 'audio/mpeg' }
   length           { 200 }

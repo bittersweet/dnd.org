@@ -2,6 +2,7 @@ class Admin::TracksController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_artist, :except => [:index, :destroy]
   before_filter :set_sub_tab, :only => [:index, :edit]
+  before_filter :find_track, :only => [:edit, :update, :destroy]
 
   layout 'admin'
 
@@ -22,17 +23,14 @@ class Admin::TracksController < ApplicationController
   end
 
   def edit
-    @track = Track.find(params[:id])
   end
 
   def update
-    @track = Track.find(params[:id])
     @track.update_attributes(params[:track])
     respond_with :admin, @track
   end
 
   def destroy
-    @track = Track.find(params[:id])
     @track.destroy
     respond_with :admin, @track
   end
@@ -41,6 +39,10 @@ protected
 
   def load_artist
     @artists = Artist.all
+  end
+
+  def find_track
+    @track = Track.find(params[:id])
   end
 
 end

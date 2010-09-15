@@ -21,6 +21,14 @@ module NavigationHelpers
     "/artists/#{id}"
   end
 
+  def tracks_index
+    '/tracks'
+  end
+
+  def track_show(id)
+    "/tracks/#{id}"
+  end
+
   def user_register
     '/users/register'
   end
@@ -47,6 +55,10 @@ module NavigationHelpers
 
   def articles_overview
     '/admin/articles'
+  end
+
+  def tracks_overview
+    '/admin/tracks'
   end
 
 end

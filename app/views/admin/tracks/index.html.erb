@@ -10,11 +10,11 @@
     <th>Delete</th>
   </tr>
   <%- @tracks.each do |t| -%>
-    <tr class="<%= cycle('odd', 'even') %>">
+    <%= content_tag :tr, :id => "track_#{t.id}", :class => cycle('odd', 'even') do %>
       <td><%= link_to t.name, track_path(t) %></td>
       <td><%= t.statistics_count %> plays in <%= time_since(t.created_at) %> days</td>
       <td><%= link_to "Edit", edit_admin_track_path(t) %></td>
       <td><%= link_to "Delete", admin_track_path(t.id), :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <%- end -%>
+    <% end -%>
+  <% end %>
 </table>
