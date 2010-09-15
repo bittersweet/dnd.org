@@ -1,7 +1,7 @@
 class Track < ActiveRecord::Base
 
   belongs_to :artist
-  has_many :statistics
+  has_many :statistics, :dependent => :destroy
 
   attr_accessible :artist_id, :name, :description, :section, :artistlink, :buylink
   attr_accessible :mp3
