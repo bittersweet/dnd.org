@@ -1,4 +1,4 @@
-DenachtdienstOrg::Application.routes.draw do |map|
+DenachtdienstOrg::Application.routes.draw do
   root :to => 'overview#index'
 
   resources :tracks do
@@ -21,5 +21,5 @@ DenachtdienstOrg::Application.routes.draw do |map|
   devise_for :users, :path_names => { :sign_in => 'login',
                                       :sign_out => 'logout',
                                       :sign_up => 'register' }
-  Jammit::Routes.draw(map)
+  match "/#{Jammit.package_path}/:package.:extension", :to => 'jammit#package', :as => :jammit
 end
