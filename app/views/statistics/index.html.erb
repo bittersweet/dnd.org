@@ -1,0 +1,11 @@
+<h4>Recently played tracks</h4>
+
+<% @recently_played.each do |s| -%>
+  <%= s.track.name %>
+<% end -%>
+
+<h4>Most played tracks</h4>
+
+<% @most_played.each do |t| -%>
+  <%= t.name %>
+<% end -%>

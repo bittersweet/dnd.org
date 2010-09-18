@@ -9,10 +9,22 @@ feature "Feature name", %q{
   scenario "Overview page" do
     admin_login
 
-    @track = Track.make(:artist => Artist.make!)
+    @track = Track.make!(:artist => Artist.make!)
     @statistic = Statistic.make!(:track => @track)
 
     visit admin_overview
+
+    page.should have_content(@track.name)
+  end
+
+  scenario "Statistics overview" do
+    @track = Track.make!(:artist => Artist.make!)
+    @statistic = Statistic.make!(:track => @track)
+
+    visit statistics_overview
+
+    page.should have_content("Recently played tracks")
+    page.should have_content("Most played tracks")
 
     page.should have_content(@track.name)
   end

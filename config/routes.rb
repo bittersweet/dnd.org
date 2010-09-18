@@ -8,6 +8,7 @@ DenachtdienstOrg::Application.routes.draw do
   end
   resources :artists
   resources :articles
+  resources :statistics, :only => [:index]
 
   resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
 

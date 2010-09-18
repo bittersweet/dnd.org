@@ -61,6 +61,10 @@ module NavigationHelpers
     '/admin/tracks'
   end
 
+  def statistics_overview
+    '/statistics'
+  end
+
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance

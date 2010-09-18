@@ -16,6 +16,7 @@ class Track < ActiveRecord::Base
 
   scope :ordered, :order => 'created_at DESC'
   scope :latest, :limit => 10
+  scope :most_played, :order => 'statistics_count ASC'
 
   scope :regular, :conditions => "section = 1"
   scope :required_listening, :conditions => "section = 2"
