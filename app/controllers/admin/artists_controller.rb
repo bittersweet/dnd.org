@@ -1,5 +1,4 @@
 class Admin::ArtistsController < ApplicationController
-  before_filter :authenticate_user!
   before_filter :set_sub_tab, :only => [:edit, :index]
   before_filter :find_artist, :only => [:edit, :update, :destroy]
 

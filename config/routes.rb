@@ -13,10 +13,12 @@ DenachtdienstOrg::Application.routes.draw do
   resources :requiredlistening, :as => :requiredlistening, :only => [:index, :show]
 
   namespace :admin do
-    root :to => 'overview#index'
-    resources :tracks
-    resources :artists
-    resources :articles
+    authenticate :user do
+      root :to => 'overview#index'
+      resources :tracks
+      resources :artists
+      resources :articles
+    end
   end
 
   devise_for :users, :path_names => { :sign_in => 'login',
