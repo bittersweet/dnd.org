@@ -6,13 +6,6 @@ GIT
       activesupport
 
 GIT
-  remote: git://github.com/cavalle/steak.git
-  revision: 4956708bfe57c48991c3600a6dd6cf4dcc80fb25
-  specs:
-    steak (1.0.0.beta.1)
-      rspec
-
-GIT
   remote: http://github.com/brynary/rack-test.git
   revision: 8f6be163c75ab71e4b9918f428b6eada35d50c8c
   specs:
@@ -155,6 +148,8 @@ GEM
       ffi (>= 0.6.1)
       json_pure
       rubyzip
+    steak (1.0.0.beta.2)
+      rspec
     thor (0.14.0)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -189,6 +184,6 @@ DEPENDENCIES
   responders
   rspec-rails (>= 2.0.0.beta.19)
   ruby-mp3info
-  steak!
+  steak (>= 1.0.0.beta.2)
   twitter
   warden

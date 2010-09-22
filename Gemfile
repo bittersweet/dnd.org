@@ -17,7 +17,7 @@ gem 'responders'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.19'
-  gem 'steak', :git => 'git://github.com/cavalle/steak.git'
+  gem 'steak', '>= 1.0.0.beta.2'
   gem 'rack-test', :git => 'http://github.com/brynary/rack-test.git'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'capybara'
