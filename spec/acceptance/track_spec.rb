@@ -11,8 +11,7 @@ feature "Track", %q{
 
     visit tracks_index
 
-    current_path.should == "/tracks"
-
+    current_path.should == '/tracks'
     page.should have_content(@track.name)
   end
 
@@ -37,6 +36,7 @@ feature "Track", %q{
 
     click 'track_submit'
 
+    current_path.should == tracks_overview
     page.should have_content("Track was successfully created.")
   end
 
@@ -53,6 +53,7 @@ feature "Track", %q{
     fill_in 'track_name', :with => 'Artist track'
     click 'track_submit'
 
+    current_path.should == tracks_overview
     page.should have_content('Track was successfully updated.')
   end
 
@@ -67,7 +68,6 @@ feature "Track", %q{
     end
 
     current_path.should == tracks_overview
-
     page.should have_content('Track was successfully deleted.')
     page.should_not have_content(@track.name)
   end
