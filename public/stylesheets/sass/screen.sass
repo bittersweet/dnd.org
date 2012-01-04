@@ -1,13 +1,13 @@
 // Variables
 
-!blue = #3bbfce
-!boxbackground = #F0C0C0
-!lightbar = rgb(240, 216, 216)
-!darkbar = rgb(143, 71, 95)
+$blue: #3bbfce
+$boxbackground: #F0C0C0
+$lightbar: rgb(240, 216, 216)
+$darkbar: rgb(143, 71, 95)
 
-!boxbackground_neg = #0f3f3f
-!lightbar_neg = rgb(112, 184, 160)
-!darkbar_neg = rgb(15, 39, 39)
+$boxbackground_neg: #0f3f3f
+$lightbar_neg: rgb(112, 184, 160)
+$darkbar_neg: rgb(15, 39, 39)
 
 // Mixins
 
@@ -93,7 +93,7 @@ h1
 
 .artist
   opacity: 0.7
-  background = !boxbackground
+  background: $boxbackground
   margin-top: 20px
   +border-radius
   +hover
@@ -125,9 +125,9 @@ h1
 
   &#artistlist li
     height: 130px
-  
+
   .neg
-    background = !lightbar_neg
+    background: $lightbar_neg
     color: white
 
   li
@@ -162,17 +162,17 @@ h1
         float: left
 
     &.odd
-      background = !lightbar 
+      background: $lightbar
 
     &.odd_neg
-      background = !lightbar_neg
+      background: $lightbar_neg
       color: white
 
     &.even
-      background = !darkbar
+      background: $darkbar
 
     &.even_neg
-      background = !darkbar_neg
+      background: $darkbar_neg
       color: white
 
     +active
@@ -251,12 +251,12 @@ table
 #facebook
   margin-top: 100px
   padding: 10px
-  background = !boxbackground
+  background: $boxbackground
   +border-radius
 
 #rl_artist
   padding: 10px
-  background = !boxbackground_neg
+  background: $boxbackground_neg
   color: #fff
   +border-radius
 
@@ -268,13 +268,13 @@ table
   margin-bottom: 50px
   padding: 10px
   padding-bottom: 20px
-  background = !boxbackground_neg
+  background: $boxbackground_neg
   color: #fff
   +border-radius
 
   a
     color: #fff
-    border-bottom: 1px solid 
+    border-bottom: 1px solid
 
 .awesome
   position: relative
@@ -295,11 +295,11 @@ table
     -moz-border-radius: 15px
 
     &:hover
-      background = !lightbar
+      background: $lightbar
 
     &.active
-      background = !lightbar
-      
+      background: $lightbar
+
 #header #menu ul li a
 
   &:hover
@@ -308,10 +308,10 @@ table
 .negative #header #menu ul li a
 
   &:hover
-    background = !lightbar_neg
+    background: $lightbar_neg
 
   &.active
-    background = !lightbar_neg
+    background: $lightbar_neg
 
 // weblog
 
@@ -321,7 +321,7 @@ table
   margin-bottom: 2em
 
   &.even
-    background = !lightbar
+    background: $lightbar
 
   &.odd
-    background = !darkbar
+    background: $darkbar
