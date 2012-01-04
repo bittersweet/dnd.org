@@ -8,6 +8,7 @@ gem 'rake', '0.8.7'
 gem 'capistrano'
 gem 'devise', '1.4.2'
 gem 'haml'
+gem 'sass'
 gem 'paperclip'
 gem 'twitter'
 gem 'ruby-mp3info', :require => 'mp3info'
@@ -22,4 +23,5 @@ group :development, :test do
   gem 'machinist'
   gem 'capybara'
   gem 'launchy'
+  gem 'sqlite3'
 end
