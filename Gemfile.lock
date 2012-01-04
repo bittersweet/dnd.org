@@ -34,7 +34,7 @@ GEM
     activesupport (3.0.9)
     addressable (2.2.6)
     arel (2.0.10)
-    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capistrano (2.9.0)
       highline
@@ -54,10 +54,10 @@ GEM
     cocaine (0.2.1)
     delayed_job (3.0.0)
       activesupport (~> 3.0)
-    devise (1.5.3)
-      bcrypt-ruby (~> 3.0)
+    devise (1.4.2)
+      bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
-      warden (~> 1.1)
+      warden (~> 1.0.3)
     diff-lcs (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -160,7 +160,7 @@ GEM
       multi_json (~> 1.0)
       simple_oauth (~> 0.1)
     tzinfo (0.3.31)
-    warden (1.1.0)
+    warden (1.0.4)
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -174,7 +174,7 @@ DEPENDENCIES
   capistrano
   capybara
   delayed_job
-  devise
+  devise (= 1.4.2)
   haml
   hoptoad_notifier
   jammit
@@ -189,4 +189,3 @@ DEPENDENCIES
   ruby-mp3info
   steak
   twitter
-  warden
